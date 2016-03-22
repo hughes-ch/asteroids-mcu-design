@@ -1,8 +1,10 @@
+#include <math.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #include "asteroids.h"
 
@@ -10,7 +12,6 @@
  *        started, about half way down this file. Descriptions have been 
  *        written about what they need to do.
  *
- *        static void level_up()
  *        static void create_missile()
  *        static void move_player_ship()
  *        static bool collision() 
@@ -59,6 +60,8 @@ static void init_game_model(Game_Model_t* model, int x, int y) {
   model->y = y;
 
   reset_game(model);
+
+  srand(time(NULL));
 }
 
 //Returns a Controller_t structure from the control queue
@@ -86,11 +89,88 @@ static void get_from_control_queue(Controller_t* controller) {
   controller->aux_button = aux_button;
 }
 
+//Creates a single asteroid in the game model
+//
+//Parameters:
+//  m - a pointer to the game model
+//  radius - the radius of the asteroid. Use the defined macros
+//  x - x position
+//  y - y position
+//  x_s - x speed
+//  y_s - y speed
+//
+//Returns true if the asteroid was created successfully and false 
+//otherwise
+int create_asteroid(Game_Model_t* m, int radius, int x, int y, 
+                     int x_s, int y_s) {
+
+  //Find open asteroid slot in data structure
+  int i; 
+  for (i = 1; i <= MAX_ASTEROIDS; i++) {
+    if ((m->asteroids[i-1]).empty) {
+      (m->asteroids[i-1]).empty = false;
+      (m->asteroids[i-1]).x_pos = x;
+      (m->asteroids[i-1]).y_pos = y;
+      (m->asteroids[i-1]).x_speed = x_s;
+      (m->asteroids[i-1]).y_speed = y_s;
+      (m->asteroids[i-1]).radius = radius;
+      return i;
+    }
+  }
+
+  return 0;
+}
+
 //Resets the asteroid field after a player has destroyed all asteroids 
 //on the screen. The number of asteroids is directly related to the level.
 //Assume there are no more asteroids in the model.
 static void level_up(Game_Model_t* model, int level) {
-  //TODO
+  int i, x, y, x_s, y_s, angle, side, speed; 
+  int num_asteroids = MIN_ASTEROIDS + (level / 2);
+
+  for (i = 0; i < num_asteroids; i++) {
+    //Generate number 0 through 3 (associated with side of screen)
+    side = rand() % 4;
+
+    //Determine the x (or y) position based on the side
+    switch (side) {
+      case SIDE_RIGHT:
+        x = model->x;
+        break;
+
+      case SIDE_LEFT:
+        x = 0;
+        break;
+
+      case SIDE_TOP:
+        y = model->y;
+        break;
+
+      case SIDE_BOTTOM:
+      default:
+        y = 0;
+        break;
+    }
+
+    //Generate number 1 through model->x (or model->y)
+    if (side == SIDE_RIGHT || side == SIDE_LEFT) {
+      y = rand() % model->y;       
+    } else {
+      x = rand() % model->x; 
+    }
+
+    //Generate random speed
+    speed = rand() % MAX_ASTEROID_SPEED;
+
+    //Generate random direction
+    angle = rand() % 360;
+    
+    //Convert random speed into x_s and y_s
+    x_s = (int)(acos((double)angle * M_PI / 180.0)) * speed;
+    y_s = (int)(asin((double)angle * M_PI / 180.0)) * speed;
+
+    create_asteroid(model, LARGE_ASTEROID_RADIUS, x, y, x_s, y_s); 
+  }
 }
 
 //Creates a missile from the nose of the ship in the same direction which

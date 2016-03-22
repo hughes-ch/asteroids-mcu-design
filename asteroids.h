@@ -2,6 +2,7 @@
 #define ASTEROIDS_H
 
 #define MAX_ASTEROIDS 50
+#define MIN_ASTEROIDS 4
 #define MAX_MISSILES 50
 
 #define LARGE_ASTEROID_RADIUS 3
@@ -20,6 +21,11 @@
 #define SHIP_ACCEL 1
 
 #define NUM_LIVES 3
+
+#define SIDE_RIGHT 0
+#define SIDE_LEFT 1
+#define SIDE_TOP 2
+#define SIDE_BOTTOM 3
 
 //Populated by the control task and used to modify the game model
 typedef struct controller_t {
