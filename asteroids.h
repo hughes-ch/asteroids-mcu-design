@@ -18,7 +18,9 @@
 #define SHIP_START_Y 0
 #define SHIP_START_ROTATION 0
 #define SHIP_RADIUS 1
-#define SHIP_ACCEL 1
+#define SHIP_ACCEL_RATE 1
+#define SHIP_ROLL_RATE 1
+#define SHIP_DECCEL_RATE 1
 
 #define NUM_LIVES 3
 
@@ -27,10 +29,16 @@
 #define SIDE_TOP 2
 #define SIDE_BOTTOM 3
 
+#define ACCEL_1_G 16384
+
 //Populated by the control task and used to modify the game model
 typedef struct controller_t {
-  uint16_t accel_data;
-  uint16_t gyro_data;
+  uint16_t accel_x;
+  uint16_t accel_y;
+  uint16_t accel_z;
+  uint16_t gyro_x;
+  uint16_t gyro_y;
+  uint16_t gyro_z;
   bool trigger_button;
   bool aux_button;
 } Controller_t;
@@ -64,6 +72,7 @@ typedef struct ship_t {
   int y_speed;
   int radius;
   int rotation;
+  bool accelerating;
 } Ship_t;
 
 //Populated by the game task and used to modify the view

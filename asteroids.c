@@ -8,15 +8,10 @@
 
 #include "asteroids.h"
 
-#define OBJ_MISSILE 0
-#define OBJ_SHIP 1
-#define OBJ_ASTEROID 2
-
 /* TODO - Write code for the following functions. They have already been
  *        started, about half way down this file. Descriptions have been 
  *        written about what they need to do.
  *
- *        static void move_player_ship()
  *        static bool collision() 
  *        static void lose_life()
  *        static void break_asteroid()
@@ -69,16 +64,28 @@ static void init_game_model(Game_Model_t* model, int x, int y) {
 
 //Returns a Controller_t structure from the control queue
 static void get_from_control_queue(Controller_t* controller) {
-  int accel_value;
-  int gyro_value;
+  int accel_x;
+  int accel_y;
+  int accel_z;
+  int gyro_x;
+  int gyro_y;
+  int gyro_z;
   int aux_button;
   int trigger_button;
 
-  printf("Accelerometer: ");
-  scanf("%d", &accel_value);
+  printf("Accelerometer x: ");
+  scanf("%d", &accel_x);
+  printf("Accelerometer y: ");
+  scanf("%d", &accel_y);
+  printf("Accelerometer z: ");
+  scanf("%d", &accel_z);
   
-  printf("Gyroscope: ");
-  scanf("%d", &gyro_value);
+  printf("Gyroscope x: ");
+  scanf("%d", &gyro_x);
+  printf("Gyroscope y: ");
+  scanf("%d", &gyro_y);
+  printf("Gyroscope z: ");
+  scanf("%d", &gyro_z);
 
   printf("trigger_button: ");
   scanf("%d", &trigger_button);
@@ -86,8 +93,12 @@ static void get_from_control_queue(Controller_t* controller) {
   printf("aux_button: ");
   scanf("%d", &aux_button);
 
-  controller->accel_data = accel_value;
-  controller->gyro_data = gyro_value;
+  controller->accel_x = accel_x;
+  controller->accel_y = accel_y;
+  controller->accel_z = accel_z;
+  controller->gyro_x = gyro_x;
+  controller->gyro_y = gyro_y;
+  controller->gyro_z = gyro_z;
   controller->trigger_button = trigger_button;
   controller->aux_button = aux_button;
 }
@@ -210,15 +221,14 @@ static int create_missile(Game_Model_t* model) {
   return 0;
 }
 
-//Move the player ship by using the controller struct. The ship does not 
-//move at a static speed. Instead, it accelerates in the direction it 
-//is oriented and decelerates gradually over time when the thrusters are
-//not on. 
 //
-//Implement a deadband in the controller so that it is possible to have 0
-//acceleration
-static void move_player_ship(Game_Model_t* m, Controller_t* c) {
-  //TODO
+static void calculate_roll_pitch(Controller_t* c, int* roll, int* pitch) {
+  double a_x = c->accel_x / ACCEL_1_G;
+  double a_y = c->accel_y / ACCEL_1_G;
+  double a_z = c->accel_z / ACCEL_1_G;
+
+  *roll = (int) atan(a_z * -1 / a_z);
+  *pitch = (int) atan(a_y / sqrt(pow(a_x, 2) + pow(a_z, 2)));
 }
 
 //Wraps the object to the other side of the screen
@@ -236,6 +246,41 @@ static void wrap(Game_Model_t* m, int* x, int* y) {
   } else if (*y > m->y) {
     *y = 0;
   }
+}
+
+//Move the player ship by using the controller struct. The ship does not 
+//move at a static speed. Instead, it accelerates in the direction it 
+//is oriented and decelerates gradually over time when the thrusters are
+//not on. 
+//
+//Implement a deadband in the controller so that it is possible to have 0
+//acceleration
+static void move_player_ship(Game_Model_t* m, Controller_t* c) {
+  //Calculate the orientation of the controller
+  int roll, pitch;
+  calculate_roll_pitch(c, &roll, &pitch);
+
+  //Change orientation based on roll
+  (m->ship).rotation += SHIP_ROLL_RATE * roll;
+
+  //Change position based on speed
+  (m->ship).x_pos += (m->ship).x_speed;
+  (m->ship).y_pos += (m->ship).y_speed;
+  wrap(m, &((m->ship).x_pos), &((m->ship).y_pos));
+  
+  //Determine acceleration based on pitch and orientation
+  int accel_tot = SHIP_ACCEL_RATE * pitch;
+  int accel_x = (int)cos((double)(m->ship).rotation*M_PI/180.0)*accel_tot;
+  int accel_y = (int)sin((double)(m->ship).rotation*M_PI/180.0)*accel_tot;
+  (m->ship).accelerating = (accel_tot != 0);
+
+  //Determine decceleration based on current speed
+  int deccel_x = (m->ship).x_speed * SHIP_DECCEL_RATE;
+  int deccel_y = (m->ship).y_speed * SHIP_DECCEL_RATE;
+
+  //Add decceleration and acceleration into speed 
+  (m->ship).x_speed += (accel_x - deccel_x);
+  (m->ship).y_speed += (accel_y - deccel_y);
 }
 
 //Move asteroids. Uses asteroids' speed parameter in the Asteroid_t struct
