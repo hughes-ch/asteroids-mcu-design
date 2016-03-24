@@ -334,8 +334,13 @@ static void move_missiles(Game_Model_t* m) {
 static bool collision(int xpos1, int ypos1, int rad1, 
                       int xpos2, int ypos2, int rad2) {
 
-  //TODO
-  return false;
+  //Determine distance between position 1 and 2
+  double dist_x = (double)xpos1 - (double)xpos2;
+  double dist_y = (double)ypos1 - (double)ypos2;
+  int dist = (int)sqrt(pow(dist_x, 2) + pow(dist_y, 2));
+
+  //If dist is smaller than the radii, return tru
+  return dist < (rad1 + rad2);
 }
 
 //Reduces the lives variable in the model by 1, destroys the ship, and 
