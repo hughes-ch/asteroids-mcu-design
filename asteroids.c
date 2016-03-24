@@ -8,11 +8,14 @@
 
 #include "asteroids.h"
 
+#define OBJ_MISSILE 0
+#define OBJ_SHIP 1
+#define OBJ_ASTEROID 2
+
 /* TODO - Write code for the following functions. They have already been
  *        started, about half way down this file. Descriptions have been 
  *        written about what they need to do.
  *
- *        static void create_missile()
  *        static void move_player_ship()
  *        static bool collision() 
  *        static void lose_life()
@@ -166,8 +169,8 @@ static void level_up(Game_Model_t* model, int level) {
     angle = rand() % 360;
     
     //Convert random speed into x_s and y_s
-    x_s = (int)(acos((double)angle * M_PI / 180.0)) * speed;
-    y_s = (int)(asin((double)angle * M_PI / 180.0)) * speed;
+    x_s = (int)(cos((double)angle * M_PI / 180.0)) * speed;
+    y_s = (int)(sin((double)angle * M_PI / 180.0)) * speed;
 
     create_asteroid(model, LARGE_ASTEROID_RADIUS, x, y, x_s, y_s); 
   }
@@ -175,8 +178,36 @@ static void level_up(Game_Model_t* model, int level) {
 
 //Creates a missile from the nose of the ship in the same direction which
 //the ship is oriented. The speed is defined in the associated header file
-static void create_missile(Game_Model_t* model) {
-  //TODO
+static int create_missile(Game_Model_t* model) {
+  //Check if there is enough room for a new missile
+  int i;
+  for (i = 1; i <= MAX_MISSILES; i++) {
+    if ((model->missiles[i-1]).empty) {
+      Missile_t m = model->missiles[i-1];
+
+      //Claim this spot in the data structure 
+      m.empty = false;
+      
+      //Calculate x and y positions
+      Ship_t s = model->ship;
+      m.x_pos=s.x_pos+((int)cos((double)s.rotation*M_PI/180.0)*s.radius);
+      m.y_pos=s.y_pos+((int)sin((double)s.rotation*M_PI/180.0)*s.radius);
+
+      //Calculate x and y speeds
+      m.x_speed = ((int)cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
+      m.y_speed = ((int)cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
+
+      //Fill other missile parameters
+      m.radius = MISSILE_RADIUS;
+      m.life = MISSILE_LIFE;
+
+      //Return true
+      return i;
+    }
+  }
+
+  //Return false if a new missile could not be created
+  return 0;
 }
 
 //Move the player ship by using the controller struct. The ship does not 
@@ -188,6 +219,70 @@ static void create_missile(Game_Model_t* model) {
 //acceleration
 static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   //TODO
+}
+
+//Wraps the object to the other side of the screen
+static void wrap(Game_Model_t* m, int* x, int* y) {
+  if (*x < 0) {
+    *x = m->x;
+
+  } else if (*x > m->x) {
+    *x = 0;
+  } 
+  
+  if (*y < 0) {
+    *y = m->y;
+
+  } else if (*y > m->y) {
+    *y = 0;
+  }
+}
+
+//Move asteroids. Uses asteroids' speed parameter in the Asteroid_t struct
+//Wraps asteroid to other side of screen if it escapes the game model
+static void move_asteroids(Game_Model_t* m) {
+  int i;
+  for (i = 0; i < MAX_ASTEROIDS; i++) {
+    if ((m->asteroids[i]).empty) {
+      continue;
+    }
+
+    //Calculate new position of asteroid
+    (m->asteroids[i]).x_pos += (m->asteroids[i]).x_speed;
+    (m->asteroids[i]).y_pos += (m->asteroids[i]).y_speed;
+
+    //If an asteroid is out of bounds, wrap it to other side of screen
+    wrap(m, &((m->asteroids[i]).x_pos), &((m->asteroids[i]).y_pos));
+  }
+}
+
+
+//Move missiles. Uses missiles' speed parameter in the Missile_t struct
+//Wraps missile to other side of screen if it escapes the game screen
+//Decrements life of missiles so that they are not infinite
+static void move_missiles(Game_Model_t* m) {
+  int i;
+  for (i = 0; i < MAX_MISSILES; i++) {
+    if ((m->missiles[i]).empty) {
+      continue;
+    }
+
+    //Remove missiles if they have been in the game too long
+    if ((m->missiles[i]).life == 0) {
+      (m->missiles[i]).empty = true;
+
+    //Calculate new positions of missiles
+    } else {
+      (m->missiles[i]).x_pos += (m->missiles[i]).x_speed;
+      (m->missiles[i]).y_pos += (m->missiles[i]).y_speed;
+
+      //If a missile is out of bounds, wrap it to other side of screen
+      wrap(m, &((m->missiles[i]).x_pos), &((m->missiles[i]).y_pos));
+
+      //Decrement missile lifetime
+      (m->missiles[i]).life--;
+    }
+  }
 }
 
 //Returns true if object 1 and object 2 are colliding
@@ -235,31 +330,10 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
     create_missile(model);
   }
 
-  //Move ship
+  //Move stuff
   move_player_ship(model, controller);
-
-  //Move asteroids
-  for (i = 0; i < MAX_ASTEROIDS; i++) {
-    if ((model->asteroids[i]).empty) {
-      continue;
-    }
-    (model->asteroids[i]).x_pos += (model->asteroids[i]).x_speed;
-    (model->asteroids[i]).y_pos += (model->asteroids[i]).y_speed;
-  }
-
-  //Move missiles
-  for (i = 0; i < MAX_MISSILES; i++) {
-    if ((model->missiles[i]).empty) {
-      continue;
-    }
-    if ((model->missiles[i]).life == 0) {
-      (model->missiles[i]).empty = true;
-    } else {
-      (model->missiles[i]).x_pos += (model->missiles[i]).x_speed;
-      (model->missiles[i]).y_pos += (model->missiles[i]).y_speed;
-      (model->missiles[i]).life--;
-    }
-  }
+  move_asteroids(model);
+  move_missiles(model);
 
   //Check for collisions
   int j;
@@ -311,7 +385,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
   
   //Destroy asteroids in collision_list
   for (i = 0; i < MAX_ASTEROIDS; i++) {
-    if (collision_list[i] = NULL) {
+    if (collision_list[i] == NULL) {
       continue;
     }
     
