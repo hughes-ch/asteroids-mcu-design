@@ -9,6 +9,7 @@
 #define MEDIUM_ASTEROID_RADIUS 2
 #define SMALL_ASTEROID_RADIUS 1
 #define MAX_ASTEROID_SPEED 1
+#define ASTEROID_ANGLE 15
 
 #define MISSILE_SPEED 1
 #define MISSILE_RADIUS 1
@@ -21,6 +22,7 @@
 #define SHIP_ACCEL_RATE 1
 #define SHIP_ROLL_RATE 1
 #define SHIP_DECCEL_RATE 1
+#define SHIP_INVINCIBILITY_LENGTH 1
 
 #define NUM_LIVES 3
 
@@ -73,6 +75,7 @@ typedef struct ship_t {
   int radius;
   int rotation;
   bool accelerating;
+  int invincible;
 } Ship_t;
 
 //Populated by the game task and used to modify the view

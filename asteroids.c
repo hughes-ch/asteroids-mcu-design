@@ -8,13 +8,7 @@
 
 #include "asteroids.h"
 
-/* TODO - Write code for the following functions. They have already been
- *        started, about half way down this file. Descriptions have been 
- *        written about what they need to do.
- *
- *        static bool collision() 
- *        static void lose_life()
- *        static void break_asteroid()
+/* TODO - Verify functionality 
  */
 
 static void reset_game(Game_Model_t* model) {
@@ -37,6 +31,7 @@ static void reset_game(Game_Model_t* model) {
   (model->ship).y_speed = 0;
   (model->ship).radius = SHIP_RADIUS;
   (model->ship).rotation = SHIP_START_ROTATION;
+  (model->ship).invincible = 0;
 
   model->lives = NUM_LIVES;
   model->score = 0;
@@ -174,7 +169,7 @@ static void level_up(Game_Model_t* model, int level) {
     }
 
     //Generate random speed
-    speed = rand() % MAX_ASTEROID_SPEED;
+    speed = (rand() % MAX_ASTEROID_SPEED) + 1;
 
     //Generate random direction
     angle = rand() % 360;
@@ -347,14 +342,65 @@ static bool collision(int xpos1, int ypos1, int rad1,
 //checks for the end of the game. This function sets the boolean variable
 //model->end_game_menu if appropriate, and then resets the game model. 
 static void lose_life(Game_Model_t* model) {
-  //TODO
+  //Reduce life by 1
+  model->lives--;
+
+  //Check if game is lost
+  if (model->lives == 0) {
+    model->end_game_menu = true;
+  }
+
+  //Reset game model
+  reset_game(model);
 }
 
 //Removes the asteroids and creates two new children asteroids in its 
 //place. If there is not enough room in the model->asteroids array, only
 //one child asteroid can be created.
 static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
-  //TODO
+  //Get important information from parent asteroid
+  int parent_x = asteroid->x_pos;
+  int parent_y = asteroid->y_pos;;
+  int parent_x_speed = asteroid->x_speed;
+  int parent_y_speed = asteroid->y_speed;
+  int parent_r = asteroid->radius;
+  
+  //Destroy parent asteroid
+  asteroid->empty = true;
+  
+  //Determine size of new asteroids
+  int child_r;
+  if (parent_r == LARGE_ASTEROID_RADIUS) {
+    child_r = MEDIUM_ASTEROID_RADIUS;
+  } else if (parent_r == MEDIUM_ASTEROID_RADIUS) {
+    child_r = SMALL_ASTEROID_RADIUS;
+  } else {
+    child_r = 0;
+  }
+  
+  //Create new asteroids if needed
+  if (child_r != 0) {
+    //Randomly generate speeds
+    int s1 = (rand() % MAX_ASTEROID_SPEED) + 1;
+    int s2 = (rand() % MAX_ASTEROID_SPEED) + 1;
+
+    //Calculate the angle of the parent's travel
+    int p_angle = (int)atan(parent_x_speed / parent_y_speed);
+
+    //Randomly generate angles within 30 degrees of parent's angle
+    int theta1 = (p_angle-ASTEROID_ANGLE) + (rand() % (ASTEROID_ANGLE*2));
+    int theta2 = (p_angle-ASTEROID_ANGLE) + (rand() % (ASTEROID_ANGLE*2));
+
+    //Calculate x_speed and y_speed for both asteroids
+    int x_s1 = (int)(cos((double)theta1 * M_PI / 180.0)) * s1;
+    int y_s1 = (int)(sin((double)theta1 * M_PI / 180.0)) * s1;
+    int x_s2 = (int)(cos((double)theta2 * M_PI / 180.0)) * s2;
+    int y_s2 = (int)(sin((double)theta2 * M_PI / 180.0)) * s2;
+
+    //Create the asteroids
+    create_asteroid(model, child_r, parent_x, parent_y, x_s1, y_s1);
+    create_asteroid(model, child_r, parent_x, parent_y, x_s2, y_s2);
+  }
 }
 
 //Increments the game by one frame
@@ -422,8 +468,8 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
 
     //Check for ship collisions
     s = model->ship;
-    if (collision(s.x_pos, s.y_pos, s.radius,
-                  a.x_pos, a.y_pos, a.radius)) {
+    if (!(model->ship).invincible && collision(s.x_pos, s.y_pos, s.radius,
+      a.x_pos, a.y_pos, a.radius)) {
 
       if (!in_collision_list) {
         collision_list[collision_list_index++] = &a;
@@ -431,6 +477,11 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
       }
       lose_life(model);
     }
+  }
+
+  //Turn off invincibility in due time
+  if ((model->ship).invincible) {
+    (model->ship).invincible--; 
   }
   
   //Destroy asteroids in collision_list
