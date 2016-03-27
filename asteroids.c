@@ -8,14 +8,34 @@
 
 #include "asteroids.h"
 
-/* TODO - Verify functionality 
+/* Verify functionality 
+ *      
+ *  - Start game [x]
+ *  - Initialize game [x]
+ *  - Pause game [x]
+ *  - Unpause game [x]
+ *  - Quit game [x]
+ *  - Asteroid movement [x]
+ *  - Missile movement [x]
+ *  - Ship rotation [x]
+ *  - Ship acceleration [TODO]
+ *  - Ship deceleration [TODO]
+ *  - Screen wrap [x]
+ *  - Missile creation [x]
+ *  - Asteroid - missile collision [x]
+ *  - Asteroid - ship collision [x]
+ *  - Child asteroid creation [x]
+ *  - Loss of life [x]
+ *  - Invincibility [x]
+ *  - Score Increase [x]
+ *  - End game [x]
+ *  - Return to main menu [x]
+ *  - Reset game [x]
+ *
+ * Make sure that a long button press does not do multiple actions
  */
 
 static void reset_game(Game_Model_t* model) {
-  model->main_menu = true;
-  model->end_game_menu = false;
-  model->pause_menu = false;
-
   int i;
   for (i = 0; i < MAX_ASTEROIDS; i++) {
     (model->asteroids[i]).empty = true;
@@ -25,8 +45,8 @@ static void reset_game(Game_Model_t* model) {
     (model->missiles[i]).empty = true;
   }
 
-  (model->ship).x_pos = SHIP_START_X;
-  (model->ship).y_pos = SHIP_START_Y;
+  (model->ship).x_pos = (model->x) / 2;
+  (model->ship).y_pos = (model->y) / 2;
   (model->ship).x_speed = 0;
   (model->ship).y_speed = 0;
   (model->ship).radius = SHIP_RADIUS;
@@ -35,22 +55,18 @@ static void reset_game(Game_Model_t* model) {
 
   model->lives = NUM_LIVES;
   model->score = 0;
+  model->level = 0;
 }
 
 //Initializes a game model
 //Allocates object data structures and sets main_menu flag to true
 static void init_game_model(Game_Model_t* model, int x, int y) {
-  int i;
- 
-  for (i = 0; i < MAX_ASTEROIDS; i++) {
-    (model->asteroids[i]).empty = true;
-  }
-  for (i = 0; i < MAX_MISSILES; i++) {
-    (model->missiles[i]).empty = true;
-  }
-  
   model->x = x;
   model->y = y;
+
+  model->main_menu = true;
+  model->pause_menu = false;
+  model->end_game_menu = false;
 
   reset_game(model);
 
@@ -59,28 +75,16 @@ static void init_game_model(Game_Model_t* model, int x, int y) {
 
 //Returns a Controller_t structure from the control queue
 static void get_from_control_queue(Controller_t* controller) {
-  int accel_x;
-  int accel_y;
-  int accel_z;
-  int gyro_x;
-  int gyro_y;
-  int gyro_z;
+  int roll;
+  int pitch;
   int aux_button;
   int trigger_button;
 
-  printf("Accelerometer x: ");
-  scanf("%d", &accel_x);
-  printf("Accelerometer y: ");
-  scanf("%d", &accel_y);
-  printf("Accelerometer z: ");
-  scanf("%d", &accel_z);
-  
-  printf("Gyroscope x: ");
-  scanf("%d", &gyro_x);
-  printf("Gyroscope y: ");
-  scanf("%d", &gyro_y);
-  printf("Gyroscope z: ");
-  scanf("%d", &gyro_z);
+  printf("Roll: ");
+  scanf("%d", &roll);
+
+  printf("Pitch: ");
+  scanf("%d", &pitch);
 
   printf("trigger_button: ");
   scanf("%d", &trigger_button);
@@ -88,12 +92,8 @@ static void get_from_control_queue(Controller_t* controller) {
   printf("aux_button: ");
   scanf("%d", &aux_button);
 
-  controller->accel_x = accel_x;
-  controller->accel_y = accel_y;
-  controller->accel_z = accel_z;
-  controller->gyro_x = gyro_x;
-  controller->gyro_y = gyro_y;
-  controller->gyro_z = gyro_z;
+  controller->roll = roll;
+  controller->pitch = pitch;
   controller->trigger_button = trigger_button;
   controller->aux_button = aux_button;
 }
@@ -133,9 +133,11 @@ int create_asteroid(Game_Model_t* m, int radius, int x, int y,
 //Resets the asteroid field after a player has destroyed all asteroids 
 //on the screen. The number of asteroids is directly related to the level.
 //Assume there are no more asteroids in the model.
-static void level_up(Game_Model_t* model, int level) {
-  int i, x, y, x_s, y_s, angle, side, speed; 
-  int num_asteroids = MIN_ASTEROIDS + (level / 2);
+static void level_up(Game_Model_t* model) {
+  int i, x, y, x_s, y_s, angle, side, speed;
+
+  model->level++;
+  int num_asteroids = MIN_ASTEROIDS + (model->level / 2);
 
   for (i = 0; i < num_asteroids; i++) {
     //Generate number 0 through 3 (associated with side of screen)
@@ -175,8 +177,8 @@ static void level_up(Game_Model_t* model, int level) {
     angle = rand() % 360;
     
     //Convert random speed into x_s and y_s
-    x_s = (int)(cos((double)angle * M_PI / 180.0)) * speed;
-    y_s = (int)(sin((double)angle * M_PI / 180.0)) * speed;
+    x_s = (int)(cos((double)angle * M_PI / 180.0) * speed);
+    y_s = (int)(sin((double)angle * M_PI / 180.0) * speed);
 
     create_asteroid(model, LARGE_ASTEROID_RADIUS, x, y, x_s, y_s); 
   }
@@ -189,23 +191,25 @@ static int create_missile(Game_Model_t* model) {
   int i;
   for (i = 1; i <= MAX_MISSILES; i++) {
     if ((model->missiles[i-1]).empty) {
-      Missile_t m = model->missiles[i-1];
+      Missile_t m;
 
       //Claim this spot in the data structure 
       m.empty = false;
       
       //Calculate x and y positions
       Ship_t s = model->ship;
-      m.x_pos=s.x_pos+((int)cos((double)s.rotation*M_PI/180.0)*s.radius);
-      m.y_pos=s.y_pos+((int)sin((double)s.rotation*M_PI/180.0)*s.radius);
+      m.x_pos=s.x_pos+(int)(cos((double)s.rotation*M_PI/180.0)*s.radius);
+      m.y_pos=s.y_pos+(int)(sin((double)s.rotation*M_PI/180.0)*s.radius);
 
       //Calculate x and y speeds
-      m.x_speed = ((int)cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
-      m.y_speed = ((int)cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
+      m.x_speed = (int)(cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
+      m.y_speed = (int)(sin((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
 
       //Fill other missile parameters
       m.radius = MISSILE_RADIUS;
       m.life = MISSILE_LIFE;
+
+      (model->missiles[i-1]) = m;
 
       //Return true
       return i;
@@ -216,15 +220,15 @@ static int create_missile(Game_Model_t* model) {
   return 0;
 }
 
-//
-static void calculate_roll_pitch(Controller_t* c, int* roll, int* pitch) {
+//Calculates the roll and pitch of the controller
+/*static void calculate_roll_pitch(Controller_t* c, int* roll, int* pitch) {
   double a_x = c->accel_x / ACCEL_1_G;
   double a_y = c->accel_y / ACCEL_1_G;
   double a_z = c->accel_z / ACCEL_1_G;
 
   *roll = (int) atan(a_z * -1 / a_z);
   *pitch = (int) atan(a_y / sqrt(pow(a_x, 2) + pow(a_z, 2)));
-}
+}*/
 
 //Wraps the object to the other side of the screen
 static void wrap(Game_Model_t* m, int* x, int* y) {
@@ -252,11 +256,13 @@ static void wrap(Game_Model_t* m, int* x, int* y) {
 //acceleration
 static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   //Calculate the orientation of the controller
-  int roll, pitch;
-  calculate_roll_pitch(c, &roll, &pitch);
+  int roll = c->roll;
+  int pitch = c->pitch;
+  //calculate_roll_pitch(c, &roll, &pitch);
 
   //Change orientation based on roll
-  (m->ship).rotation += SHIP_ROLL_RATE * roll;
+  (m->ship).rotation += (SHIP_ROLL_RATE * roll);
+  (m->ship).rotation %= 360;
 
   //Change position based on speed
   (m->ship).x_pos += (m->ship).x_speed;
@@ -264,14 +270,15 @@ static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   wrap(m, &((m->ship).x_pos), &((m->ship).y_pos));
   
   //Determine acceleration based on pitch and orientation
-  int accel_tot = SHIP_ACCEL_RATE * pitch;
-  int accel_x = (int)cos((double)(m->ship).rotation*M_PI/180.0)*accel_tot;
-  int accel_y = (int)sin((double)(m->ship).rotation*M_PI/180.0)*accel_tot;
-  (m->ship).accelerating = (accel_tot != 0);
+  int a_tot = SHIP_ACCEL_RATE * pitch;
+  int accel_x = (int)(cos((double)(m->ship).rotation*M_PI/180.0)*a_tot);
+  int accel_y = (int)(sin((double)(m->ship).rotation*M_PI/180.0)*a_tot);
+  (m->ship).accelerating = (a_tot != 0);
 
   //Determine decceleration based on current speed
-  int deccel_x = (m->ship).x_speed * SHIP_DECCEL_RATE;
-  int deccel_y = (m->ship).y_speed * SHIP_DECCEL_RATE;
+  int deccel_x = (m->ship).x_speed / SHIP_DECCEL_RATE;
+  int deccel_y = (m->ship).y_speed / SHIP_DECCEL_RATE;
+  printf("Decel: (%d, %d)\n", deccel_x, deccel_y);
 
   //Add decceleration and acceleration into speed 
   (m->ship).x_speed += (accel_x - deccel_x);
@@ -345,13 +352,17 @@ static void lose_life(Game_Model_t* model) {
   //Reduce life by 1
   model->lives--;
 
+  //Reset ship to center
+  (model->ship).x_pos = model->x / 2;
+  (model->ship).y_pos = model->y / 2;
+
+  //Make ship invincible for a few moments
+  (model->ship).invincible = SHIP_INVINCIBILITY_LENGTH;
+
   //Check if game is lost
   if (model->lives == 0) {
     model->end_game_menu = true;
   }
-
-  //Reset game model
-  reset_game(model);
 }
 
 //Removes the asteroids and creates two new children asteroids in its 
@@ -385,17 +396,22 @@ static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
     int s2 = (rand() % MAX_ASTEROID_SPEED) + 1;
 
     //Calculate the angle of the parent's travel
-    int p_angle = (int)atan(parent_x_speed / parent_y_speed);
+    int p_angle;
+    if (parent_y_speed == 0) {
+      p_angle = rand() % 360;
+    } else {
+      p_angle = (int)atan(parent_x_speed / parent_y_speed);
+    }
 
     //Randomly generate angles within 30 degrees of parent's angle
     int theta1 = (p_angle-ASTEROID_ANGLE) + (rand() % (ASTEROID_ANGLE*2));
     int theta2 = (p_angle-ASTEROID_ANGLE) + (rand() % (ASTEROID_ANGLE*2));
 
     //Calculate x_speed and y_speed for both asteroids
-    int x_s1 = (int)(cos((double)theta1 * M_PI / 180.0)) * s1;
-    int y_s1 = (int)(sin((double)theta1 * M_PI / 180.0)) * s1;
-    int x_s2 = (int)(cos((double)theta2 * M_PI / 180.0)) * s2;
-    int y_s2 = (int)(sin((double)theta2 * M_PI / 180.0)) * s2;
+    int x_s1 = (int)(cos((double)theta1 * M_PI / 180.0) * s1);
+    int y_s1 = (int)(sin((double)theta1 * M_PI / 180.0) * s1);
+    int x_s2 = (int)(cos((double)theta2 * M_PI / 180.0) * s2);
+    int y_s2 = (int)(sin((double)theta2 * M_PI / 180.0) * s2);
 
     //Create the asteroids
     create_asteroid(model, child_r, parent_x, parent_y, x_s1, y_s1);
@@ -405,10 +421,31 @@ static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
 
 //Increments the game by one frame
 void game_tick(Game_Model_t* model, Controller_t* controller) {
-  //Stores the number of times the player has cleared the asteroids array
-  static int level = 0;
+  printf("\n");
+  //Pause game menu
+  printf("Pause game menu\n");
+  if (model->pause_menu) {
+    if (controller->trigger_button) {
+      model->pause_menu = false;
+
+    } else if (controller->aux_button) {
+      model->pause_menu = false;
+      model->main_menu = false;
+      model->end_game_menu = true;
+    }
+
+    return;
+  }
+
+  //Determine if the game needs to be paused
+  printf("Determine if game needs to pause\n");
+  if (controller->aux_button) {
+    model->pause_menu = true;
+    return;
+  }
 
   //Create asteroids if screen is empty
+  printf("Create asteroids if screen is empty\n");
   int i;
   bool empty;
   for (i = 0; i < MAX_ASTEROIDS; i++) {
@@ -418,20 +455,23 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
     }
   }
   if (empty) {
-    level_up(model, ++level);
+    level_up(model);
   }
 
+  //Move stuff
+  printf("Move stuff\n");
+  move_player_ship(model, controller);
+  move_asteroids(model);
+  move_missiles(model);
+  
   //Create missiles
+  printf("Create missiles\n");
   if (controller->trigger_button) {
     create_missile(model);
   }
 
-  //Move stuff
-  move_player_ship(model, controller);
-  move_asteroids(model);
-  move_missiles(model);
-
   //Check for collisions
+  printf("Check for collisions\n");
   int j;
   Asteroid_t a;
   Missile_t m;
@@ -441,6 +481,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
   int collision_list_index = 0;
 
   //Cycle through each asteroid
+  printf("Cycle through each asteroids\n");
   for (i = 0; i < MAX_ASTEROIDS; i++) {
     a = model->asteroids[i];
     in_collision_list = false;
@@ -451,6 +492,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
     }
  
     //Check if asteroids have collided with a missile
+    printf("Check if asteroids have collided with missile\n");
     for (j = 0; j < MAX_MISSILES; j++) {
       m = model->missiles[j];
       if (m.empty) {
@@ -459,20 +501,22 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
       if (collision(m.x_pos, m.y_pos, m.radius, 
                     a.x_pos, a.y_pos, a.radius)) {
 
-        collision_list[collision_list_index++] = &a;
+        collision_list[collision_list_index++] = &(model->asteroids[i]);
         in_collision_list = true; 
-        m.empty = true;
+        (model->missiles[j]).empty = true;
+        model->score += BREAK_ASTEROID_SCORE;
         continue;
       }
     }
 
     //Check for ship collisions
+    printf("Check for ship collisions\n");
     s = model->ship;
-    if (!(model->ship).invincible && collision(s.x_pos, s.y_pos, s.radius,
+    if (!s.invincible && collision(s.x_pos, s.y_pos, s.radius, 
       a.x_pos, a.y_pos, a.radius)) {
 
       if (!in_collision_list) {
-        collision_list[collision_list_index++] = &a;
+        collision_list[collision_list_index++] = &(model->asteroids[i]);
         in_collision_list = true;
       }
       lose_life(model);
@@ -480,11 +524,13 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
   }
 
   //Turn off invincibility in due time
+  printf("Turn off invincibility\n");
   if ((model->ship).invincible) {
     (model->ship).invincible--; 
   }
   
   //Destroy asteroids in collision_list
+  printf("Destroy asteroids\n");
   for (i = 0; i < MAX_ASTEROIDS; i++) {
     if (collision_list[i] == NULL) {
       continue;
@@ -492,6 +538,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
     
     break_asteroid(model, collision_list[i]);
   }
+  printf("\n");
 }
 
 //Sends the game model to the display task
@@ -544,6 +591,7 @@ void send_model(Game_Model_t* model) {
   printf("Ship Position: (%d,%d)\n", s.x_pos, s.y_pos);
   printf("Ship Speed: (%d, %d)\n", s.x_speed, s.y_speed);
   printf("Ship Rotation: %d\n", s.rotation);
+  printf("Ship Invincibility: %d\n", s.invincible);
 
   printf("Lives: %d\n", model->lives);
   printf("Score: %d\n\n", model->score);

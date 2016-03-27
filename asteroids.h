@@ -1,46 +1,41 @@
 #ifndef ASTEROIDS_H
 #define ASTEROIDS_H
 
-#define MAX_ASTEROIDS 50
-#define MIN_ASTEROIDS 4
-#define MAX_MISSILES 50
-
-#define LARGE_ASTEROID_RADIUS 3
-#define MEDIUM_ASTEROID_RADIUS 2
-#define SMALL_ASTEROID_RADIUS 1
-#define MAX_ASTEROID_SPEED 1
-#define ASTEROID_ANGLE 15
-
-#define MISSILE_SPEED 1
-#define MISSILE_RADIUS 1
-#define MISSILE_LIFE 1
-
-#define SHIP_START_X 0
-#define SHIP_START_Y 0
-#define SHIP_START_ROTATION 0
-#define SHIP_RADIUS 1
-#define SHIP_ACCEL_RATE 1
-#define SHIP_ROLL_RATE 1
-#define SHIP_DECCEL_RATE 1
-#define SHIP_INVINCIBILITY_LENGTH 1
-
-#define NUM_LIVES 3
-
+//Software constants - don't change
 #define SIDE_RIGHT 0
 #define SIDE_LEFT 1
 #define SIDE_TOP 2
 #define SIDE_BOTTOM 3
 
-#define ACCEL_1_G 16384
+//Game constants - feel free to change
+#define MAX_ASTEROIDS 50
+#define MIN_ASTEROIDS 4
+#define MAX_MISSILES 50
+
+#define LARGE_ASTEROID_RADIUS 5
+#define MEDIUM_ASTEROID_RADIUS 3
+#define SMALL_ASTEROID_RADIUS 2
+#define MAX_ASTEROID_SPEED 3
+#define ASTEROID_ANGLE 15
+
+#define MISSILE_SPEED 3
+#define MISSILE_RADIUS 1
+#define MISSILE_LIFE 10
+
+#define SHIP_START_ROTATION 0
+#define SHIP_RADIUS 3
+#define SHIP_ACCEL_RATE 1
+#define SHIP_ROLL_RATE 1
+#define SHIP_DECCEL_RATE 2 //Larger number = less decceleration (not zero)
+#define SHIP_INVINCIBILITY_LENGTH 5
+
+#define NUM_LIVES 3
+#define BREAK_ASTEROID_SCORE 100
 
 //Populated by the control task and used to modify the game model
 typedef struct controller_t {
-  uint16_t accel_x;
-  uint16_t accel_y;
-  uint16_t accel_z;
-  uint16_t gyro_x;
-  uint16_t gyro_y;
-  uint16_t gyro_z;
+  int roll;
+  int pitch;
   bool trigger_button;
   bool aux_button;
 } Controller_t;
@@ -88,6 +83,7 @@ typedef struct game_model_t {
   Ship_t ship;
   int lives;
   int score;
+  int level;
   int x;
   int y;
 } Game_Model_t;
