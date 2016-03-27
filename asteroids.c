@@ -355,6 +355,8 @@ static void lose_life(Game_Model_t* model) {
   //Reset ship to center
   (model->ship).x_pos = model->x / 2;
   (model->ship).y_pos = model->y / 2;
+  (model->ship).x_speed = 0;
+  (model->ship).y_speed = 0;
 
   //Make ship invincible for a few moments
   (model->ship).invincible = SHIP_INVINCIBILITY_LENGTH;
