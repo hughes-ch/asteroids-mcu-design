@@ -128,7 +128,8 @@ static void APP_ChangeResolution (void)
 		receivedChar = inbyte();
 		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
 		{
-			SetVideoResolution(receivedChar - 0x30);
+			//SetVideoResolution(receivedChar - 0x30);
+			SetVideoResolution(RESOLUTION_800x600);
 			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
 		}
 		else
@@ -139,6 +140,26 @@ static void APP_ChangeResolution (void)
 				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
 			}
 		}
+	}
+}
+
+/*******************************************************************************
+ * @brief Displays one HDMI frame
+********************************************************************************/
+void display_frame() {
+	static unsigned int x = 0;
+	static unsigned int y = 0;
+
+	DDRVideoWrAnimation(800, 600, x, y);
+
+	x++;
+	y++;
+
+	if (x >= 800) {
+		x = 0;
+	}
+	if (y >= 600) {
+		y = 0;
 	}
 }
 
@@ -162,28 +183,17 @@ int main()
 
 	printf("Starting...\n");
 
-#ifdef XPAR_AXI_IIC_0_BASEADDR
-	HAL_PlatformInit(XPAR_AXI_IIC_0_BASEADDR,	/* Perform any required platform init */
-					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
-					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
-					 XPAR_SCUTIMER_INTR);
-#else
 	HAL_PlatformInit(XPAR_AXI_IIC_MAIN_BASEADDR,	/* Perform any required platform init */
 					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
 					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
 					 XPAR_SCUTIMER_INTR);
-#endif
 
 	Xil_ExceptionEnable();
 
-	SetVideoResolution(RESOLUTION_640x480);
+	SetVideoResolution(RESOLUTION_800x600);
 	InitHdmiAudioPcore();
 
 	APP_PrintRevisions();       /* Display S/W and H/W revisions */
-
-	DBG_MSG("To change the video resolution press:\r\n");
-	DBG_MSG("  '0' - 640x480;  '1' - 800x600;  '2' - 1024x768; '3' - 1280x720 \r\n");
-	DBG_MSG("  '4' - 1360x768; '5' - 1600x900; '6' - 1920x1080.\r\n");
 
 	ADIAPI_TransmitterInit();   /* Initialize ADI repeater software and h/w */
 
@@ -202,6 +212,7 @@ int main()
 			}
 		}
 		APP_ChangeResolution();
+		display_frame();
 	}
 
 	Xil_DCacheDisable();

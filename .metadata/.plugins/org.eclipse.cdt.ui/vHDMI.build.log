@@ -1,46 +1,6 @@
-12:15:20 **** Build of configuration Debug for project vHDMI ****
+18:22:43 **** Incremental Build of configuration Debug for project vHDMI ****
 make all 
-'Building file: ../src/cf_hdmi.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
-../src/cf_hdmi.c: In function 'DDRVideoWr':
-../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
-  unsigned char  repetition = 0;
-                 ^
-../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
-  unsigned long  index      = 0;
-                 ^
-../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
-  unsigned long  backup     = 0;
-                 ^
-In file included from ../src/cf_hdmi.c:48:0:
-../src/cf_hdmi.c: At top level:
-../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
- static u32 IMG_DATA[] = {
-            ^
-'Finished building: ../src/cf_hdmi.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
-'Finished building: ../src/main.c'
-' '
-'Building file: ../src/transmitter.c'
-'Invoking: ARM gcc compiler'
-arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
-'Finished building: ../src/transmitter.c'
-' '
-'Building target: vHDMI.elf'
-'Invoking: ARM gcc linker'
-arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: vHDMI.elf'
-' '
-'Invoking: ARM Print Size'
-arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 113245	 705568	  23564	 842377	  cda89	vHDMI.elf
-'Finished building: vHDMI.elf.size'
-' '
+make: Nothing to be done for `all'.
 
-12:15:28 Build Finished (took 8s.121ms)
+18:22:43 Build Finished (took 195ms)
 

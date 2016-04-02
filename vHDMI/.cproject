@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="xilinx.gnu.arm.exe.debug.1789915157">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="xilinx.gnu.arm.exe.debug.1789915157" moduleId="org.eclipse.cdt.core.settings" name="Debug">
@@ -16,12 +14,12 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="xilinx.gnu.arm.exe.debug.1789915157" name="Debug" parent="xilinx.gnu.arm.exe.debug">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" cleanCommand="rm -rf" description="" id="xilinx.gnu.arm.exe.debug.1789915157" name="Debug" parent="xilinx.gnu.arm.exe.debug">
 					<folderInfo id="xilinx.gnu.arm.exe.debug.1789915157." name="/" resourcePath="">
 						<toolChain id="xilinx.gnu.arm.exe.debug.toolchain.1202579590" name="Xilinx ARM GNU Toolchain" superClass="xilinx.gnu.arm.exe.debug.toolchain">
 							<targetPlatform binaryParser="com.xilinx.sdk.managedbuilder.XELF.arm" id="xilinx.arm.target.gnu.base.debug.1710264444" isAbstract="false" name="Debug Platform" superClass="xilinx.arm.target.gnu.base.debug"/>
 							<builder buildPath="${workspace_loc:/vHDMI}/Debug" enableAutoBuild="true" id="xilinx.gnu.arm.toolchain.builder.debug.212862388" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU make" superClass="xilinx.gnu.arm.toolchain.builder.debug"/>
-							<tool id="xilinx.gnu.arm.c.toolchain.assembler.debug.675797903" name="ARM gcc assembler" superClass="xilinx.gnu.arm.c.toolchain.assembler.debug">
+							<tool command="arm-xilinx-eabi-gcc" id="xilinx.gnu.arm.c.toolchain.assembler.debug.675797903" name="ARM gcc assembler" superClass="xilinx.gnu.arm.c.toolchain.assembler.debug">
 								<inputType id="xilinx.gnu.assembler.input.484807490" superClass="xilinx.gnu.assembler.input"/>
 							</tool>
 							<tool id="xilinx.gnu.arm.c.toolchain.compiler.debug.54810047" name="ARM gcc compiler" superClass="xilinx.gnu.arm.c.toolchain.compiler.debug">
@@ -51,10 +49,11 @@
 									<listOptionValue builtIn="false" value="-Wl,--start-group,-lxil,-lgcc,-lc,--end-group"/>
 								</option>
 								<option id="xilinx.gnu.c.linker.option.lscript.2080467937" name="Linker Script" superClass="xilinx.gnu.c.linker.option.lscript" value="../src/lscript.ld" valueType="string"/>
-								<option id="xilinx.gnu.c.link.option.libs.508491940" superClass="xilinx.gnu.c.link.option.libs" valueType="libs">
+								<option id="xilinx.gnu.c.link.option.libs.508491940" name="Libraries (-l)" superClass="xilinx.gnu.c.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="HDMI_ZedBoardLib"/>
+									<listOptionValue builtIn="false" value="m"/>
 								</option>
-								<option id="xilinx.gnu.c.link.option.paths.1833074547" superClass="xilinx.gnu.c.link.option.paths" valueType="libPaths">
+								<option id="xilinx.gnu.c.link.option.paths.1833074547" name="Library search path (-L)" superClass="xilinx.gnu.c.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
 								</option>
 								<inputType id="xilinx.gnu.linker.input.2042665627" superClass="xilinx.gnu.linker.input">
@@ -92,7 +91,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release,org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="xilinx.gnu.arm.exe.release.1379547827" name="Release" parent="xilinx.gnu.arm.exe.release">
+				<configuration artifactExtension="elf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe,org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.release" cleanCommand="rm -rf" description="" id="xilinx.gnu.arm.exe.release.1379547827" name="Release" parent="xilinx.gnu.arm.exe.release">
 					<folderInfo id="xilinx.gnu.arm.exe.release.1379547827." name="/" resourcePath="">
 						<toolChain id="xilinx.gnu.arm.exe.release.toolchain.52576583" name="Xilinx ARM GNU Toolchain" superClass="xilinx.gnu.arm.exe.release.toolchain">
 							<targetPlatform binaryParser="com.xilinx.sdk.managedbuilder.XELF.arm" id="xilinx.arm.target.gnu.base.release.670446533" isAbstract="false" name="Release Platform" superClass="xilinx.arm.target.gnu.base.release"/>
@@ -166,5 +165,13 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.xilinx.managedbuilder.ui.ARMGCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/vHDMI"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/vHDMI"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

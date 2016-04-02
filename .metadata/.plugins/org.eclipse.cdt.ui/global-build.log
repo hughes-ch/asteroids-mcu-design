@@ -1507,3 +1507,2309 @@ arm-xilinx-eabi-size zynq_fsbl.elf  |tee "zynq_fsbl.elf.size"
   70020	  11492	  73316	 154828	  25ccc	zynq_fsbl.elf
 'Finished building: zynq_fsbl.elf.size'
 ' '
+13:12:58 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:124:7: warning: unused variable 'receivedChar' [-Wunused-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112745	 705568	  23564	 841877	  cd895	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+13:14:53 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/asteroids.o: In function `level_up':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:180: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:181: undefined reference to `sin'
+./src/asteroids.o: In function `create_missile':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:201: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:202: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:205: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:206: undefined reference to `sin'
+./src/asteroids.o: In function `move_player_ship':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:274: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:275: undefined reference to `sin'
+./src/asteroids.o: In function `collision':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `sqrt'
+./src/asteroids.o: In function `break_asteroid':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:405: undefined reference to `atan'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:413: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:414: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:415: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:416: undefined reference to `sin'
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:15:10 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/asteroids.o: In function `level_up':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:180: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:181: undefined reference to `sin'
+./src/asteroids.o: In function `create_missile':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:201: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:202: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:205: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:206: undefined reference to `sin'
+./src/asteroids.o: In function `move_player_ship':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:274: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:275: undefined reference to `sin'
+./src/asteroids.o: In function `collision':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `sqrt'
+./src/asteroids.o: In function `break_asteroid':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:405: undefined reference to `atan'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:413: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:414: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:415: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:416: undefined reference to `sin'
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:15:12 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:19:25 **** Clean-only build of configuration Debug for project vHDMI ****
+make clean 
+rm -rf  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o  ./src/asteroids.d ./src/cf_hdmi.d ./src/main.d ./src/transmitter.d  vHDMI.elf.size  vHDMI.elf
+' '
+13:19:25 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:124:7: warning: unused variable 'receivedChar' [-Wunused-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/asteroids.o: In function `level_up':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:180: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:181: undefined reference to `sin'
+./src/asteroids.o: In function `create_missile':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:201: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:202: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:205: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:206: undefined reference to `sin'
+./src/asteroids.o: In function `move_player_ship':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:274: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:275: undefined reference to `sin'
+./src/asteroids.o: In function `collision':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `sqrt'
+./src/asteroids.o: In function `break_asteroid':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:405: undefined reference to `atan'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:413: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:414: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:415: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:416: undefined reference to `sin'
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:19:44 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/asteroids.o: In function `level_up':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:180: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:181: undefined reference to `sin'
+./src/asteroids.o: In function `create_missile':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:201: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:202: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:205: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:206: undefined reference to `sin'
+./src/asteroids.o: In function `move_player_ship':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:274: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:275: undefined reference to `sin'
+./src/asteroids.o: In function `collision':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:342: undefined reference to `sqrt'
+./src/asteroids.o: In function `break_asteroid':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:405: undefined reference to `atan'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:413: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:414: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:415: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:416: undefined reference to `sin'
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:19:45 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:20:15 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/asteroids.o: In function `level_up':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:157: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:158: undefined reference to `sin'
+./src/asteroids.o: In function `create_missile':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:178: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:179: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:182: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:183: undefined reference to `sin'
+./src/asteroids.o: In function `move_player_ship':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:251: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:252: undefined reference to `sin'
+./src/asteroids.o: In function `collision':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:319: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:319: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:319: undefined reference to `sqrt'
+./src/asteroids.o: In function `break_asteroid':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:382: undefined reference to `atan'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:390: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:391: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:392: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:393: undefined reference to `sin'
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:21:09 **** Clean-only build of configuration Debug for project vHDMI ****
+make clean 
+rm -rf  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o  ./src/asteroids.d ./src/cf_hdmi.d ./src/main.d ./src/transmitter.d  vHDMI.elf.size  vHDMI.elf
+' '
+13:21:09 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:124:7: warning: unused variable 'receivedChar' [-Wunused-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/asteroids.o: In function `level_up':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:157: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:158: undefined reference to `sin'
+./src/asteroids.o: In function `create_missile':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:178: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:179: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:182: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:183: undefined reference to `sin'
+./src/asteroids.o: In function `move_player_ship':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:251: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:252: undefined reference to `sin'
+./src/asteroids.o: In function `collision':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:319: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:319: undefined reference to `pow'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:319: undefined reference to `sqrt'
+./src/asteroids.o: In function `break_asteroid':
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:382: undefined reference to `atan'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:390: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:391: undefined reference to `sin'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:392: undefined reference to `cos'
+C:\Users\Chris\hdmi_workspace\vHDMI\Debug/../src/asteroids.c:393: undefined reference to `sin'
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:26:05 **** Clean-only build of configuration Debug for project vHDMI ****
+make clean 
+rm -rf  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o  ./src/asteroids.d ./src/cf_hdmi.d ./src/main.d ./src/transmitter.d  vHDMI.elf.size  vHDMI.elf
+' '
+13:26:07 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:124:7: warning: unused variable 'receivedChar' [-Wunused-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:26:19 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:26:20 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:29:33 **** Clean-only build of configuration Debug for project vHDMI ****
+make clean 
+rm -rf  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o  ./src/asteroids.d ./src/cf_hdmi.d ./src/main.d ./src/transmitter.d  vHDMI.elf.size  vHDMI.elf
+' '
+13:29:33 **** Clean-only build of configuration Debug for project zynq_fsbl ****
+make clean 
+rm -rf  ./src/ddr_init.o ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o  ./src/fsbl_handoff.d  ./src/ddr_init.d ./src/fsbl_hooks.d ./src/image_mover.d ./src/main.d ./src/md5.d ./src/nand.d ./src/nor.d ./src/pcap.d ./src/ps7_init.d ./src/qspi.d ./src/rsa.d ./src/sd.d  zynq_fsbl.elf.size  zynq_fsbl.elf
+' '
+13:29:34 **** Clean-only build of project standalone_bsp ****
+13:29:34 **** Clean-only build of project zynq_fsbl_bsp ****
+make -k clean 
+make -k clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+rm -f ps7_cortexa9_0/lib/libxil.a
+13:29:34 **** Build of project standalone_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src"
+make -C ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v1_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/iic_v2_08_a/src"
+make -C ps7_cortexa9_0/libsrc/iic_v2_08_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v2_03_a/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v2_03_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v1_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v1_00_a/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v1_00_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v3_12_a/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v3_12_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v1_05_a/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v1_05_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v1_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make libs in ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src"
+make -C ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling axivdma"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v1_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/iic_v2_08_a/src"
+make -C ps7_cortexa9_0/libsrc/iic_v2_08_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling iic"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v2_03_a/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v2_03_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v1_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v1_00_a/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v1_00_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v3_12_a/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v3_12_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v1_05_a/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v1_05_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v1_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling xadcps"
+'Finished building libraries'
+13:30:07 **** Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:124:7: warning: unused variable 'receivedChar' [-Wunused-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+c:/xilinx/sdk/2015.4/gnu/arm/nt/bin/../lib/gcc/arm-xilinx-eabi/4.9.2/../../../../arm-xilinx-eabi/lib\libc.a(lib_a-gettimeofdayr.o): In function `_gettimeofday_r':
+gettimeofdayr.c:(.text+0x20): undefined reference to `_gettimeofday'
+collect2.exe: error: ld returned 1 exit status
+make: *** [vHDMI.elf] Error 1
+13:30:12 **** Build of project zynq_fsbl_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src"
+make -C ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v1_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/iic_v2_08_a/src"
+make -C ps7_cortexa9_0/libsrc/iic_v2_08_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v2_03_a/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v2_03_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v1_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v1_00_a/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v1_00_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v3_12_a/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v3_12_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v1_05_a/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v1_05_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v1_06_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/xilffs_v1_00_a/src"
+make -C ps7_cortexa9_0/libsrc/xilffs_v1_00_a/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make libs in ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src"
+make -C ps7_cortexa9_0/libsrc/axivdma_v4_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling axivdma"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v1_01_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v2_04_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v1_07_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v1_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v1_02_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/iic_v2_08_a/src"
+make -C ps7_cortexa9_0/libsrc/iic_v2_08_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling iic"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v2_03_a/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v2_03_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v1_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v1_02_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v1_02_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v1_00_a/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v1_00_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v3_12_a/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v3_12_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v1_01_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v1_05_a/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v1_05_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v1_06_a/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v1_06_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v1_03_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling xadcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xilffs_v1_00_a/src"
+make -C ps7_cortexa9_0/libsrc/xilffs_v1_00_a/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling XilFFs Library"
+"Creating archive libxilffs.a"
+'Finished building libraries'
+13:30:46 **** Build of configuration Debug for project zynq_fsbl ****
+make all 
+'Building file: ../src/ddr_init.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ddr_init.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ddr_init.d" -MT"src/ddr_init.d" -o "src/ddr_init.o" "../src/ddr_init.c"
+'Finished building: ../src/ddr_init.c'
+' '
+'Building file: ../src/fsbl_handoff.S'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/fsbl_handoff.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.d" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+'Finished building: ../src/fsbl_handoff.S'
+' '
+'Building file: ../src/fsbl_hooks.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/fsbl_hooks.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.d" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
+'Finished building: ../src/fsbl_hooks.c'
+' '
+'Building file: ../src/image_mover.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/image_mover.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.d" -o "src/image_mover.o" "../src/image_mover.c"
+'Finished building: ../src/image_mover.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/md5.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/md5.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.d" -o "src/md5.o" "../src/md5.c"
+'Finished building: ../src/md5.c'
+' '
+'Building file: ../src/nand.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/nand.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.d" -o "src/nand.o" "../src/nand.c"
+'Finished building: ../src/nand.c'
+' '
+'Building file: ../src/nor.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/nor.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.d" -o "src/nor.o" "../src/nor.c"
+'Finished building: ../src/nor.c'
+' '
+'Building file: ../src/pcap.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/pcap.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.d" -o "src/pcap.o" "../src/pcap.c"
+'Finished building: ../src/pcap.c'
+' '
+'Building file: ../src/ps7_init.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/ps7_init.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.d" -o "src/ps7_init.o" "../src/ps7_init.c"
+'Finished building: ../src/ps7_init.c'
+' '
+'Building file: ../src/qspi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/qspi.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.d" -o "src/qspi.o" "../src/qspi.c"
+'Finished building: ../src/qspi.c'
+' '
+'Building file: ../src/rsa.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/rsa.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.d" -o "src/rsa.o" "../src/rsa.c"
+'Finished building: ../src/rsa.c'
+' '
+'Building file: ../src/sd.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sd.o" -I../../zynq_fsbl_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.d" -o "src/sd.o" "../src/sd.c"
+'Finished building: ../src/sd.c'
+' '
+'Building target: zynq_fsbl.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\zynq_fsbl\src" -Wl,-T -Wl,../src/lscript.ld -L../../zynq_fsbl_bsp/ps7_cortexa9_0/lib -o "zynq_fsbl.elf"  ./src/ddr_init.o ./src/fsbl_handoff.o ./src/fsbl_hooks.o ./src/image_mover.o ./src/main.o ./src/md5.o ./src/nand.o ./src/nor.o ./src/pcap.o ./src/ps7_init.o ./src/qspi.o ./src/rsa.o ./src/sd.o   -lrsa -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxilffs,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zynq_fsbl.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size zynq_fsbl.elf  |tee "zynq_fsbl.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  70020	  11492	  73316	 154828	  25ccc	zynq_fsbl.elf
+'Finished building: zynq_fsbl.elf.size'
+' '
+13:40:52 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'init_game_model':
+../src/asteroids.c:49:19: error: invalid type argument of '->' (have 'Controller_t')
+   srand(controller->pitch);
+                   ^
+../src/asteroids.c: In function 'asteroids_start':
+../src/asteroids.c:586:3: error: incompatible type for argument 2 of 'init_game_model'
+   init_game_model(&model, &controller, x, y);
+   ^
+../src/asteroids.c:39:13: note: expected 'Controller_t' but argument is of type 'struct Controller_t *'
+ static void init_game_model(Game_Model_t* model, Controller_t controller, int x, int y) {
+             ^
+make: *** [src/asteroids.o] Error 1
+13:41:20 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 188912	 705700	  23580	 918192	  e02b0	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+13:41:28 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+13:41:28 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:42:18 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+13:42:18 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:42:25 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+13:42:26 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:43:07 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+13:43:08 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:43:50 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189092	 705700	  23580	 918372	  e0364	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+13:43:56 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+13:43:56 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+13:44:32 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+13:44:33 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:17:46 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:133:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:132:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 0;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 0;
+         ^
+../src/main.c:152:2: warning: implicit declaration of function 'DDRVideoWrAnimation' [-Wimplicit-function-declaration]
+  DDRVideoWrAnimation(640, 480, x, y);
+  ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:17:54 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:17:55 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:21:39 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:21:45 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:21:46 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:23:15 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:23:20 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:23:20 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:24:34 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:24:40 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:24:41 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:25:33 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:25:37 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:25:38 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:29:06 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:29:31 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 300;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 200;
+         ^
+../src/main.c:152:2: warning: implicit declaration of function 'DDRVideoWrAnimation' [-Wimplicit-function-declaration]
+  DDRVideoWrAnimation(640, 480, x, y);
+  ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705708	  23580	 918508	  e03ec	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:29:35 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:29:35 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:30:01 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:30:01 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:33:01 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 300;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 200;
+         ^
+../src/main.c:152:2: warning: implicit declaration of function 'DDRVideoWrAnimation' [-Wimplicit-function-declaration]
+  DDRVideoWrAnimation(640, 480, x, y);
+  ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189156	 705708	  23580	 918444	  e03ac	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:35:26 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 300;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 200;
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189156	 705708	  23580	 918444	  e03ac	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:35:34 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:35:35 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:36:38 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 0;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 0;
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189220	 705700	  23580	 918500	  e03e4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:36:41 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:36:42 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:38:29 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 0;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 0;
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189284	 705700	  23580	 918564	  e0424	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:38:33 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:38:34 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:39:26 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:39:26 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:41:24 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:41:24 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:42:49 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'display_frame':
+../src/main.c:149:9: warning: type defaults to 'int' in declaration of 'x' [-Wimplicit-int]
+  static x = 0;
+         ^
+../src/main.c:150:9: warning: type defaults to 'int' in declaration of 'y' [-Wimplicit-int]
+  static y = 0;
+         ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189284	 705700	  23580	 918564	  e0424	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:42:53 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:42:54 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:46:03 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189284	 705700	  23580	 918564	  e0424	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:46:15 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:46:16 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:49:29 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189284	 705700	  23580	 918564	  e0424	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:49:36 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:49:37 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:51:53 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189284	 705700	  23580	 918564	  e0424	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:51:56 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:51:56 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:54:19 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189284	 705700	  23580	 918564	  e0424	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:54:23 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:54:23 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:57:06 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:57:07 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:57:12 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189060	 705700	  23580	 918340	  e0344	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:57:16 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:57:17 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:58:08 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:58:08 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+14:58:34 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189060	 705700	  23580	 918340	  e0344	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+14:58:36 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+14:58:37 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+15:18:33 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+15:18:34 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:42:56 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189316	 705700	  23580	 918596	  e0444	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+16:43:13 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:43:13 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:43:46 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:43:46 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:45:44 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189316	 705700	  23580	 918596	  e0444	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+16:46:00 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:46:00 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:48:01 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189316	 705700	  23580	 918596	  e0444	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+16:48:09 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:48:09 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:48:22 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:48:23 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:52:51 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189316	 705700	  23580	 918596	  e0444	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+16:52:58 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:52:59 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+16:53:26 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189316	 705700	  23580	 918596	  e0444	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+16:53:32 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+16:53:33 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:19:49 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189572	 705700	  23596	 918868	  e0554	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:19:56 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:19:56 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:20:12 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:20:13 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:22:18 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189572	 705700	  23596	 918868	  e0554	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:22:24 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:22:24 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:24:56 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:176:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189636	 705700	  23596	 918932	  e0594	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:25:03 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:25:04 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:26:10 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:176:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189636	 705700	  23596	 918932	  e0594	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:26:15 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:26:16 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:27:11 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:172:58: error: expected ';' before ')' token
+    Xil_Out32((addr + (pixel*4)+(line * 4 * xbound)), 0x0));
+                                                          ^
+../src/cf_hdmi.c:172:58: error: expected statement before ')' token
+../src/cf_hdmi.c:176:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+make: *** [src/cf_hdmi.o] Error 1
+17:27:14 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:172:58: error: expected ';' before ')' token
+    Xil_Out32((addr + (pixel*4)+(line * 4 * xbound)), 0x0));
+                                                          ^
+../src/cf_hdmi.c:172:58: error: expected statement before ')' token
+../src/cf_hdmi.c:176:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+make: *** [src/cf_hdmi.o] Error 1
+17:27:15 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:27:33 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:176:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189636	 705700	  23596	 918932	  e0594	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:27:38 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:27:38 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:28:08 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'get_frame_addr':
+../src/cf_hdmi.c:147:9: warning: type defaults to 'int' in declaration of 'count' [-Wimplicit-int]
+  static count = 0;
+         ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:176:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189636	 705700	  23596	 918932	  e0594	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:28:23 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:28:23 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:29:11 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:29:11 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+17:45:13 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:168:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189508	 705708	  23580	 918796	  e050c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+17:45:20 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+17:45:21 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:18:19 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:175:13: error: 'VDMA_BASE_ADDR' undeclared (first use in this function)
+  Xil_Out32((VDMA_BASE_ADDR + AXI_VDMA_PARK_PTR_REG), 0);
+             ^
+../src/cf_hdmi.c:175:13: note: each undeclared identifier is reported only once for each function it appears in
+../src/cf_hdmi.c:168:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+make: *** [src/cf_hdmi.o] Error 1
+18:18:40 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:168:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/transmitter.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/transmitter.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/transmitter.d" -MT"src/transmitter.d" -o "src/transmitter.o" "../src/transmitter.c"
+'Finished building: ../src/transmitter.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189508	 705708	  23580	 918796	  e050c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:18:48 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:18:49 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:19:49 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:168:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189508	 705708	  23580	 918796	  e050c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:19:57 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:19:57 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:21:57 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:168:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189572	 705708	  23580	 918860	  e054c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:22:03 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:22:03 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:22:39 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+../src/cf_hdmi.c: In function 'DDRVideoWrAnimation':
+../src/cf_hdmi.c:168:6: warning: unused variable 'bound' [-Wunused-variable]
+  int bound = y+10 > ybound ? ybound : y+10;
+      ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189572	 705708	  23580	 918860	  e054c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:22:43 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:22:44 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.

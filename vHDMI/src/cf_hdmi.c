@@ -123,9 +123,7 @@ extern u32 XDmaPs_ToCCRValue(XDmaPs_ChanCtrl *ChanCtrl);
 /***************************************************************************//**
  * @brief DDRVideoWr.
 *******************************************************************************/
-void DDRVideoWr(unsigned short horizontalActiveTime,
-				unsigned short verticalActiveTime)
-{
+void DDRVideoWr(unsigned short horizontalActiveTime, unsigned short verticalActiveTime) {
 	unsigned long  pixel      = 0;
 	unsigned long  backup     = 0;
 	unsigned short line       = 0;
@@ -133,36 +131,52 @@ void DDRVideoWr(unsigned short horizontalActiveTime,
 	unsigned char  repetition = 0;
 
 	/* all black */
-	for(line = 000; line < verticalActiveTime; line++ ) {
-			for(pixel=000;pixel<horizontalActiveTime; pixel++) {
-				Xil_Out32((VIDEO_BASEADDR+(pixel*4)+(line * 4 * horizontalActiveTime)), (0x000000 & 0xffffff));
-			}
-
+	for(line = 0; line < verticalActiveTime; line++ ) {
+		for(pixel = 0; pixel < horizontalActiveTime; pixel++) {
+			Xil_Out32((FRAME_BUFFER_1 + (pixel*4)+(line * 4 * horizontalActiveTime)), (0x0));
+			Xil_Out32((FRAME_BUFFER_2 + (pixel*4)+(line * 4 * horizontalActiveTime)), (0x0));
+			Xil_Out32((FRAME_BUFFER_3 + (pixel*4)+(line * 4 * horizontalActiveTime)), (0x0));
+		}
 	}
 
-
-	for(line = 000; line < 100; line++ ) {
-			for(pixel=000;pixel<100; pixel++) {
-				Xil_Out32((VIDEO_BASEADDR+(pixel*4)+(line * 4 * horizontalActiveTime)), (0xFF0000 & 0xffffff));
-			}
-
-	}
-	for(line = 100; line < 200; line++ ) {
-			for(pixel=000;pixel<100; pixel++) {
-				Xil_Out32((VIDEO_BASEADDR+(pixel*4)+(line * 4 * horizontalActiveTime)), (0x00FF00 & 0xffffff));
-			}
-
-	}
-	for(line = 200; line < 300; line++ ) {
-			for(pixel=000;pixel<100; pixel++) {
-				Xil_Out32((VIDEO_BASEADDR+(pixel*4)+(line * 4 * horizontalActiveTime)), (0x0000FF & 0xffffff));
-			}
-
-	}
 	Xil_DCacheFlush();
 	return;
+}
 
+u32 get_frame_addr() {
+	static u32 addr = FRAME_BUFFER_1;
 
+	if (addr == FRAME_BUFFER_1) {
+		addr = FRAME_BUFFER_2;
+	} else {
+		addr = FRAME_BUFFER_1;
+	}
+
+	return addr;
+}
+
+void DDRVideoWrAnimation(unsigned int xbound, unsigned int ybound, unsigned int x, unsigned int y) {
+	int line, pixel;
+	u32 addr = get_frame_addr();
+
+	for(line = 0; line < ybound; line++ ) {
+		for(pixel = 0; pixel < xbound; pixel++) {
+			Xil_Out32((addr + (pixel*4)+(line * 4 * xbound)), (0x0));
+		}
+	}
+
+	int bound = y+10 > ybound ? ybound : y+10;
+	for(line = y; line < y+10; line++ ) {
+		for(pixel = x; pixel < x+10; pixel++) {
+			Xil_Out32((addr + (pixel*4)+(line * 4 * xbound)), (0xff0000));
+		}
+	}
+
+	if (addr == FRAME_BUFFER_1) {
+		Xil_Out32((VDMA_BASEADDR + AXI_VDMA_PARK_PTR_REG), 0);
+	} else {
+		Xil_Out32((VDMA_BASEADDR + AXI_VDMA_PARK_PTR_REG), 1);
+	}
 
 	Xil_DCacheFlush();
 }
@@ -318,13 +332,11 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_SOURCE_SEL), 0x1);
 
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_DMA_CTRL),
-			  0x00000003); // enable circular mode
+			  0x00000001); // enable circular mode
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_START_1),
-			  VIDEO_BASEADDR); // start address
+			  FRAME_BUFFER_1); // start address
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_START_2),
-			  VIDEO_BASEADDR); // start address
-	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_START_3),
-			  VIDEO_BASEADDR); // start address
+			  FRAME_BUFFER_2); // start address
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_FRMDLY_STRIDE),
 			  (horizontalActiveTime*4)); // h offset
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_H_SIZE),
