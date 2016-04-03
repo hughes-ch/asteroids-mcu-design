@@ -1,6 +1,6 @@
-18:22:43 **** Incremental Build of configuration Debug for project vHDMI ****
+22:32:00 **** Incremental Build of configuration Debug for project vHDMI ****
 make all 
 make: Nothing to be done for `all'.
 
-18:22:43 Build Finished (took 195ms)
+22:32:01 Build Finished (took 235ms)
 

@@ -3813,3 +3813,1774 @@ make: Nothing to be done for `all'.
 18:22:44 **** Incremental Build of configuration Debug for project zynq_fsbl ****
 make all 
 make: Nothing to be done for `all'.
+18:45:33 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:103:13: warning: 'APP_PrintRevisions' defined but not used [-Wunused-function]
+ static void APP_PrintRevisions (void)
+             ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189508	 705708	  23580	 918796	  e050c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:46:58 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:103:13: warning: 'APP_PrintRevisions' defined but not used [-Wunused-function]
+ static void APP_PrintRevisions (void)
+             ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189428	 705708	  23580	 918716	  e04bc	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:47:02 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:47:02 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:47:33 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:47:34 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:48:10 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:103:13: warning: 'APP_PrintRevisions' defined but not used [-Wunused-function]
+ static void APP_PrintRevisions (void)
+             ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189428	 705708	  23580	 918716	  e04bc	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:48:14 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:48:15 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:48:45 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:48:46 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:49:22 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189572	 705708	  23580	 918860	  e054c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:49:25 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:49:26 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+18:50:35 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c:103:13: warning: 'APP_PrintRevisions' defined but not used [-Wunused-function]
+ static void APP_PrintRevisions (void)
+             ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189508	 705708	  23580	 918796	  e050c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+18:50:39 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+18:50:39 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+19:16:00 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c:38:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189444	 705708	  23580	 918732	  e04cc	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+19:16:03 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:46:0:
+../src/asteroids.h:39:3: error: unknown type name 'bool'
+   bool trigger_button;
+   ^
+../src/asteroids.h:40:3: error: unknown type name 'bool'
+   bool aux_button;
+   ^
+../src/asteroids.h:45:3: error: unknown type name 'bool'
+   bool empty;
+   ^
+../src/asteroids.h:55:3: error: unknown type name 'bool'
+   bool empty;
+   ^
+../src/asteroids.h:72:3: error: unknown type name 'bool'
+   bool accelerating;
+   ^
+../src/asteroids.h:78:3: error: unknown type name 'bool'
+   bool main_menu;
+   ^
+../src/asteroids.h:79:3: error: unknown type name 'bool'
+   bool end_game_menu;
+   ^
+../src/asteroids.h:80:3: error: unknown type name 'bool'
+   bool pause_menu;
+   ^
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:105:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+../src/main.c:104:8: warning: unused variable 'resolutions' [-Wunused-variable]
+  char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
+        ^
+../src/main.c: In function 'hdmi_init':
+../src/main.c:161:7: warning: assignment makes pointer from integer without a cast
+  resx = 800;
+       ^
+../src/main.c:162:7: warning: assignment makes pointer from integer without a cast
+  resy = 600;
+       ^
+../src/main.c: In function 'main':
+../src/main.c:180:15: warning: unused variable 'controller' [-Wunused-variable]
+  Controller_t controller;
+               ^
+make: *** [src/main.o] Error 1
+19:17:01 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:105:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+../src/main.c:104:8: warning: unused variable 'resolutions' [-Wunused-variable]
+  char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
+        ^
+../src/main.c: In function 'hdmi_init':
+../src/main.c:161:7: warning: assignment makes pointer from integer without a cast
+  resx = 800;
+       ^
+../src/main.c:162:7: warning: assignment makes pointer from integer without a cast
+  resy = 600;
+       ^
+../src/main.c: In function 'main':
+../src/main.c:180:15: warning: unused variable 'controller' [-Wunused-variable]
+  Controller_t controller;
+               ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 188972	 705708	  23580	 918260	  e02f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+19:21:06 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:105:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+../src/main.c:104:8: warning: unused variable 'resolutions' [-Wunused-variable]
+  char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
+        ^
+../src/main.c: In function 'hdmi_init':
+../src/main.c:161:7: warning: assignment makes pointer from integer without a cast
+  resx = 800;
+       ^
+../src/main.c:162:7: warning: assignment makes pointer from integer without a cast
+  resy = 600;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 188004	 705708	  23580	 917292	  dff2c	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+19:21:10 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+19:21:11 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+19:31:03 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+In file included from ../src/asteroids.c:7:0:
+../src/asteroids.h:86:3: error: expected ':', ',', ';', '}' or '__attribute__' before 'Asteroid_t'
+   Asteroid_t asteroids[MAX_ASTEROIDS];
+   ^
+../src/asteroids.c: In function 'reset_game':
+../src/asteroids.c:16:11: error: 'Game_Model_t' has no member named 'asteroids'
+     (model->asteroids[i]).empty = true;
+           ^
+../src/asteroids.c:20:11: error: 'Game_Model_t' has no member named 'missiles'
+     (model->missiles[i]).empty = true;
+           ^
+../src/asteroids.c:23:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).x_pos = (model->x) / 2;
+         ^
+../src/asteroids.c:23:31: error: 'Game_Model_t' has no member named 'x'
+   (model->ship).x_pos = (model->x) / 2;
+                               ^
+../src/asteroids.c:24:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).y_pos = (model->y) / 2;
+         ^
+../src/asteroids.c:24:31: error: 'Game_Model_t' has no member named 'y'
+   (model->ship).y_pos = (model->y) / 2;
+                               ^
+../src/asteroids.c:25:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).x_speed = 0;
+         ^
+../src/asteroids.c:26:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).y_speed = 0;
+         ^
+../src/asteroids.c:27:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).radius = SHIP_RADIUS;
+         ^
+../src/asteroids.c:28:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).rotation = SHIP_START_ROTATION;
+         ^
+../src/asteroids.c:29:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).invincible = 0;
+         ^
+../src/asteroids.c:31:8: error: 'Game_Model_t' has no member named 'lives'
+   model->lives = NUM_LIVES;
+        ^
+../src/asteroids.c:32:8: error: 'Game_Model_t' has no member named 'score'
+   model->score = 0;
+        ^
+../src/asteroids.c:33:8: error: 'Game_Model_t' has no member named 'level'
+   model->level = 0;
+        ^
+../src/asteroids.c: In function 'create_asteroid':
+../src/asteroids.c:79:11: error: 'Game_Model_t' has no member named 'asteroids'
+     if ((m->asteroids[i-1]).empty) {
+           ^
+../src/asteroids.c:80:9: error: 'Game_Model_t' has no member named 'asteroids'
+       (m->asteroids[i-1]).empty = false;
+         ^
+../src/asteroids.c:81:9: error: 'Game_Model_t' has no member named 'asteroids'
+       (m->asteroids[i-1]).x_pos = x;
+         ^
+../src/asteroids.c:82:9: error: 'Game_Model_t' has no member named 'asteroids'
+       (m->asteroids[i-1]).y_pos = y;
+         ^
+../src/asteroids.c:83:9: error: 'Game_Model_t' has no member named 'asteroids'
+       (m->asteroids[i-1]).x_speed = x_s;
+         ^
+../src/asteroids.c:84:9: error: 'Game_Model_t' has no member named 'asteroids'
+       (m->asteroids[i-1]).y_speed = y_s;
+         ^
+../src/asteroids.c:85:9: error: 'Game_Model_t' has no member named 'asteroids'
+       (m->asteroids[i-1]).radius = radius;
+         ^
+../src/asteroids.c: In function 'level_up':
+../src/asteroids.c:99:8: error: 'Game_Model_t' has no member named 'level'
+   model->level++;
+        ^
+../src/asteroids.c:100:45: error: 'Game_Model_t' has no member named 'level'
+   int num_asteroids = MIN_ASTEROIDS + (model->level / 2);
+                                             ^
+../src/asteroids.c:109:18: error: 'Game_Model_t' has no member named 'x'
+         x = model->x;
+                  ^
+../src/asteroids.c:117:18: error: 'Game_Model_t' has no member named 'y'
+         y = model->y;
+                  ^
+../src/asteroids.c:128:25: error: 'Game_Model_t' has no member named 'y'
+       y = rand() % model->y;       
+                         ^
+../src/asteroids.c:130:25: error: 'Game_Model_t' has no member named 'x'
+       x = rand() % model->x; 
+                         ^
+../src/asteroids.c: In function 'create_missile':
+../src/asteroids.c:153:15: error: 'Game_Model_t' has no member named 'missiles'
+     if ((model->missiles[i-1]).empty) {
+               ^
+../src/asteroids.c:160:23: error: 'Game_Model_t' has no member named 'ship'
+       Ship_t s = model->ship;
+                       ^
+../src/asteroids.c:172:13: error: 'Game_Model_t' has no member named 'missiles'
+       (model->missiles[i-1]) = m;
+             ^
+../src/asteroids.c: In function 'wrap':
+../src/asteroids.c:196:11: error: 'Game_Model_t' has no member named 'x'
+     *x = m->x;
+           ^
+../src/asteroids.c:198:20: error: 'Game_Model_t' has no member named 'x'
+   } else if (*x > m->x) {
+                    ^
+../src/asteroids.c:203:11: error: 'Game_Model_t' has no member named 'y'
+     *y = m->y;
+           ^
+../src/asteroids.c:205:20: error: 'Game_Model_t' has no member named 'y'
+   } else if (*y > m->y) {
+                    ^
+../src/asteroids.c: In function 'move_player_ship':
+../src/asteroids.c:224:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).rotation += (SHIP_ROLL_RATE * roll);
+     ^
+../src/asteroids.c:225:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).rotation %= 360;
+     ^
+../src/asteroids.c:228:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).x_pos += (m->ship).x_speed;
+     ^
+../src/asteroids.c:228:24: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).x_pos += (m->ship).x_speed;
+                        ^
+../src/asteroids.c:229:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).y_pos += (m->ship).y_speed;
+     ^
+../src/asteroids.c:229:24: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).y_pos += (m->ship).y_speed;
+                        ^
+../src/asteroids.c:230:15: error: 'Game_Model_t' has no member named 'ship'
+   wrap(m, &((m->ship).x_pos), &((m->ship).y_pos));
+               ^
+../src/asteroids.c:230:35: error: 'Game_Model_t' has no member named 'ship'
+   wrap(m, &((m->ship).x_pos), &((m->ship).y_pos));
+                                   ^
+../src/asteroids.c:234:37: error: 'Game_Model_t' has no member named 'ship'
+   int accel_x = (int)(cos((double)(m->ship).rotation*M_PI/180.0)*a_tot);
+                                     ^
+../src/asteroids.c:235:37: error: 'Game_Model_t' has no member named 'ship'
+   int accel_y = (int)(sin((double)(m->ship).rotation*M_PI/180.0)*a_tot);
+                                     ^
+../src/asteroids.c:236:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).accelerating = (a_tot != 0);
+     ^
+../src/asteroids.c:239:20: error: 'Game_Model_t' has no member named 'ship'
+   int deccel_x = (m->ship).x_speed / SHIP_DECCEL_RATE;
+                    ^
+../src/asteroids.c:240:20: error: 'Game_Model_t' has no member named 'ship'
+   int deccel_y = (m->ship).y_speed / SHIP_DECCEL_RATE;
+                    ^
+../src/asteroids.c:243:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).x_speed += (accel_x - deccel_x);
+     ^
+../src/asteroids.c:244:5: error: 'Game_Model_t' has no member named 'ship'
+   (m->ship).y_speed += (accel_y - deccel_y);
+     ^
+../src/asteroids.c: In function 'move_asteroids':
+../src/asteroids.c:252:11: error: 'Game_Model_t' has no member named 'asteroids'
+     if ((m->asteroids[i]).empty) {
+           ^
+../src/asteroids.c:257:7: error: 'Game_Model_t' has no member named 'asteroids'
+     (m->asteroids[i]).x_pos += (m->asteroids[i]).x_speed;
+       ^
+../src/asteroids.c:257:34: error: 'Game_Model_t' has no member named 'asteroids'
+     (m->asteroids[i]).x_pos += (m->asteroids[i]).x_speed;
+                                  ^
+../src/asteroids.c:258:7: error: 'Game_Model_t' has no member named 'asteroids'
+     (m->asteroids[i]).y_pos += (m->asteroids[i]).y_speed;
+       ^
+../src/asteroids.c:258:34: error: 'Game_Model_t' has no member named 'asteroids'
+     (m->asteroids[i]).y_pos += (m->asteroids[i]).y_speed;
+                                  ^
+../src/asteroids.c:261:17: error: 'Game_Model_t' has no member named 'asteroids'
+     wrap(m, &((m->asteroids[i]).x_pos), &((m->asteroids[i]).y_pos));
+                 ^
+../src/asteroids.c:261:45: error: 'Game_Model_t' has no member named 'asteroids'
+     wrap(m, &((m->asteroids[i]).x_pos), &((m->asteroids[i]).y_pos));
+                                             ^
+../src/asteroids.c: In function 'move_missiles':
+../src/asteroids.c:272:11: error: 'Game_Model_t' has no member named 'missiles'
+     if ((m->missiles[i]).empty) {
+           ^
+../src/asteroids.c:277:11: error: 'Game_Model_t' has no member named 'missiles'
+     if ((m->missiles[i]).life == 0) {
+           ^
+../src/asteroids.c:278:9: error: 'Game_Model_t' has no member named 'missiles'
+       (m->missiles[i]).empty = true;
+         ^
+../src/asteroids.c:282:9: error: 'Game_Model_t' has no member named 'missiles'
+       (m->missiles[i]).x_pos += (m->missiles[i]).x_speed;
+         ^
+../src/asteroids.c:282:35: error: 'Game_Model_t' has no member named 'missiles'
+       (m->missiles[i]).x_pos += (m->missiles[i]).x_speed;
+                                   ^
+../src/asteroids.c:283:9: error: 'Game_Model_t' has no member named 'missiles'
+       (m->missiles[i]).y_pos += (m->missiles[i]).y_speed;
+         ^
+../src/asteroids.c:283:35: error: 'Game_Model_t' has no member named 'missiles'
+       (m->missiles[i]).y_pos += (m->missiles[i]).y_speed;
+                                   ^
+../src/asteroids.c:286:19: error: 'Game_Model_t' has no member named 'missiles'
+       wrap(m, &((m->missiles[i]).x_pos), &((m->missiles[i]).y_pos));
+                   ^
+../src/asteroids.c:286:46: error: 'Game_Model_t' has no member named 'missiles'
+       wrap(m, &((m->missiles[i]).x_pos), &((m->missiles[i]).y_pos));
+                                              ^
+../src/asteroids.c:289:9: error: 'Game_Model_t' has no member named 'missiles'
+       (m->missiles[i]).life--;
+         ^
+../src/asteroids.c: In function 'lose_life':
+../src/asteroids.c:312:8: error: 'Game_Model_t' has no member named 'lives'
+   model->lives--;
+        ^
+../src/asteroids.c:315:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).x_pos = model->x / 2;
+         ^
+../src/asteroids.c:315:30: error: 'Game_Model_t' has no member named 'x'
+   (model->ship).x_pos = model->x / 2;
+                              ^
+../src/asteroids.c:316:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).y_pos = model->y / 2;
+         ^
+../src/asteroids.c:316:30: error: 'Game_Model_t' has no member named 'y'
+   (model->ship).y_pos = model->y / 2;
+                              ^
+../src/asteroids.c:317:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).x_speed = 0;
+         ^
+../src/asteroids.c:318:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).y_speed = 0;
+         ^
+../src/asteroids.c:321:9: error: 'Game_Model_t' has no member named 'ship'
+   (model->ship).invincible = SHIP_INVINCIBILITY_LENGTH;
+         ^
+../src/asteroids.c:324:12: error: 'Game_Model_t' has no member named 'lives'
+   if (model->lives == 0) {
+            ^
+../src/asteroids.c:325:10: error: 'Game_Model_t' has no member named 'state'
+     model->state = STATE_END_GAME_MENU;
+          ^
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:386:12: error: 'Game_Model_t' has no member named 'state'
+   if (model->state == STATE_PAUSE_MENU) {
+            ^
+../src/asteroids.c:388:12: error: 'Game_Model_t' has no member named 'state'
+       model->state == STATE_PLAYING;
+            ^
+../src/asteroids.c:391:12: error: 'Game_Model_t' has no member named 'state'
+       model->state = STATE_END_GAME_MENU;
+            ^
+../src/asteroids.c:399:10: error: 'Game_Model_t' has no member named 'state'
+     model->state = STATE_PAUSE_MENU;
+          ^
+../src/asteroids.c:407:16: error: 'Game_Model_t' has no member named 'asteroids'
+     if (!(model->asteroids[i]).empty) {
+                ^
+../src/asteroids.c:437:14: error: 'Game_Model_t' has no member named 'asteroids'
+     a = model->asteroids[i];
+              ^
+../src/asteroids.c:447:16: error: 'Game_Model_t' has no member named 'missiles'
+       m = model->missiles[j];
+                ^
+../src/asteroids.c:454:57: error: 'Game_Model_t' has no member named 'asteroids'
+         collision_list[collision_list_index++] = &(model->asteroids[i]);
+                                                         ^
+../src/asteroids.c:456:15: error: 'Game_Model_t' has no member named 'missiles'
+         (model->missiles[j]).empty = true;
+               ^
+../src/asteroids.c:457:14: error: 'Game_Model_t' has no member named 'score'
+         model->score += BREAK_ASTEROID_SCORE;
+              ^
+../src/asteroids.c:463:14: error: 'Game_Model_t' has no member named 'ship'
+     s = model->ship;
+              ^
+../src/asteroids.c:468:57: error: 'Game_Model_t' has no member named 'asteroids'
+         collision_list[collision_list_index++] = &(model->asteroids[i]);
+                                                         ^
+../src/asteroids.c:476:13: error: 'Game_Model_t' has no member named 'ship'
+   if ((model->ship).invincible) {
+             ^
+../src/asteroids.c:477:11: error: 'Game_Model_t' has no member named 'ship'
+     (model->ship).invincible--; 
+           ^
+../src/asteroids.c: In function 'send_model':
+../src/asteroids.c:495:12: error: 'Game_Model_t' has no member named 'state'
+   if (model->state == STATE_MAIN_MENU) {
+            ^
+../src/asteroids.c:497:19: error: 'Game_Model_t' has no member named 'state'
+   } else if (model->state == STATE_PLAYING) {
+                   ^
+../src/asteroids.c:499:19: error: 'Game_Model_t' has no member named 'state'
+   } else if (model->state == STATE_PAUSE_MENU) {
+                   ^
+../src/asteroids.c:510:15: error: 'Game_Model_t' has no member named 'asteroids'
+     if ((model->asteroids[i]).empty) {
+               ^
+../src/asteroids.c:513:15: error: 'Game_Model_t' has no member named 'asteroids'
+     if ((model->asteroids[i]).radius == LARGE_ASTEROID_RADIUS) {
+               ^
+../src/asteroids.c:515:22: error: 'Game_Model_t' has no member named 'asteroids'
+     } else if ((model->asteroids[i]).radius == MEDIUM_ASTEROID_RADIUS) {
+                      ^
+../src/asteroids.c:520:19: error: 'Game_Model_t' has no member named 'asteroids'
+     x_pos = (model->asteroids[i]).x_pos;
+                   ^
+../src/asteroids.c:521:19: error: 'Game_Model_t' has no member named 'asteroids'
+     y_pos = (model->asteroids[i]).y_pos;
+                   ^
+../src/asteroids.c:522:17: error: 'Game_Model_t' has no member named 'asteroids'
+     x_s = (model->asteroids[i]).x_speed;
+                 ^
+../src/asteroids.c:523:17: error: 'Game_Model_t' has no member named 'asteroids'
+     y_s = (model->asteroids[i]).y_speed;
+                 ^
+../src/asteroids.c:531:15: error: 'Game_Model_t' has no member named 'missiles'
+     if ((model->missiles[i]).empty) {
+               ^
+../src/asteroids.c:534:19: error: 'Game_Model_t' has no member named 'missiles'
+     x_pos = (model->missiles[i]).x_pos;
+                   ^
+../src/asteroids.c:535:19: error: 'Game_Model_t' has no member named 'missiles'
+     y_pos = (model->missiles[i]).y_pos;
+                   ^
+../src/asteroids.c:536:17: error: 'Game_Model_t' has no member named 'missiles'
+     x_s = (model->missiles[i]).x_speed;
+                 ^
+../src/asteroids.c:537:17: error: 'Game_Model_t' has no member named 'missiles'
+     y_s = (model->missiles[i]).y_speed;
+                 ^
+../src/asteroids.c:538:15: error: 'Game_Model_t' has no member named 'missiles'
+     l = (model->missiles[i]).life;
+               ^
+../src/asteroids.c:543:19: error: 'Game_Model_t' has no member named 'ship'
+   Ship_t s = model->ship;
+                   ^
+../src/asteroids.c:549:30: error: 'Game_Model_t' has no member named 'lives'
+   printf("Lives: %d\n", model->lives);
+                              ^
+../src/asteroids.c:550:32: error: 'Game_Model_t' has no member named 'score'
+   printf("Score: %d\n\n", model->score);
+                                ^
+../src/asteroids.c: In function 'asteroids_init':
+../src/asteroids.c:555:7: error: 'Game_Model_t' has no member named 'x'
+  model->x = x;
+       ^
+../src/asteroids.c:556:7: error: 'Game_Model_t' has no member named 'y'
+  model->y = y;
+       ^
+../src/asteroids.c:558:7: error: 'Game_Model_t' has no member named 'state'
+  model->state = STATE_MAIN_MENU;
+       ^
+../src/asteroids.c: In function 'asteroids_main':
+../src/asteroids.c:567:11: error: 'Game_Model_t' has no member named 'state'
+  if (model->state == STATE_MAIN_MENU) {
+           ^
+../src/asteroids.c:570:8: error: 'Game_Model_t' has no member named 'state'
+   model->state = STATE_PLAYING;
+        ^
+../src/asteroids.c:574:18: error: 'Game_Model_t' has no member named 'state'
+  } else if (model->state == STATE_PAUSE_MENU) {
+                  ^
+../src/asteroids.c:577:8: error: 'Game_Model_t' has no member named 'state'
+   model->state = STATE_PLAYING;
+        ^
+../src/asteroids.c:582:8: error: 'Game_Model_t' has no member named 'state'
+   model->state = STATE_END_GAME_MENU;
+        ^
+../src/asteroids.c:586:18: error: 'Game_Model_t' has no member named 'state'
+  } else if (model->state == STATE_END_GAME_MENU) {
+                  ^
+../src/asteroids.c:592:8: error: 'Game_Model_t' has no member named 'state'
+   model->state = STATE_MAIN_MENU;
+        ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+make: *** [src/asteroids.o] Error 1
+19:31:26 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:388:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:105:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+../src/main.c:104:8: warning: unused variable 'resolutions' [-Wunused-variable]
+  char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
+        ^
+../src/main.c: In function 'hdmi_init':
+../src/main.c:161:7: warning: assignment makes pointer from integer without a cast
+  resx = 800;
+       ^
+../src/main.c:162:7: warning: assignment makes pointer from integer without a cast
+  resy = 600;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 188180	 705708	  23580	 917468	  dffdc	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+20:52:18 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:21:50 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+In file included from ../src/asteroids.h:5:0,
+                 from ../src/asteroids.c:7:
+../src/models.h:68:24: error: 'MAX_MODEL_SIZE' undeclared here (not in a function)
+   Position_t positions[MAX_MODEL_SIZE];
+                        ^
+../src/asteroids.c: In function 'create_asteroid':
+../src/models.h:33:44: error: 'LARGE_ASTERIOD_POSITIONS' undeclared (first use in this function)
+ #define LARGE_ASTEROID_MODEL  (Model_t){1, LARGE_ASTERIOD_POSITIONS}
+                                            ^
+../src/asteroids.c:88:32: note: in expansion of macro 'LARGE_ASTEROID_MODEL'
+      m->asteroids[i-1].model = LARGE_ASTEROID_MODEL;
+                                ^
+../src/models.h:33:44: note: each undeclared identifier is reported only once for each function it appears in
+ #define LARGE_ASTEROID_MODEL  (Model_t){1, LARGE_ASTERIOD_POSITIONS}
+                                            ^
+../src/asteroids.c:88:32: note: in expansion of macro 'LARGE_ASTEROID_MODEL'
+      m->asteroids[i-1].model = LARGE_ASTEROID_MODEL;
+                                ^
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+make: *** [src/asteroids.o] Error 1
+21:22:57 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/cf_hdmi.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/cf_hdmi.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/cf_hdmi.d" -MT"src/cf_hdmi.d" -o "src/cf_hdmi.o" "../src/cf_hdmi.c"
+../src/cf_hdmi.c: In function 'DDRVideoWr':
+../src/cf_hdmi.c:131:17: warning: unused variable 'repetition' [-Wunused-variable]
+  unsigned char  repetition = 0;
+                 ^
+../src/cf_hdmi.c:130:17: warning: unused variable 'index' [-Wunused-variable]
+  unsigned long  index      = 0;
+                 ^
+../src/cf_hdmi.c:128:17: warning: unused variable 'backup' [-Wunused-variable]
+  unsigned long  backup     = 0;
+                 ^
+In file included from ../src/cf_hdmi.c:48:0:
+../src/cf_hdmi.c: At top level:
+../src/cf_hdmi_demo.h:42:12: warning: 'IMG_DATA' defined but not used [-Wunused-variable]
+ static u32 IMG_DATA[] = {
+            ^
+'Finished building: ../src/cf_hdmi.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+../src/main.c: In function 'display_frame':
+../src/main.c:137:2: error: unknown type name 'Object_Model_t'
+  Object_Model_t o_model;
+  ^
+../src/main.c:148:11: error: incompatible types when assigning to type 'int' from type 'Model_t'
+   o_model = model->asteroids[i].model;
+           ^
+../src/main.c:152:26: error: request for member 'num' in something not a structure or union
+   for (j = 0; j < o_model.num; j++) {
+                          ^
+../src/main.c:153:15: error: request for member 'positions' in something not a structure or union
+    x = o_model.positions[j].x + x_pos;
+               ^
+../src/main.c:154:15: error: request for member 'positions' in something not a structure or union
+    y = o_model.positions[j].y + y_pos;
+               ^
+../src/main.c:161:11: error: incompatible types when assigning to type 'int' from type 'Model_t'
+   o_model = model->missiles[i].model;
+           ^
+../src/main.c:165:26: error: request for member 'num' in something not a structure or union
+   for (j = 0; j < o_model.num; j++) {
+                          ^
+../src/main.c:166:15: error: request for member 'positions' in something not a structure or union
+    x = o_model.positions[j].x + x_pos;
+               ^
+../src/main.c:167:15: error: request for member 'positions' in something not a structure or union
+    y = o_model.positions[j].y + y_pos;
+               ^
+../src/main.c:173:10: error: incompatible types when assigning to type 'int' from type 'Model_t'
+  o_model = model->ship.model;
+          ^
+../src/main.c:177:25: error: request for member 'num' in something not a structure or union
+  for (j = 0; j < o_model.num; j++) {
+                         ^
+../src/main.c:178:14: error: request for member 'positions' in something not a structure or union
+   x = o_model.positions[j].x + x_pos;
+              ^
+../src/main.c:179:14: error: request for member 'positions' in something not a structure or union
+   y = o_model.positions[j].y + y_pos;
+              ^
+../src/main.c:137:17: warning: variable 'o_model' set but not used [-Wunused-but-set-variable]
+  Object_Model_t o_model;
+                 ^
+../src/main.c: In function 'hdmi_init':
+../src/main.c:208:7: warning: assignment makes pointer from integer without a cast
+  resx = 800;
+       ^
+../src/main.c:209:7: warning: assignment makes pointer from integer without a cast
+  resy = 600;
+       ^
+make: *** [src/main.o] Error 1
+21:25:04 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+In file included from ../src/asteroids.c:7:0:
+../src/asteroids.h:59:3: error: unknown type name 'Model_t'
+   Model_t model;
+   ^
+../src/asteroids.h:71:3: error: unknown type name 'Model_t'
+   Model_t model;
+   ^
+../src/asteroids.h:84:3: error: unknown type name 'Model_t'
+   Model_t model;
+   ^
+../src/asteroids.h:98:3: error: unknown type name 'Model_t'
+   Model_t model;
+   ^
+../src/asteroids.c: In function 'create_asteroid':
+../src/asteroids.c:88:30: error: incompatible types when assigning to type 'int' from type 'Object_Model_t'
+      m->asteroids[i-1].model = LARGE_ASTEROID_MODEL;
+                              ^
+../src/asteroids.c:90:30: error: incompatible types when assigning to type 'int' from type 'Object_Model_t'
+      m->asteroids[i-1].model = MEDIUM_ASTEROID_MODEL;
+                              ^
+../src/asteroids.c:92:30: error: incompatible types when assigning to type 'int' from type 'Object_Model_t'
+      m->asteroids[i-1].model = SMALL_ASTEROID_MODEL;
+                              ^
+../src/asteroids.c: In function 'create_missile':
+../src/asteroids.c:182:15: error: incompatible types when assigning to type 'int' from type 'Object_Model_t'
+       m.model = MISSILE_MODEL;
+               ^
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: In function 'asteroids_init':
+../src/asteroids.c:571:15: error: incompatible types when assigning to type 'int' from type 'Object_Model_t'
+  model->model = PLAYING_MODEL;
+               ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+make: *** [src/asteroids.o] Error 1
+21:26:06 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+../src/main.c: In function 'hdmi_init':
+../src/main.c:208:7: warning: assignment makes pointer from integer without a cast
+  resx = 800;
+       ^
+../src/main.c:209:7: warning: assignment makes pointer from integer without a cast
+  resy = 600;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189164	 705708	  23580	 918452	  e03b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:26:24 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189228	 705708	  23580	 918516	  e03f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:26:38 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:26:39 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:27:25 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:27:25 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:27:49 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:27:50 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:29:52 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189228	 705708	  23580	 918516	  e03f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:29:59 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:29:59 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:34:46 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189292	 705708	  23580	 918580	  e0434	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:34:58 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:34:58 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:36:05 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:36:06 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:37:17 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189292	 705708	  23580	 918580	  e0434	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:37:23 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:37:24 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:40:17 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189420	 705708	  23580	 918708	  e04b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:40:25 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:40:26 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:42:17 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189676	 705708	  23580	 918964	  e05b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:42:21 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:42:22 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:45:19 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189692	 705708	  23580	 918980	  e05c4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:45:23 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:45:23 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:46:41 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189676	 705708	  23580	 918964	  e05b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:46:45 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:46:46 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:46:57 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:46:57 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:47:22 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:47:22 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:48:11 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:48:12 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:49:01 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189676	 705708	  23580	 918964	  e05b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:49:17 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:49:18 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:50:11 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:50:12 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:53:27 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189740	 705708	  23580	 919028	  e05f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:53:31 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:53:32 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:54:20 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:54:21 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:57:27 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189740	 705708	  23580	 919028	  e05f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:57:38 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:57:39 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+21:58:53 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189740	 705708	  23580	 919028	  e05f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+21:58:56 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+21:58:57 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:01:27 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189740	 705708	  23580	 919028	  e05f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:01:32 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:01:33 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:03:36 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189756	 705708	  23580	 919044	  e0604	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:03:40 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:03:40 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:04:36 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189740	 705708	  23580	 919028	  e05f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:04:39 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:04:39 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:08:24 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189420	 705708	  23580	 918708	  e04b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:08:28 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:08:29 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:09:05 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189420	 705708	  23580	 918708	  e04b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:09:13 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:09:14 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:12:41 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189484	 705708	  23580	 918772	  e04f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:12:46 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:12:46 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:13:43 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:13:43 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:13:57 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189484	 705708	  23580	 918772	  e04f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:14:00 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:14:00 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:14:25 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:400:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189484	 705708	  23580	 918772	  e04f4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:14:38 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:14:38 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:30:46 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:409:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 190892	 705708	  23580	 920180	  e0a74	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:30:54 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:30:55 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.
+22:31:55 **** Auto Build of configuration Debug for project vHDMI ****
+make all 
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c: In function 'game_tick':
+../src/asteroids.c:409:7: warning: statement with no effect [-Wunused-value]
+       model->state == STATE_PLAYING;
+       ^
+../src/asteroids.c: At top level:
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+'Finished building: ../src/main.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189420	 705708	  23580	 918708	  e04b4	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
+22:32:00 **** Incremental Build of configuration Debug for project vHDMI ****
+make all 
+make: Nothing to be done for `all'.
+22:32:01 **** Incremental Build of configuration Debug for project zynq_fsbl ****
+make all 
+make: Nothing to be done for `all'.

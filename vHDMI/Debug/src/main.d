@@ -1,4 +1,4 @@
-src/main.o src/main.d: ../src/main.c \
+src/main.o src/main.d: ../src/main.c ../src/asteroids.h ../src/models.h \
  ../../standalone_bsp/ps7_cortexa9_0/include/xil_cache.h \
  ../../standalone_bsp/ps7_cortexa9_0/include/xil_types.h \
  ../../standalone_bsp/ps7_cortexa9_0/include/xbasic_types.h \
@@ -23,6 +23,10 @@ src/main.o src/main.d: ../src/main.c \
  ../../standalone_bsp/ps7_cortexa9_0/include/xstatus.h \
  ../../standalone_bsp/ps7_cortexa9_0/include/xuartps_hw.h \
  ../../standalone_bsp/ps7_cortexa9_0/include/xil_io.h
+
+../src/asteroids.h:
+
+../src/models.h:
 
 ../../standalone_bsp/ps7_cortexa9_0/include/xil_cache.h:
 

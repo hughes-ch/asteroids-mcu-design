@@ -42,6 +42,8 @@
 /***************************** Include Files **********************************/
 /******************************************************************************/
 #include <stdio.h>
+
+#include "asteroids.h"
 #include "xil_cache.h"
 #include "xbasic_types.h"
 #include "xil_io.h"
@@ -64,9 +66,6 @@ extern char inbyte(void);
 /******************************************************************************/
 /************************ Variables Definitions *******************************/
 /******************************************************************************/
-static UCHAR    MajorRev;      /* Major Release Number */
-static UCHAR    MinorRev;      /* Usually used for code-drops */
-static UCHAR    RcRev;         /* Release Candidate Number */
 static BOOL     DriverEnable;
 static BOOL     LastEnable;
 
@@ -96,71 +95,141 @@ static BOOL APP_DriverEnabled (void)
 }
 
 /***************************************************************************//**
- * @brief Displays the application version and the chip revision.
- *
- * @return None.
-*******************************************************************************/
-static void APP_PrintRevisions (void)
-{
-	UINT16 TxRev;
-
-	ADIAPI_TxGetChipRevision(&TxRev);
-
-	DBG_MSG("\n\r********************************************************************\r\n");
-	DBG_MSG("  ADI HDMI Trasmitter Application Ver R%d.%d.%d\n\r", MajorRev, MinorRev, RcRev);
-	DBG_MSG("  HDMI-TX:  ADV7511 Rev 0x%x\r\n", TxRev);
-	DBG_MSG("  Created:  %s At %s\n\r", __DATE__, __TIME__);
-	DBG_MSG("********************************************************************\r\n\n\r");
-}
-
-/***************************************************************************//**
  * @brief Changes the video resolution.
  *
  * @return None.
 *******************************************************************************/
 static void APP_ChangeResolution (void)
 {
-	char *resolutions[7] = {"640x480", "800x600", "1024x768", "1280x720", "1360x768", "1600x900", "1920x1080"};
 	char receivedChar    = 0;
 
 	if(XUartPs_IsReceiveData(UART_BASEADDR))
 	{
 		receivedChar = inbyte();
-		if((receivedChar >= 0x30) && (receivedChar <= 0x36))
-		{
-			//SetVideoResolution(receivedChar - 0x30);
-			SetVideoResolution(RESOLUTION_800x600);
-			DBG_MSG("Resolution was changed to %s \r\n", resolutions[receivedChar - 0x30]);
-		}
-		else
-		{
-			if((receivedChar != 0x0A) && (receivedChar != 0x0D))
-			{
-				SetVideoResolution(RESOLUTION_640x480);
-				DBG_MSG("Resolution was changed to %s \r\n", resolutions[0]);
-			}
-		}
+
+		SetVideoResolution(RESOLUTION_800x600);
+		DBG_MSG("Refreshing screen. Resolution set to 800x600\r\n");
 	}
+}
+
+/*******************************************************************************
+ * Calculates the next frame buffer location in memory
+ *******************************************************************************/
+u32 get_frame_addr() {
+	static u32 addr = FRAME_BUFFER_1;
+
+	if (addr == FRAME_BUFFER_1) {
+		addr = FRAME_BUFFER_2;
+	} else {
+		addr = FRAME_BUFFER_1;
+	}
+
+	return addr;
 }
 
 /*******************************************************************************
  * @brief Displays one HDMI frame
 ********************************************************************************/
-void display_frame() {
-	static unsigned int x = 0;
-	static unsigned int y = 0;
+void display_frame(Game_Model_t* model) {
+	//Determine which frame buffer to write
+	u32 addr = get_frame_addr();
+	int line, pixel, i, j, x, y, x_pos, y_pos;
+	Object_Model_t o_model;
 
-	DDRVideoWrAnimation(800, 600, x, y);
-
-	x++;
-	y++;
-
-	if (x >= 800) {
-		x = 0;
+	//Create black background
+	for(line = 0; line < model->y; line++) {
+		for(pixel = 0; pixel < model->x; pixel++) {
+			Xil_Out32((addr + (pixel*4)+(line * 4 * model->x)), (0));
+		}
 	}
-	if (y >= 600) {
-		y = 0;
+
+	//Display asteroids on screen
+	for (i = 0; i < MAX_ASTEROIDS; i++) {
+		if ((model->asteroids[i]).empty) {
+			continue;
+		}
+
+		o_model = (model->asteroids[i]).model;
+		x_pos = (model->asteroids[i]).x_pos;
+		y_pos = (model->asteroids[i]).y_pos;
+
+		for (j = 0; j < o_model.num; j++) {
+			x = (o_model.positions[j].x) + x_pos;
+			y = (o_model.positions[j].y) + y_pos;
+			Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
+		}
 	}
+
+	//Display missiles on screen
+	for (i = 0; i < MAX_MISSILES; i++) {
+		if ((model->missiles[i]).empty) {
+			continue;
+		}
+
+		o_model = (model->missiles[i]).model;
+		x_pos = (model->missiles[i]).x_pos;
+		y_pos = (model->missiles[i]).y_pos;
+
+		for (j = 0; j < o_model.num; j++) {
+			x = (o_model.positions[j]).x + x_pos;
+			y = (o_model.positions[j]).y + y_pos;
+			Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
+		}
+	}
+
+	//Display ship on screen
+	o_model = model->ship.model;
+	x_pos = model->ship.x_pos;
+	y_pos = model->ship.y_pos;
+
+	for (j = 0; j < o_model.num; j++) {
+		x = (o_model.positions[j]).x + x_pos;
+		y = (o_model.positions[j]).y + y_pos;
+		Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
+	}
+
+	//Start VDMA with the desired starting address
+	if (addr == FRAME_BUFFER_1) {
+		Xil_Out32((VDMA_BASEADDR + AXI_VDMA_PARK_PTR_REG), 0);
+	} else {
+		Xil_Out32((VDMA_BASEADDR + AXI_VDMA_PARK_PTR_REG), 1);
+	}
+
+	Xil_DCacheFlush();
+}
+
+/********************************************************************************
+ * Initializes hardware and software for HDMI to operate properly
+ ********************************************************************************/
+void hdmi_init(int* resx, int* resy) {
+	DriverEnable = TRUE;
+	LastEnable = FALSE;
+
+	HAL_PlatformInit(XPAR_AXI_IIC_MAIN_BASEADDR,	/* Perform any required platform init */
+						 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
+						 XPAR_SCUGIC_SINGLE_DEVICE_ID,
+						 XPAR_SCUTIMER_INTR);
+
+	Xil_ExceptionEnable();
+
+	SetVideoResolution(RESOLUTION_800x600);
+	*resx = 800;
+	*resy = 600;
+
+	InitHdmiAudioPcore();
+
+	ADIAPI_TransmitterInit();
+	ADIAPI_TransmitterSetPowerMode(REP_POWER_UP);
+}
+
+/********************************************************************************
+ * Stores the value of the controller from the controller task
+ ********************************************************************************/
+void get_controller_value(Controller_t* controller) {
+	controller->aux_button = false;
+	controller->trigger_button = false;
+	controller->pitch = 0;
+	controller->roll = 0;
 }
 
 /***************************************************************************//**
@@ -171,33 +240,15 @@ void display_frame() {
 int main()
 {
 	UINT32 StartCount;
-
-	MajorRev     = 1;
-	MinorRev     = 1;
-	RcRev        = 1;
-	DriverEnable = TRUE;
-	LastEnable   = FALSE;
+	int resx, resy;
+	Game_Model_t model;
+	Controller_t controller;
 
 	Xil_ICacheEnable();
 	Xil_DCacheEnable();
 
-	printf("Starting...\n");
-
-	HAL_PlatformInit(XPAR_AXI_IIC_MAIN_BASEADDR,	/* Perform any required platform init */
-					 XPAR_SCUTIMER_DEVICE_ID,	/* including hardware reset to HDMI devices */
-					 XPAR_SCUGIC_SINGLE_DEVICE_ID,
-					 XPAR_SCUTIMER_INTR);
-
-	Xil_ExceptionEnable();
-
-	SetVideoResolution(RESOLUTION_800x600);
-	InitHdmiAudioPcore();
-
-	APP_PrintRevisions();       /* Display S/W and H/W revisions */
-
-	ADIAPI_TransmitterInit();   /* Initialize ADI repeater software and h/w */
-
-	ADIAPI_TransmitterSetPowerMode(REP_POWER_UP);
+	hdmi_init(&resx, &resy);
+	asteroids_init(&model, resx, resy);
 
 	StartCount = HAL_GetCurrentMsCount();
 
@@ -211,8 +262,12 @@ int main()
 				ADIAPI_TransmitterMain();
 			}
 		}
+
 		APP_ChangeResolution();
-		display_frame();
+
+		get_controller_value(&controller);
+		asteroids_main(&model, &controller);
+		display_frame(&model);
 	}
 
 	Xil_DCacheDisable();

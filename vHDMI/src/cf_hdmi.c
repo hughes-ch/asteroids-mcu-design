@@ -143,44 +143,6 @@ void DDRVideoWr(unsigned short horizontalActiveTime, unsigned short verticalActi
 	return;
 }
 
-u32 get_frame_addr() {
-	static u32 addr = FRAME_BUFFER_1;
-
-	if (addr == FRAME_BUFFER_1) {
-		addr = FRAME_BUFFER_2;
-	} else {
-		addr = FRAME_BUFFER_1;
-	}
-
-	return addr;
-}
-
-void DDRVideoWrAnimation(unsigned int xbound, unsigned int ybound, unsigned int x, unsigned int y) {
-	int line, pixel;
-	u32 addr = get_frame_addr();
-
-	for(line = 0; line < ybound; line++ ) {
-		for(pixel = 0; pixel < xbound; pixel++) {
-			Xil_Out32((addr + (pixel*4)+(line * 4 * xbound)), (0x0));
-		}
-	}
-
-	int bound = y+10 > ybound ? ybound : y+10;
-	for(line = y; line < y+10; line++ ) {
-		for(pixel = x; pixel < x+10; pixel++) {
-			Xil_Out32((addr + (pixel*4)+(line * 4 * xbound)), (0xff0000));
-		}
-	}
-
-	if (addr == FRAME_BUFFER_1) {
-		Xil_Out32((VDMA_BASEADDR + AXI_VDMA_PARK_PTR_REG), 0);
-	} else {
-		Xil_Out32((VDMA_BASEADDR + AXI_VDMA_PARK_PTR_REG), 1);
-	}
-
-	Xil_DCacheFlush();
-}
-
 /***************************************************************************//**
  * @brief DDRAudioWr.
 *******************************************************************************/
