@@ -1,6 +1,24 @@
-22:32:00 **** Incremental Build of configuration Debug for project vHDMI ****
+10:00:10 **** Auto Build of configuration Debug for project vHDMI ****
 make all 
-make: Nothing to be done for `all'.
+'Building file: ../src/asteroids.c'
+'Invoking: ARM gcc compiler'
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+../src/asteroids.c:37:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+'Finished building: ../src/asteroids.c'
+' '
+'Building target: vHDMI.elf'
+'Invoking: ARM gcc linker'
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: vHDMI.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 189356	 705708	  23580	 918644	  e0474	vHDMI.elf
+'Finished building: vHDMI.elf.size'
+' '
 
-22:32:01 Build Finished (took 235ms)
+10:00:12 Build Finished (took 1s.813ms)
 
