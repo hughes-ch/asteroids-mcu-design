@@ -148,7 +148,6 @@ void display_frame(Game_Model_t* model) {
 		if ((model->asteroids[i]).empty) {
 			continue;
 		}
-
 		o_model = (model->asteroids[i]).model;
 		x_pos = (model->asteroids[i]).x_pos;
 		y_pos = (model->asteroids[i]).y_pos;

@@ -369,3 +369,180 @@ java.lang.RuntimeException: No Target with ID 64 in the System
 21:37:01 INFO  : XSDB server has started successfully.
 09:24:45 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
 09:24:55 INFO  : XSDB server has started successfully.
+10:56:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:50:33 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+17:50:40 INFO  : XSDB server has started successfully.
+18:23:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:27:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:28:47 ERROR : Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Unknown Error Occured
+    Cable is not connected to the host
+
+18:28:47 ERROR : Unexpected error while launching program.
+com.xilinx.sdk.targetmanager.TMException: Connection to Board Failed
+
+
+    Unknown Error Occured
+    Cable is not connected to the host
+
+	at com.xilinx.sdk.targetmanager.internal.TM.isFPGAConfigured(TM.java:374)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.isFpgaConfigured(XilinxAppLaunchConfigurationDelegate.java:409)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:303)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+18:31:43 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+18:32:02 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+18:32:06 INFO  : XSDB server has started successfully.
+18:32:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:34:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:34:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:46:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:48:09 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+18:48:13 INFO  : XSDB server has started successfully.
+18:48:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:22:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:24:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:37:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:52:37 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+20:52:48 INFO  : XSDB server has started successfully.
+20:54:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:09:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:12:40 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+21:13:18 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+21:13:27 INFO  : XSDB server has started successfully.
+21:13:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:18:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:19:09 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+22:41:39 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+22:41:48 INFO  : XSDB server has started successfully.
+22:48:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:48:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248707864" && level==0} -index 1' command is executed.
+22:48:19 INFO  : FPGA configured successfully with bitstream "C:/Users/Chris/hdmi_workspace/hw_platform_0/system_top.bit"
+22:48:58 INFO  : ps7_init is completed.
+22:48:59 INFO  : ps7_post_config is completed.
+22:48:59 INFO  : Processor reset is completed for ps7_cortexa9_0
+23:49:59 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+18:51:10 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+18:51:18 INFO  : XSDB server has started successfully.
+18:52:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:52:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:52:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248707864" && level==0} -index 1' command is executed.
+18:52:40 INFO  : FPGA configured successfully with bitstream "C:/Users/Chris/hdmi_workspace/hw_platform_0/system_top.bit"
+18:53:30 INFO  : ps7_init is completed.
+18:53:30 INFO  : ps7_post_config is completed.
+18:53:30 INFO  : Processor reset is completed for ps7_cortexa9_0
+18:54:51 INFO  : Processor reset is completed for ps7_cortexa9_0
+18:55:14 INFO  : Processor reset is completed for ps7_cortexa9_0
+18:56:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+18:57:52 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:02:15 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:10:06 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:10:32 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:10:58 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:16:06 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:16:50 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:16:54 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:18:36 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:18:38 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:20:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:22:12 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:22:16 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:24:11 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:24:14 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:25:26 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:25:27 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:27:47 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:27:51 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:27:55 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Failed to download ELF file
+
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(TM.java:686)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(AppRunner.java:129)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:637)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+19:28:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:28:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248707864" && level==0} -index 1' command is executed.
+19:28:29 INFO  : FPGA configured successfully with bitstream "C:/Users/Chris/hdmi_workspace/hw_platform_0/system_top.bit"
+19:28:43 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+19:29:00 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+19:29:03 INFO  : XSDB server has started successfully.
+19:29:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:29:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248707864" && level==0} -index 1' command is executed.
+19:29:29 INFO  : FPGA configured successfully with bitstream "C:/Users/Chris/hdmi_workspace/hw_platform_0/system_top.bit"
+19:29:43 INFO  : ps7_init is completed.
+19:29:43 INFO  : ps7_post_config is completed.
+19:29:43 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:31:54 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:31:56 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:38:00 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:43:12 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:43:15 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:46:11 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:48:01 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:48:03 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:48:33 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:48:35 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:49:07 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:49:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:53:13 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:53:15 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:55:36 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+19:55:38 INFO  : Processor reset is completed for ps7_cortexa9_0
+19:56:07 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:28:50 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:32:40 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:32:43 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:33:12 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:33:13 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:35:36 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:36:15 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:36:19 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:37:08 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:37:10 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:38:16 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:38:18 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:39:34 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:39:35 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:42:18 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:43:01 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:43:18 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:43:22 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:43:46 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:43:47 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:44:18 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:44:20 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:46:30 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:46:32 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:49:14 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:49:16 INFO  : Processor reset is completed for ps7_cortexa9_0
+20:50:25 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+20:50:27 INFO  : Processor reset is completed for ps7_cortexa9_0
+21:07:46 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+21:07:49 INFO  : Processor reset is completed for ps7_cortexa9_0
+21:10:12 INFO  : Processor reset is completed for ps7_cortexa9_0
+21:11:18 INFO  : Processor reset is completed for ps7_cortexa9_0
+21:11:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:11:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248707864" && level==0} -index 1' command is executed.
+21:11:49 INFO  : FPGA configured successfully with bitstream "C:/Users/Chris/hdmi_workspace/hw_platform_0/system_top.bit"
+21:11:55 INFO  : ps7_init is completed.
+21:11:56 INFO  : ps7_post_config is completed.
+21:11:56 INFO  : Processor reset is completed for ps7_cortexa9_0
+21:12:18 INFO  : Processor reset is completed for ps7_cortexa9_0

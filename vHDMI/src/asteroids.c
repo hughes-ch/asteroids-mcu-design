@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "asteroids.h"
+#include "models.h"
 
 /*
  * Make sure that a long button press does not repeat actions
@@ -58,58 +59,159 @@ static void get_from_control_queue(Controller_t* controller) {
   controller->aux_button = aux_button;
 }
 
-/*void set_type(Position_t positions[MAX_MODEL_SIZE], int type, int* num) {
+void p_array_deep_copy(Position_t* copy, Position_t* orig, int length) {
 	int i;
+	for (i = 0; i < length; i++) {
+		copy[i].x = orig[i].x;
+		copy[i].y = orig[i].y;
+	}
+}
+
+void set_type(Position_t positions[MAX_MODEL_SIZE], int type, int* num) {
 	switch (type) {
 		case TYPE_LARGE_ASTEROID:
-			Position_t dots[LARGE_ASTEROID_NUM_POSITIONS] = LARGE_ASTEROID_POSITIONS;
-			for (i = 0; i < LARGE_ASTEROID_NUM_POSITIONS; i++) {
+			p_array_deep_copy(positions, large_asteroid_model, LARGE_ASTEROID_NUM_POSITIONS);
+			*num = LARGE_ASTEROID_NUM_POSITIONS;
+			break;
 
-			}
 		case TYPE_MEDIUM_ASTEROID:
+			p_array_deep_copy(positions, medium_asteroid_model, MEDIUM_ASTEROID_NUM_POSITIONS);
+			*num = MEDIUM_ASTEROID_NUM_POSITIONS;
+			break;
+
 		case TYPE_SMALL_ASTEROID:
+			p_array_deep_copy(positions, small_asteroid_model, SMALL_ASTEROID_NUM_POSITIONS);
+			*num = SMALL_ASTEROID_NUM_POSITIONS;
+			break;
+
 		case TYPE_MISSILE:
+			p_array_deep_copy(positions, missile_model, MISSILE_NUM_POSITIONS);
+			*num = MISSILE_NUM_POSITIONS;
+			break;
+
 		case TYPE_SHIP:
+			p_array_deep_copy(positions, ship_model, SHIP_NUM_POSITIONS);
+			*num = SHIP_NUM_POSITIONS;
+			break;
+
 		case TYPE_MAIN_MENU:
+			p_array_deep_copy(positions, main_menu_model, MAIN_MENU_NUM_POSITIONS);
+			*num = MAIN_MENU_NUM_POSITIONS;
+			break;
+
 		case TYPE_END_GAME_MENU:
+			p_array_deep_copy(positions, end_game_menu_model, LARGE_ASTEROID_NUM_POSITIONS);
+			*num = END_GAME_MENU_NUM_POSITIONS;
+			break;
+
 		case TYPE_PAUSE_GAME_MENU:
+			p_array_deep_copy(positions, pause_game_menu_model, PAUSE_GAME_MENU_NUM_POSITIONS);
+			*num = PAUSE_GAME_MENU_NUM_POSITIONS;
+			break;
+
 		case TYPE_PLAYING:
+			p_array_deep_copy(positions, playing_model, PLAYING_NUM_POSITIONS);
+			*num = PLAYING_NUM_POSITIONS;
+			break;
+
 		case TYPE_LABEL_LIVES:
+			p_array_deep_copy(positions, label_lives_model, LABEL_LIVES_NUM_POSITIONS);
+			*num = LABEL_LIVES_NUM_POSITIONS;
+			break;
+
 		case TYPE_LABEL_SCORE:
+			p_array_deep_copy(positions, label_score_model, LABEL_SCORE_NUM_POSITIONS);
+			*num = LABEL_SCORE_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_0:
+			p_array_deep_copy(positions, character_0_model, CHARACTER_0_NUM_POSITIONS);
+			*num = CHARACTER_0_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_1:
+			p_array_deep_copy(positions, character_1_model, CHARACTER_1_NUM_POSITIONS);
+			*num = CHARACTER_1_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_2:
+			p_array_deep_copy(positions, character_2_model, CHARACTER_2_NUM_POSITIONS);
+			*num = CHARACTER_2_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_3:
+			p_array_deep_copy(positions, character_3_model, CHARACTER_3_NUM_POSITIONS);
+			*num = CHARACTER_3_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_4:
+			p_array_deep_copy(positions, character_4_model, CHARACTER_4_NUM_POSITIONS);
+			*num = CHARACTER_4_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_5:
+			p_array_deep_copy(positions, character_5_model, CHARACTER_5_NUM_POSITIONS);
+			*num = CHARACTER_5_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_6:
+			p_array_deep_copy(positions, character_6_model, CHARACTER_6_NUM_POSITIONS);
+			*num = CHARACTER_6_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_7:
+			p_array_deep_copy(positions, character_7_model, CHARACTER_7_NUM_POSITIONS);
+			*num = CHARACTER_7_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_8:
+			p_array_deep_copy(positions, character_8_model, CHARACTER_8_NUM_POSITIONS);
+			*num = CHARACTER_8_NUM_POSITIONS;
+			break;
+
 		case TYPE_CHARACTER_9:
+			p_array_deep_copy(positions, character_9_model, CHARACTER_9_NUM_POSITIONS);
+			*num = CHARACTER_9_NUM_POSITIONS;
+			break;
+
+		default:
+			break;
+	}
+}
+
+//Adds one position to the model
+void plot(Object_Model_t* model, int x, int y) {
+	//Add to model (Assuming it is not full)
+	if (model->num < MAX_MODEL_SIZE) {
+		(model->positions[model->num]).x = x;
+		(model->positions[model->num]).y = y;
+		model->num++;
 	}
 }
 
 //Creates an object model for an object
 void create_object_model(Object_Model_t* model, int type) {
-	//Find connect-dots #define array based on type
+	//Find connect-dots array based on type
 	Position_t positions[MAX_MODEL_SIZE];
 	int num_dots;
 	set_type(positions, type, &num_dots);
 
 	//Initialize model struct
 	model->num = 0;
+	int x = positions[0].x;
+	int y = positions[0].y;
+	plot(model, x, y);
 
-	//Connect dots
-	int i, length;
-	int x = 0;
-	int y = 0;
-	for (i = 0; i < num_dots; i++) {
-		while(x != positions[i].x || y != positions[i].y) {
+	//Connect dots using bresenham's line algorithm
+	//https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+	int i, j, length;
+	for (i = 0; i < num_dots - 1; i++) {
+		/*while(x != positions[i].x || y != positions[i].y) {
 			//Increment either x or y, depending which is further from the next dot
-			if (abs(x - position[i].x) >= abs(y - position[i].y)) {
-				x++;
+			if (abs(x - positions[i].x) >= abs(y - positions[i].y)) {
+				x += x > positions[i].x ? -1 : 1;
 			} else {
-				y++;
+				y += y > positions[i].y ? -1 : 1;
 			}
 
 			//Add to model (Assuming it is not full)
@@ -118,9 +220,36 @@ void create_object_model(Object_Model_t* model, int type) {
 				(model->positions[model->num]).y = y;
 				model->num++;
 			}
+		}*/
+		double deltax = positions[i+1].x - x;
+
+		//If change in x is 0, we can use a naiive approach
+		if (deltax == 0) {
+			while (y != positions[i+1].y) {
+				y += y > positions[i+1].y ? -1 : 1;
+				plot(model, x, y);
+			}
+
+		//Use Bresenham's algorithm otherwise
+		} else {
+			double deltay = positions[i+1].y - y;
+			double error = 0;
+			double deltaerr = fabs(deltay / deltax);
+
+			for (x = positions[i].x; x != positions[i+1].x; x += x > positions[i+1].x ? -1 : 1) {
+				plot(model, x, y);
+				error += deltaerr;
+				while (error >= 0.5) {
+					plot(model, x, y);
+					y += y > positions[i+1].y ? -1 : 1;
+					error -= 1;
+				}
+			}
 		}
 	}
-}*/
+}
+
+//
 
 //Creates a single asteroid in the game model
 //
@@ -149,11 +278,11 @@ int create_asteroid(Game_Model_t* m, int radius, int x, int y,
       (m->asteroids[i-1]).radius = radius;
 
       if (radius == LARGE_ASTEROID_RADIUS) {
-    	m->asteroids[i-1].model = LARGE_ASTEROID_MODEL;
+    	create_object_model(&(m->asteroids[i-1].model), TYPE_LARGE_ASTEROID);
       } else if (radius == MEDIUM_ASTEROID_RADIUS) {
-    	m->asteroids[i-1].model = MEDIUM_ASTEROID_MODEL;
+    	create_object_model(&(m->asteroids[i-1].model), TYPE_MEDIUM_ASTEROID);
       } else {
-    	m->asteroids[i-1].model = SMALL_ASTEROID_MODEL;
+    	create_object_model(&(m->asteroids[i-1].model), TYPE_SMALL_ASTEROID);
       }
 
       return i;
@@ -243,7 +372,7 @@ static int create_missile(Game_Model_t* model) {
       m.life = MISSILE_LIFE;
 
       //Set the missile model
-      m.model = MISSILE_MODEL;
+      create_object_model(&(m.model), TYPE_MISSILE);
 
       (model->missiles[i-1]) = m;
 
@@ -631,10 +760,10 @@ void asteroids_init(Game_Model_t* model, int x, int y) {
 	model->x = x;
 	model->y = y;
 
-	model->state = STATE_MAIN_MENU;
-	model->model = PLAYING_MODEL;
+	model->state = STATE_PLAYING;
+	create_object_model(&(model->model), TYPE_PLAYING);
 
-	(model->ship).model = SHIP_MODEL;
+	create_object_model(&((model->ship).model), TYPE_SHIP);
 
 	reset_game(model);
 }

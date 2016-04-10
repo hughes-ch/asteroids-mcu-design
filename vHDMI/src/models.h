@@ -32,54 +32,6 @@
 #define TYPE_CHARACTER_8     19
 #define TYPE_CHARACTER_9     20
 
-#define LARGE_ASTEROID_POSITIONS {(Position_t){0, 0}}
-#define MEDIUM_ASTEROID_POSITIONS {(Position_t){0, 0}}
-#define SMALL_ASTEROID_POSITIONS {(Position_t){0, 0}}
-#define MISSILE_POSITIONS {(Position_t){0, 0}}
-#define SHIP_POSITIONS {(Position_t){0, 0}}
-#define MAIN_MENU_POSITIONS {(Position_t){0, 0}}
-#define END_GAME_MENU_POSITIONS {(Position_t){0, 0}}
-#define PAUSE_GAME_MENU_POSITIONS {(Position_t){0, 0}}
-#define PLAYING_POSITIONS {(Position_t){0, 0}}
-#define LABEL_LIVES_POSITIONS {(Position_t){0, 0}}
-#define LABEL_SCORE_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_0_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_1_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_2_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_3_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_4_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_5_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_6_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_7_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_8_POSITIONS {(Position_t){0, 0}}
-#define CHARACTER_9_POSITIONS {(Position_t){0, 0}}
-
-#define LARGE_ASTEROID_MODEL  (Object_Model_t){1, LARGE_ASTEROID_POSITIONS}
-#define MEDIUM_ASTEROID_MODEL (Object_Model_t){1, MEDIUM_ASTEROID_POSITIONS}
-#define SMALL_ASTEROID_MODEL  (Object_Model_t){1, SMALL_ASTEROID_POSITIONS}
-
-#define MISSILE_MODEL (Object_Model_t){1, MISSILE_POSITIONS}
-#define SHIP_MODEL    (Object_Model_t){1, SHIP_POSITIONS}
-
-#define MAIN_MENU_MODEL       (Object_Model_t){1, MAIN_MENU_POSITIONS}
-#define END_GAME_MENU_MODEL   (Object_Model_t){1, END_GAME_MENU_POSITIONS}
-#define PAUSE_GAME_MENU_MODEL (Object_Model_t){1, PAUSE_GAME_POSITIONS}
-#define PLAYING_MODEL         (Object_Model_t){1, PLAYING_POSITIONS}
-
-#define LABEL_LIVES_MODEL (Object_Model_t){1, LABEL_LIVES_POSITIONS}
-#define LABLE_SCORE_MODEL (Object_Model_t){1, LABLE_SCORE_POSITIONS}
-
-#define CHARACTER_0_MODEL (Object_Model_t){1, CHARACTER_0_POSITIONS}
-#define CHARACTER_1_MODEL (Object_Model_t){1, CHARACTER_1_POSITIONS}
-#define CHARACTER_2_MODEL (Object_Model_t){1, CHARACTER_2_POSITIONS}
-#define CHARACTER_3_MODEL (Object_Model_t){1, CHARACTER_3_POSITIONS}
-#define CHARACTER_4_MODEL (Object_Model_t){1, CHARACTER_4_POSITIONS}
-#define CHARACTER_5_MODEL (Object_Model_t){1, CHARACTER_5_POSITIONS}
-#define CHARACTER_6_MODEL (Object_Model_t){1, CHARACTER_6_POSITIONS}
-#define CHARACTER_7_MODEL (Object_Model_t){1, CHARACTER_7_POSITIONS}
-#define CHARACTER_8_MODEL (Object_Model_t){1, CHARACTER_8_POSITIONS}
-#define CHARACTER_9_MODEL (Object_Model_t){1, CHARACTER_9_POSITIONS}
-
 //Stores one x, y position
 typedef struct position_t {
   int x;
@@ -91,5 +43,83 @@ typedef struct model_t {
   int num;
   Position_t positions[MAX_MODEL_SIZE];
 } Object_Model_t;
+
+#define LARGE_ASTEROID_NUM_POSITIONS 13
+static Position_t large_asteroid_model[LARGE_ASTEROID_NUM_POSITIONS] = {(Position_t){6, -5},
+																		(Position_t){10, -7},
+																		(Position_t){7, -9},
+																		(Position_t){0, -7},
+																		(Position_t){-7, -9},
+																		(Position_t){-10, -7},
+																		(Position_t){-8, 0},
+																		(Position_t){-10, 3},
+																		(Position_t){-7, 9},
+																		(Position_t){-6, 7},
+																		(Position_t){6, 9},
+																		(Position_t){10, 3},
+																		(Position_t){6, -5}};
+
+#define MEDIUM_ASTEROID_NUM_POSITIONS 1
+static Position_t medium_asteroid_model[MEDIUM_ASTEROID_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define SMALL_ASTEROID_NUM_POSITIONS 1
+static Position_t small_asteroid_model[SMALL_ASTEROID_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define MISSILE_NUM_POSITIONS 1
+static Position_t missile_model[MISSILE_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define SHIP_NUM_POSITIONS 4
+static Position_t ship_model[SHIP_NUM_POSITIONS] = {(Position_t){-5, 5},
+												(Position_t){5, 5},
+												(Position_t){0, -5},
+												(Position_t){-5, 5}};
+
+#define MAIN_MENU_NUM_POSITIONS 1
+static Position_t main_menu_model[MAIN_MENU_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define END_GAME_MENU_NUM_POSITIONS 1
+static Position_t end_game_menu_model[END_GAME_MENU_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define PAUSE_GAME_MENU_NUM_POSITIONS 1
+static Position_t pause_game_menu_model[PAUSE_GAME_MENU_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define PLAYING_NUM_POSITIONS 1
+static Position_t playing_model[PLAYING_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define LABEL_LIVES_NUM_POSITIONS 1
+static Position_t label_lives_model[LABEL_LIVES_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define LABEL_SCORE_NUM_POSITIONS 1
+static Position_t label_score_model[LABEL_SCORE_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_0_NUM_POSITIONS 1
+static Position_t character_0_model[CHARACTER_0_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_1_NUM_POSITIONS 1
+static Position_t character_1_model[CHARACTER_1_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_2_NUM_POSITIONS 1
+static Position_t character_2_model[CHARACTER_2_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_3_NUM_POSITIONS 1
+static Position_t character_3_model[CHARACTER_3_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_4_NUM_POSITIONS 1
+static Position_t character_4_model[CHARACTER_4_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_5_NUM_POSITIONS 1
+static Position_t character_5_model[CHARACTER_5_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_6_NUM_POSITIONS 1
+static Position_t character_6_model[CHARACTER_6_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_7_NUM_POSITIONS 1
+static Position_t character_7_model[CHARACTER_7_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_8_NUM_POSITIONS 1
+static Position_t character_8_model[CHARACTER_8_NUM_POSITIONS] = {(Position_t){0, 0}};
+
+#define CHARACTER_9_NUM_POSITIONS 1
+static Position_t character_9_model[CHARACTER_9_NUM_POSITIONS] = {(Position_t){0, 0}};
 
 #endif /* MODELS_H_ */
