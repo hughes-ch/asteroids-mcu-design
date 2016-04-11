@@ -143,48 +143,64 @@ void display_frame(Game_Model_t* model) {
 		}
 	}
 
-	//Display asteroids on screen
-	for (i = 0; i < MAX_ASTEROIDS; i++) {
-		if ((model->asteroids[i]).empty) {
-			continue;
-		}
-		o_model = (model->asteroids[i]).model;
-		x_pos = (model->asteroids[i]).x_pos;
-		y_pos = (model->asteroids[i]).y_pos;
+	//Create view of game. Only display game objects when playing
+	if (model->state == STATE_PLAYING) {
+		//Display asteroids on screen
+		for (i = 0; i < MAX_ASTEROIDS; i++) {
+			if ((model->asteroids[i]).empty) {
+				continue;
+			}
+			o_model = *((model->asteroids[i]).model);
+			x_pos = (model->asteroids[i]).x_pos;
+			y_pos = (model->asteroids[i]).y_pos;
 
-		for (j = 0; j < o_model.num; j++) {
-			x = (o_model.positions[j].x) + x_pos;
-			y = (o_model.positions[j].y) + y_pos;
-			Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
-		}
-	}
-
-	//Display missiles on screen
-	for (i = 0; i < MAX_MISSILES; i++) {
-		if ((model->missiles[i]).empty) {
-			continue;
+			for (j = 0; j < o_model.num; j++) {
+				x = (o_model.positions[j].x) + x_pos;
+				y = (o_model.positions[j].y) + y_pos;
+				if (x > 0 && x < model->x && y > 0 && y < model->y) {
+					Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
+				}
+			}
 		}
 
-		o_model = (model->missiles[i]).model;
-		x_pos = (model->missiles[i]).x_pos;
-		y_pos = (model->missiles[i]).y_pos;
+		//Display missiles on screen
+		for (i = 0; i < MAX_MISSILES; i++) {
+			if ((model->missiles[i]).empty) {
+				continue;
+			}
+
+			o_model = *((model->missiles[i]).model);
+			x_pos = (model->missiles[i]).x_pos;
+			y_pos = (model->missiles[i]).y_pos;
+
+			for (j = 0; j < o_model.num; j++) {
+				x = (o_model.positions[j]).x + x_pos;
+				y = (o_model.positions[j]).y + y_pos;
+				if (x > 0 && x < model->x && y > 0 && y < model->y) {
+					Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
+				}
+			}
+		}
+
+		//Display ship on screen
+		o_model = *(model->ship.model);
+		x_pos = model->ship.x_pos;
+		y_pos = model->ship.y_pos;
 
 		for (j = 0; j < o_model.num; j++) {
 			x = (o_model.positions[j]).x + x_pos;
 			y = (o_model.positions[j]).y + y_pos;
+			if (x > 0 && x < model->x && y > 0 && y < model->y) {
+				Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
+			}
+		}
+	} else {
+		o_model = *(model->model);
+		for (j = 0; j < o_model.num; j++) {
+			x = (o_model.positions[j]).x;
+			y = (o_model.positions[j]).y;
 			Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
 		}
-	}
-
-	//Display ship on screen
-	o_model = model->ship.model;
-	x_pos = model->ship.x_pos;
-	y_pos = model->ship.y_pos;
-
-	for (j = 0; j < o_model.num; j++) {
-		x = (o_model.positions[j]).x + x_pos;
-		y = (o_model.positions[j]).y + y_pos;
-		Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
 	}
 
 	//Start VDMA with the desired starting address

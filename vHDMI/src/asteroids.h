@@ -56,7 +56,7 @@ typedef struct asteroid_t {
   int x_speed;
   int y_speed;
   int radius;
-  Object_Model_t model;
+  Object_Model_t* model;
 } Asteroid_t;
 
 //Stores the information defining a single missile
@@ -68,7 +68,7 @@ typedef struct missile_t {
   int y_speed;
   int radius;
   int life;
-  Object_Model_t model;
+  Object_Model_t* model;
 } Missile_t;
 
 //Stores the information defining the player's ship
@@ -81,7 +81,7 @@ typedef struct ship_t {
   int rotation;
   bool accelerating;
   int invincible;
-  Object_Model_t model;
+  Object_Model_t* model;
 } Ship_t;
 
 //Populated by the game task and used to modify the view
@@ -95,7 +95,7 @@ typedef struct game_model_t {
   int level;
   int x;
   int y;
-  Object_Model_t model;
+  Object_Model_t* model;
 } Game_Model_t;
 
 //Starts the asteroids task. Takes the same Controller_t instance as

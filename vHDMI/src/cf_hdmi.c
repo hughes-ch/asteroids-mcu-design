@@ -293,8 +293,9 @@ void InitHdmiVideoPcore(unsigned short horizontalActiveTime,
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_SOURCE_SEL), 0x0);
 	Xil_Out32((CFV_BASEADDR + AXI_HDMI_REG_SOURCE_SEL), 0x1);
 
+	//Configure VDMA
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_DMA_CTRL),
-			  0x00000001); // enable circular mode
+			  0x00000001);
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_START_1),
 			  FRAME_BUFFER_1); // start address
 	Xil_Out32((VDMA_BASEADDR + AXI_VDMA_REG_START_2),

@@ -1,6 +1,260 @@
-21:12:15 **** Incremental Build of configuration Debug for project vHDMI ****
+17:17:20 **** Auto Build of configuration Debug for project vHDMI ****
 make all 
-make: Nothing to be done for `all'.
+Building file: ../src/asteroids.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/asteroids.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/asteroids.d" -MT"src/asteroids.d" -o "src/asteroids.o" "../src/asteroids.c"
+In file included from ../src/asteroids.h:5:0,
+                 from ../src/asteroids.c:7:
+../src/models.h:107:19: warning: 'large_asteroid_model' defined but not used [-Wunused-variable]
+ static Position_t large_asteroid_model[LARGE_ASTEROID_NUM_POSITIONS] = {(Position_t){24, -20},
+                   ^
+../src/models.h:122:19: warning: 'medium_asteroid_model' defined but not used [-Wunused-variable]
+ static Position_t medium_asteroid_model[MEDIUM_ASTEROID_NUM_POSITIONS] = {(Position_t){-5, 0},
+                   ^
+../src/models.h:136:19: warning: 'small_asteroid_model' defined but not used [-Wunused-variable]
+ static Position_t small_asteroid_model[SMALL_ASTEROID_NUM_POSITIONS] = {(Position_t){0, 0},
+                   ^
+../src/models.h:150:19: warning: 'missile_model' defined but not used [-Wunused-variable]
+ static Position_t missile_model[MISSILE_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:153:19: warning: 'ship_model' defined but not used [-Wunused-variable]
+ static Position_t ship_model[SHIP_NUM_POSITIONS] = {(Position_t){0, -10},
+                   ^
+../src/models.h:161:19: warning: 'character_0_model' defined but not used [-Wunused-variable]
+ static Position_t character_0_model[CHARACTER_0_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:164:19: warning: 'character_1_model' defined but not used [-Wunused-variable]
+ static Position_t character_1_model[CHARACTER_1_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:167:19: warning: 'character_2_model' defined but not used [-Wunused-variable]
+ static Position_t character_2_model[CHARACTER_2_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:170:19: warning: 'character_3_model' defined but not used [-Wunused-variable]
+ static Position_t character_3_model[CHARACTER_3_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:173:19: warning: 'character_4_model' defined but not used [-Wunused-variable]
+ static Position_t character_4_model[CHARACTER_4_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:176:19: warning: 'character_5_model' defined but not used [-Wunused-variable]
+ static Position_t character_5_model[CHARACTER_5_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:179:19: warning: 'character_6_model' defined but not used [-Wunused-variable]
+ static Position_t character_6_model[CHARACTER_6_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:182:19: warning: 'character_7_model' defined but not used [-Wunused-variable]
+ static Position_t character_7_model[CHARACTER_7_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:185:19: warning: 'character_8_model' defined but not used [-Wunused-variable]
+ static Position_t character_8_model[CHARACTER_8_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:188:19: warning: 'character_9_model' defined but not used [-Wunused-variable]
+ static Position_t character_9_model[CHARACTER_9_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:191:19: warning: 'character_a_model' defined but not used [-Wunused-variable]
+ static Position_t character_a_model[CHARACTER_A_NUM_POSITIONS] = {(Position_t){0, -5},
+                   ^
+../src/models.h:201:19: warning: 'character_b_model' defined but not used [-Wunused-variable]
+ static Position_t character_b_model[CHARACTER_B_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:204:19: warning: 'character_c_model' defined but not used [-Wunused-variable]
+ static Position_t character_c_model[CHARACTER_C_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:207:19: warning: 'character_d_model' defined but not used [-Wunused-variable]
+ static Position_t character_d_model[CHARACTER_D_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:210:19: warning: 'character_e_model' defined but not used [-Wunused-variable]
+ static Position_t character_e_model[CHARACTER_E_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:213:19: warning: 'character_g_model' defined but not used [-Wunused-variable]
+ static Position_t character_g_model[CHARACTER_G_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:216:19: warning: 'character_i_model' defined but not used [-Wunused-variable]
+ static Position_t character_i_model[CHARACTER_I_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:219:19: warning: 'character_l_model' defined but not used [-Wunused-variable]
+ static Position_t character_l_model[CHARACTER_L_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:222:19: warning: 'character_m_model' defined but not used [-Wunused-variable]
+ static Position_t character_m_model[CHARACTER_M_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:225:19: warning: 'character_n_model' defined but not used [-Wunused-variable]
+ static Position_t character_n_model[CHARACTER_N_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:228:19: warning: 'character_o_model' defined but not used [-Wunused-variable]
+ static Position_t character_o_model[CHARACTER_O_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:231:19: warning: 'character_p_model' defined but not used [-Wunused-variable]
+ static Position_t character_p_model[CHARACTER_P_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:234:19: warning: 'character_q_model' defined but not used [-Wunused-variable]
+ static Position_t character_q_model[CHARACTER_Q_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:237:19: warning: 'character_r_model' defined but not used [-Wunused-variable]
+ static Position_t character_r_model[CHARACTER_R_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:240:19: warning: 'character_s_model' defined but not used [-Wunused-variable]
+ static Position_t character_s_model[CHARACTER_S_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:243:19: warning: 'character_t_model' defined but not used [-Wunused-variable]
+ static Position_t character_t_model[CHARACTER_T_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:246:19: warning: 'character_u_model' defined but not used [-Wunused-variable]
+ static Position_t character_u_model[CHARACTER_U_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:249:19: warning: 'character_y_model' defined but not used [-Wunused-variable]
+ static Position_t character_y_model[CHARACTER_Y_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:252:19: warning: 'character_z_model' defined but not used [-Wunused-variable]
+ static Position_t character_z_model[CHARACTER_Z_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/asteroids.c:38:13: warning: 'get_from_control_queue' defined but not used [-Wunused-function]
+ static void get_from_control_queue(Controller_t* controller) {
+             ^
+Finished building: ../src/asteroids.c
+ 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/main.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'APP_ChangeResolution':
+../src/main.c:104:7: warning: variable 'receivedChar' set but not used [-Wunused-but-set-variable]
+  char receivedChar    = 0;
+       ^
+In file included from ../src/asteroids.h:5:0,
+                 from ../src/main.c:46:
+../src/main.c: At top level:
+../src/models.h:107:19: warning: 'large_asteroid_model' defined but not used [-Wunused-variable]
+ static Position_t large_asteroid_model[LARGE_ASTEROID_NUM_POSITIONS] = {(Position_t){24, -20},
+                   ^
+../src/models.h:122:19: warning: 'medium_asteroid_model' defined but not used [-Wunused-variable]
+ static Position_t medium_asteroid_model[MEDIUM_ASTEROID_NUM_POSITIONS] = {(Position_t){-5, 0},
+                   ^
+../src/models.h:136:19: warning: 'small_asteroid_model' defined but not used [-Wunused-variable]
+ static Position_t small_asteroid_model[SMALL_ASTEROID_NUM_POSITIONS] = {(Position_t){0, 0},
+                   ^
+../src/models.h:150:19: warning: 'missile_model' defined but not used [-Wunused-variable]
+ static Position_t missile_model[MISSILE_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:153:19: warning: 'ship_model' defined but not used [-Wunused-variable]
+ static Position_t ship_model[SHIP_NUM_POSITIONS] = {(Position_t){0, -10},
+                   ^
+../src/models.h:161:19: warning: 'character_0_model' defined but not used [-Wunused-variable]
+ static Position_t character_0_model[CHARACTER_0_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:164:19: warning: 'character_1_model' defined but not used [-Wunused-variable]
+ static Position_t character_1_model[CHARACTER_1_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:167:19: warning: 'character_2_model' defined but not used [-Wunused-variable]
+ static Position_t character_2_model[CHARACTER_2_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:170:19: warning: 'character_3_model' defined but not used [-Wunused-variable]
+ static Position_t character_3_model[CHARACTER_3_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:173:19: warning: 'character_4_model' defined but not used [-Wunused-variable]
+ static Position_t character_4_model[CHARACTER_4_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:176:19: warning: 'character_5_model' defined but not used [-Wunused-variable]
+ static Position_t character_5_model[CHARACTER_5_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:179:19: warning: 'character_6_model' defined but not used [-Wunused-variable]
+ static Position_t character_6_model[CHARACTER_6_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:182:19: warning: 'character_7_model' defined but not used [-Wunused-variable]
+ static Position_t character_7_model[CHARACTER_7_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:185:19: warning: 'character_8_model' defined but not used [-Wunused-variable]
+ static Position_t character_8_model[CHARACTER_8_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:188:19: warning: 'character_9_model' defined but not used [-Wunused-variable]
+ static Position_t character_9_model[CHARACTER_9_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:191:19: warning: 'character_a_model' defined but not used [-Wunused-variable]
+ static Position_t character_a_model[CHARACTER_A_NUM_POSITIONS] = {(Position_t){0, -5},
+                   ^
+../src/models.h:201:19: warning: 'character_b_model' defined but not used [-Wunused-variable]
+ static Position_t character_b_model[CHARACTER_B_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:204:19: warning: 'character_c_model' defined but not used [-Wunused-variable]
+ static Position_t character_c_model[CHARACTER_C_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:207:19: warning: 'character_d_model' defined but not used [-Wunused-variable]
+ static Position_t character_d_model[CHARACTER_D_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:210:19: warning: 'character_e_model' defined but not used [-Wunused-variable]
+ static Position_t character_e_model[CHARACTER_E_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:213:19: warning: 'character_g_model' defined but not used [-Wunused-variable]
+ static Position_t character_g_model[CHARACTER_G_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:216:19: warning: 'character_i_model' defined but not used [-Wunused-variable]
+ static Position_t character_i_model[CHARACTER_I_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:219:19: warning: 'character_l_model' defined but not used [-Wunused-variable]
+ static Position_t character_l_model[CHARACTER_L_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:222:19: warning: 'character_m_model' defined but not used [-Wunused-variable]
+ static Position_t character_m_model[CHARACTER_M_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:225:19: warning: 'character_n_model' defined but not used [-Wunused-variable]
+ static Position_t character_n_model[CHARACTER_N_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:228:19: warning: 'character_o_model' defined but not used [-Wunused-variable]
+ static Position_t character_o_model[CHARACTER_O_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:231:19: warning: 'character_p_model' defined but not used [-Wunused-variable]
+ static Position_t character_p_model[CHARACTER_P_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:234:19: warning: 'character_q_model' defined but not used [-Wunused-variable]
+ static Position_t character_q_model[CHARACTER_Q_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:237:19: warning: 'character_r_model' defined but not used [-Wunused-variable]
+ static Position_t character_r_model[CHARACTER_R_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:240:19: warning: 'character_s_model' defined but not used [-Wunused-variable]
+ static Position_t character_s_model[CHARACTER_S_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:243:19: warning: 'character_t_model' defined but not used [-Wunused-variable]
+ static Position_t character_t_model[CHARACTER_T_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:246:19: warning: 'character_u_model' defined but not used [-Wunused-variable]
+ static Position_t character_u_model[CHARACTER_U_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:249:19: warning: 'character_y_model' defined but not used [-Wunused-variable]
+ static Position_t character_y_model[CHARACTER_Y_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+../src/models.h:252:19: warning: 'character_z_model' defined but not used [-Wunused-variable]
+ static Position_t character_z_model[CHARACTER_Z_NUM_POSITIONS] = {(Position_t){0, 0}};
+                   ^
+Finished building: ../src/main.c
+ 
+Building file: ../src/models.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"C:\Users\Chris\hdmi_workspace\vHDMI\inc" -c -fmessage-length=0 -MT"src/models.o" -I../../standalone_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/models.d" -MT"src/models.d" -o "src/models.o" "../src/models.c"
+../src/models.c: In function 'create_object_model':
+../src/models.c:239:4: warning: implicit declaration of function 'fabs' [-Wimplicit-function-declaration]
+    double deltaerr = fabs(deltay / deltax);
+    ^
+../src/models.c:239:22: warning: incompatible implicit declaration of built-in function 'fabs'
+    double deltaerr = fabs(deltay / deltax);
+                      ^
+../src/models.c:224:12: warning: unused variable 'length' [-Wunused-variable]
+  int i, j, length;
+            ^
+../src/models.c:224:9: warning: unused variable 'j' [-Wunused-variable]
+  int i, j, length;
+         ^
+Finished building: ../src/models.c
+ 
+Building target: vHDMI.elf
+Invoking: ARM gcc linker
+arm-xilinx-eabi-gcc -L"C:\Users\Chris\hdmi_workspace\vHDMI\lib" -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp/ps7_cortexa9_0/lib -o "vHDMI.elf"  ./src/asteroids.o ./src/cf_hdmi.o ./src/main.o ./src/models.o ./src/transmitter.o   -lHDMI_ZedBoardLib -lm -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: vHDMI.elf
+ 
+Invoking: ARM Print Size
+arm-xilinx-eabi-size vHDMI.elf  |tee "vHDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 193132	 706932	 176428	1076492	 106d0c	vHDMI.elf
+Finished building: vHDMI.elf.size
+ 
 
-21:12:15 Build Finished (took 274ms)
+17:17:23 Build Finished (took 3s.654ms)
 

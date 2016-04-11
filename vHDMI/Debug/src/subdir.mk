@@ -10,18 +10,21 @@ C_SRCS += \
 ../src/asteroids.c \
 ../src/cf_hdmi.c \
 ../src/main.c \
+../src/models.c \
 ../src/transmitter.c 
 
 OBJS += \
 ./src/asteroids.o \
 ./src/cf_hdmi.o \
 ./src/main.o \
+./src/models.o \
 ./src/transmitter.o 
 
 C_DEPS += \
 ./src/asteroids.d \
 ./src/cf_hdmi.d \
 ./src/main.d \
+./src/models.d \
 ./src/transmitter.d 
 
 
