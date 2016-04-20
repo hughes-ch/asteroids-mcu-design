@@ -8,7 +8,7 @@
 #ifndef MODELS_H_
 #define MODELS_H_
 
-#define MAX_MODEL_SIZE 500
+#define MAX_MODEL_SIZE 1500
 #define NUM_MODELS 38
 
 #define TYPE_LARGE_ASTEROID  (NUM_MODELS - 1)
@@ -73,35 +73,35 @@ typedef struct model_t {
  *  [ ] END_GAME_MENU
  *  [ ] PAUSE_GAME_MENU
  *  [ ] PLAYING
- *  [ ] CHARACTER_0
- *  [ ] CHARACTER_1
- *  [ ] CHARACTER_2
- *  [ ] CHARACTER_3
- *  [ ] CHARACTER_4
- *  [ ] CHARACTER_5
- *  [ ] CHARACTER_6
- *  [ ] CHARACTER_7
- *  [ ] CHARACTER_8
- *  [ ] CHARACTER_9
+ *  [x] CHARACTER_0
+ *  [x] CHARACTER_1
+ *  [x] CHARACTER_2
+ *  [x] CHARACTER_3
+ *  [x] CHARACTER_4
+ *  [x] CHARACTER_5
+ *  [x] CHARACTER_6
+ *  [x] CHARACTER_7
+ *  [x] CHARACTER_8
+ *  [x] CHARACTER_9
  *  [x] CHARACTER_A
- *  [ ] CHARACTER_B
- *  [ ] CHARACTER_C
- *  [ ] CHARACTER_D
- *  [ ] CHARACTER_E
- *  [ ] CHARACTER_G
- *  [ ] CHARACTER_I
- *  [ ] CHARACTER_L
- *  [ ] CHARACTER_M
- *  [ ] CHARACTER_N
- *  [ ] CHARACTER_O
- *  [ ] CHARACTER_P
- *  [ ] CHARACTER_Q
- *  [ ] CHARACTER_R
- *  [ ] CHARACTER_S
- *  [ ] CHARACTER_T
- *  [ ] CHARACTER_U
- *  [ ] CHARACTER_Y
- *  [ ] CHARACTER_Z
+ *  [x] CHARACTER_B
+ *  [x] CHARACTER_C
+ *  [x] CHARACTER_D
+ *  [x] CHARACTER_E
+ *  [x] CHARACTER_G
+ *  [x] CHARACTER_I
+ *  [x] CHARACTER_L
+ *  [x] CHARACTER_M
+ *  [x] CHARACTER_N
+ *  [x] CHARACTER_O
+ *  [x] CHARACTER_P
+ *  [x] CHARACTER_Q
+ *  [x] CHARACTER_R
+ *  [x] CHARACTER_S
+ *  [x] CHARACTER_T
+ *  [x] CHARACTER_U
+ *  [x] CHARACTER_Y
+ *  [x] CHARACTER_Z
  */
 #define LARGE_ASTEROID_NUM_POSITIONS 13
 static Position_t large_asteroid_model[LARGE_ASTEROID_NUM_POSITIONS] = {(Position_t){24, -20},
@@ -157,35 +157,105 @@ static Position_t ship_model[SHIP_NUM_POSITIONS] = {(Position_t){0, -10},
 													(Position_t){8, 10},
 													(Position_t){0, -10}};
 
-#define CHARACTER_0_NUM_POSITIONS 1
-static Position_t character_0_model[CHARACTER_0_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_0_NUM_POSITIONS 9
+static Position_t character_0_model[CHARACTER_0_NUM_POSITIONS] = {(Position_t){-2, -5},
+																  (Position_t){-4, -3},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){4, -3},
+																  (Position_t){2, -5},
+																  (Position_t){-2, -5}};
 
-#define CHARACTER_1_NUM_POSITIONS 1
-static Position_t character_1_model[CHARACTER_1_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_1_NUM_POSITIONS 8
+static Position_t character_1_model[CHARACTER_1_NUM_POSITIONS] = {(Position_t){0, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){0, 5},
+																  (Position_t){0, -5},
+																  (Position_t){-4, -4},
+																  (Position_t){0, -5},
+																  (Position_t){0, 5}};
 
-#define CHARACTER_2_NUM_POSITIONS 1
-static Position_t character_2_model[CHARACTER_2_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_2_NUM_POSITIONS 11
+static Position_t character_2_model[CHARACTER_2_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){4, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){-4, 0},
+																  (Position_t){4, 0},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5}};
 
-#define CHARACTER_3_NUM_POSITIONS 1
-static Position_t character_3_model[CHARACTER_3_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_3_NUM_POSITIONS 10
+static Position_t character_3_model[CHARACTER_3_NUM_POSITIONS] = {(Position_t){4, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){4, 0},
+																  (Position_t){4, 5},
+															  	  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){4, 0}};
 
-#define CHARACTER_4_NUM_POSITIONS 1
-static Position_t character_4_model[CHARACTER_4_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_4_NUM_POSITIONS 6
+static Position_t character_4_model[CHARACTER_4_NUM_POSITIONS] = {(Position_t){0, 5},
+																  (Position_t){0, -5},
+																  (Position_t){-5, 0},
+																  (Position_t){3, 0},
+																  (Position_t){0, 0},
+																  (Position_t){0, 5}};
 
-#define CHARACTER_5_NUM_POSITIONS 1
-static Position_t character_5_model[CHARACTER_5_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_5_NUM_POSITIONS 11
+static Position_t character_5_model[CHARACTER_5_NUM_POSITIONS] = {(Position_t){4, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 0},
+																  (Position_t){4, 0},
+																  (Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){4, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5}};
 
-#define CHARACTER_6_NUM_POSITIONS 1
-static Position_t character_6_model[CHARACTER_6_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_6_NUM_POSITIONS 6
+static Position_t character_6_model[CHARACTER_6_NUM_POSITIONS] = {(Position_t){-4, 0},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){4, 0},
+																  (Position_t){-4, 0}};
 
-#define CHARACTER_7_NUM_POSITIONS 1
-static Position_t character_7_model[CHARACTER_7_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_7_NUM_POSITIONS 5
+static Position_t character_7_model[CHARACTER_7_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5}};
 
-#define CHARACTER_8_NUM_POSITIONS 1
-static Position_t character_8_model[CHARACTER_8_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_8_NUM_POSITIONS 8
+static Position_t character_8_model[CHARACTER_8_NUM_POSITIONS] = {(Position_t){4, -5},
+																  (Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){-4, 0},
+																  (Position_t){4, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5}};
 
-#define CHARACTER_9_NUM_POSITIONS 1
-static Position_t character_9_model[CHARACTER_9_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_9_NUM_POSITIONS 6
+static Position_t character_9_model[CHARACTER_9_NUM_POSITIONS] = {(Position_t){4, 0},
+																  (Position_t){4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 0},
+																  (Position_t){4, 0}};
 
 #define CHARACTER_A_NUM_POSITIONS 8
 static Position_t character_a_model[CHARACTER_A_NUM_POSITIONS] = {(Position_t){0, -5},
@@ -197,59 +267,295 @@ static Position_t character_a_model[CHARACTER_A_NUM_POSITIONS] = {(Position_t){0
 																  (Position_t){4, -1},
 																  (Position_t){0, -5}};
 
-#define CHARACTER_B_NUM_POSITIONS 1
-static Position_t character_b_model[CHARACTER_B_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_B_NUM_POSITIONS 12
+static Position_t character_b_model[CHARACTER_B_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){-4, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 4},
+																  (Position_t){4, 0},
+																  (Position_t){2, -1},
+																  (Position_t){-4, -1},
+																  (Position_t){2, -1},
+																  (Position_t){4, -2},
+																  (Position_t){4, -4},
+																  (Position_t){2, -5},
+																  (Position_t){-4, -5}};
 
-#define CHARACTER_C_NUM_POSITIONS 1
-static Position_t character_c_model[CHARACTER_C_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_C_NUM_POSITIONS 15
+static Position_t character_c_model[CHARACTER_C_NUM_POSITIONS] = {(Position_t){4, 3},
+																  (Position_t){2, 5},
+																  (Position_t){-2, 5},
+																  (Position_t){-4, 3},
+																  (Position_t){-4, -3},
+																  (Position_t){-2, -5},
+																  (Position_t){2, -5},
+																  (Position_t){4, -3},
+																  (Position_t){2, -5},
+																  (Position_t){-2, -5},
+																  (Position_t){-4, -3},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3}};
 
-#define CHARACTER_D_NUM_POSITIONS 1
-static Position_t character_d_model[CHARACTER_D_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_D_NUM_POSITIONS 7
+static Position_t character_d_model[CHARACTER_D_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){4, -3},
+																  (Position_t){2, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_E_NUM_POSITIONS 1
-static Position_t character_e_model[CHARACTER_E_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_E_NUM_POSITIONS 10
+static Position_t character_e_model[CHARACTER_E_NUM_POSITIONS] = {(Position_t){-4, 0},
+																  (Position_t){2, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 0}};
 
-#define CHARACTER_G_NUM_POSITIONS 1
-static Position_t character_g_model[CHARACTER_G_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_F_NUM_POSITIONS 8
+static Position_t character_f_model[CHARACTER_F_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 0},
+																  (Position_t){1, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_I_NUM_POSITIONS 1
-static Position_t character_i_model[CHARACTER_I_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_G_NUM_POSITIONS 19
+static Position_t character_g_model[CHARACTER_G_NUM_POSITIONS] = {(Position_t){4, -3},
+																  (Position_t){2, -5},
+																  (Position_t){-2, -5},
+																  (Position_t){-4, -3},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){4, 1},
+																  (Position_t){2, 1},
+																  (Position_t){4, 1},
+																  (Position_t){4, 3},
+																  (Position_t){2, 5},
+																  (Position_t){-2, 5},
+																  (Position_t){-4, 3},
+																  (Position_t){-4, -3},
+																  (Position_t){-2, -5},
+																  (Position_t){2, -5},
+																  (Position_t){4, -3}};
 
-#define CHARACTER_L_NUM_POSITIONS 1
-static Position_t character_l_model[CHARACTER_L_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_H_NUM_POSITIONS 9
+static Position_t character_h_model[CHARACTER_H_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 0},
+																  (Position_t){4, 0},
+																  (Position_t){4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){4, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_M_NUM_POSITIONS 1
-static Position_t character_m_model[CHARACTER_M_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_I_NUM_POSITIONS 9
+static Position_t character_i_model[CHARACTER_I_NUM_POSITIONS] = {(Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){0, 5},
+																  (Position_t){0, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){0, -5},
+																  (Position_t){0, 5},
+																  (Position_t){4, 5}};
 
-#define CHARACTER_N_NUM_POSITIONS 1
-static Position_t character_n_model[CHARACTER_N_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_J_NUM_POSITIONS 9
+static Position_t character_j_model[CHARACTER_J_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){2, 5},
+																  (Position_t){-2, 5},
+																  (Position_t){-4, 3},
+																  (Position_t){-4, -5}};
 
-#define CHARACTER_O_NUM_POSITIONS 1
-static Position_t character_o_model[CHARACTER_O_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_K_NUM_POSITIONS 10
+static Position_t character_k_model[CHARACTER_K_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, -1},
+																  (Position_t){-3, -1},
+																  (Position_t){3, -5},
+																  (Position_t){-3, -1},
+																  (Position_t){4, 5},
+																  (Position_t){-3, -1},
+																  (Position_t){-4, -1},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_P_NUM_POSITIONS 1
-static Position_t character_p_model[CHARACTER_P_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_L_NUM_POSITIONS 5
+static Position_t character_l_model[CHARACTER_L_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){-4, -5}};
 
-#define CHARACTER_Q_NUM_POSITIONS 1
-static Position_t character_q_model[CHARACTER_Q_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_M_NUM_POSITIONS 9
+static Position_t character_m_model[CHARACTER_M_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){0, 0},
+																  (Position_t){4, -5},
+																  (Position_t){4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){0, 0},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_R_NUM_POSITIONS 1
-static Position_t character_r_model[CHARACTER_R_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_N_NUM_POSITIONS 7
+static Position_t character_n_model[CHARACTER_N_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_S_NUM_POSITIONS 1
-static Position_t character_s_model[CHARACTER_S_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_O_NUM_POSITIONS 9
+static Position_t character_o_model[CHARACTER_O_NUM_POSITIONS] = {(Position_t){-2, -5},
+																  (Position_t){-4, -3},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){4, -3},
+																  (Position_t){2, -5},
+																  (Position_t){-2, -5}};
 
-#define CHARACTER_T_NUM_POSITIONS 1
-static Position_t character_t_model[CHARACTER_T_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_P_NUM_POSITIONS 8
+static Position_t character_p_model[CHARACTER_P_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){2, -5},
+																  (Position_t){4, -3},
+																  (Position_t){4, -2},
+																  (Position_t){2, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_U_NUM_POSITIONS 1
-static Position_t character_u_model[CHARACTER_U_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_Q_NUM_POSITIONS 13
+static Position_t character_q_model[CHARACTER_Q_NUM_POSITIONS] = {(Position_t){3, 4},
+																  (Position_t){2, 5},
+																  (Position_t){-2, 5},
+																  (Position_t){-4, 3},
+																  (Position_t){-4, -3},
+																  (Position_t){-2, -5},
+																  (Position_t){2, -5},
+																  (Position_t){4, -3},
+																  (Position_t){4, 3},
+																  (Position_t){3, 4},
+																  (Position_t){2, 3},
+																  (Position_t){4, 5},
+																  (Position_t){3, 4}};
 
-#define CHARACTER_Y_NUM_POSITIONS 1
-static Position_t character_y_model[CHARACTER_Y_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_R_NUM_POSITIONS 10
+static Position_t character_r_model[CHARACTER_R_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){-4, -5},
+																  (Position_t){2, -5},
+																  (Position_t){4, -3},
+																  (Position_t){4, -2},
+																  (Position_t){2, 0},
+																  (Position_t){4, 5},
+																  (Position_t){2, 0},
+																  (Position_t){-4, 0},
+																  (Position_t){-4, 5}};
 
-#define CHARACTER_Z_NUM_POSITIONS 1
-static Position_t character_z_model[CHARACTER_Z_NUM_POSITIONS] = {(Position_t){0, 0}};
+#define CHARACTER_S_NUM_POSITIONS 19
+static Position_t character_s_model[CHARACTER_S_NUM_POSITIONS] = {(Position_t){2, -5},
+																  (Position_t){-2, -5},
+																  (Position_t){-4, -3},
+																  (Position_t){-2, -1},
+																  (Position_t){2, -1},
+																  (Position_t){4, 1},
+																  (Position_t){4, 3},
+																  (Position_t){2, 5},
+																  (Position_t){-2, 5},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){4, 1},
+																  (Position_t){2, -1},
+																  (Position_t){-2, -1},
+																  (Position_t){-4, -3},
+																  (Position_t){-2, -5},
+																  (Position_t){2, -5}};
+
+#define CHARACTER_T_NUM_POSITIONS 6
+static Position_t character_t_model[CHARACTER_T_NUM_POSITIONS] = {(Position_t){0, 5},
+																  (Position_t){0, -5},
+																  (Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){0, -5},
+																  (Position_t){0, 5}};
+
+#define CHARACTER_U_NUM_POSITIONS 11
+static Position_t character_u_model[CHARACTER_U_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){-4, 3},
+																  (Position_t){-2, 5},
+																  (Position_t){2, 5},
+																  (Position_t){4, 3},
+																  (Position_t){4, -5},
+																  (Position_t){4, 3},
+																  (Position_t){2, 5},
+																  (Position_t){-2, 5},
+																  (Position_t){-4, 3},
+																  (Position_t){-4, -5}};
+
+#define CHARACTER_V_NUM_POSITIONS 5
+static Position_t character_v_model[CHARACTER_V_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){0, 5},
+																  (Position_t){4, -5},
+																  (Position_t){0, 5},
+																  (Position_t){-4, -5}};
+
+#define CHARACTER_W_NUM_POSITIONS 9
+static Position_t character_w_model[CHARACTER_W_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){-4, 5},
+																  (Position_t){0, 0},
+																  (Position_t){4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){4, 5},
+																  (Position_t){0, 0},
+																  (Position_t){-4, 5},
+																  (Position_t){-4, -5}};
+
+#define CHARACTER_X_NUM_POSITIONS 7
+static Position_t character_x_model[CHARACTER_X_NUM_POSITIONS] = {(Position_t){-4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){0, 0},
+																  (Position_t){-4, -5},
+																  (Position_t){4, 5},
+																  (Position_t){0, 0},
+																  (Position_t){-4, 5}};
+
+#define CHARACTER_Y_NUM_POSITIONS 7
+static Position_t character_y_model[CHARACTER_Y_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){0, 0},
+																  (Position_t){4, -5},
+																  (Position_t){0, 0},
+																  (Position_t){0, 5},
+																  (Position_t){0, 0},
+																  (Position_t){-4, -5}};
+
+#define CHARACTER_Z_NUM_POSITIONS 7
+static Position_t character_z_model[CHARACTER_Z_NUM_POSITIONS] = {(Position_t){-4, -5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, 5},
+																  (Position_t){-4, 5},
+																  (Position_t){4, -5},
+																  (Position_t){-4, -5}};
 
 //Function Defs
 void init_models(void);
