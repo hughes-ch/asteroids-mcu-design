@@ -33,8 +33,8 @@
 #define SHIP_START_ROTATION 0
 #define SHIP_RADIUS 3
 #define SHIP_ACCEL_CONSTANT 10
-#define SHIP_ROLL_CONSTANT 10
-#define SHIP_DECCEL_CONSTANT 1 //Larger number = less decceleration (not zero)
+#define SHIP_ROLL_CONSTANT 3
+#define SHIP_DECCEL_CONSTANT 1.0625
 #define SHIP_INVINCIBILITY_LENGTH 5
 
 #define NUM_LIVES 3

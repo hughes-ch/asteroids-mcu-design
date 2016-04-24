@@ -14,11 +14,8 @@ Todo:
 
 Bug List:
  - Change asteroids to use floats so that they can travel diagonally
- - Ship travels too fast
- - Ship travels in the wrong direction
  - Ship shoots in the wrong direction
  - When TV first turns on, it tries to use 1080i instead of 800x600
- - Ship acceleration needs work
  - Asteroid ship collisions are not working unless ship is completely surrounded by asteroid
  - Asteroids do not fully exit screen before appearing on other side
  - Missile collisions
