@@ -570,8 +570,8 @@ void asteroids_init(Game_Model_t* model, int x, int y) {
 
 	init_models();
 
-	model->state = STATE_MAIN_MENU;
-	set_object_model(&(model->model), TYPE_MAIN_MENU);
+	model->state = STATE_PLAYING;
+	set_object_model(&(model->model), TYPE_PLAYING);
 
 	set_object_model(&((model->ship).model), TYPE_SHIP);
 

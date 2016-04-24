@@ -127,6 +127,21 @@ u32 get_frame_addr() {
 	return addr;
 }
 
+void display_sub_objects(Object_Model_t* model, int screensize, u32 start_addr) {
+	int i, x, y;
+	Object_Model_t* sub_model;
+	for (i = 0; i < model->num_sub_objects; i++) {
+		sub_model = model->sub_objects[i];
+		display_sub_objects(sub_model, screensize, start_addr);
+	}
+
+	for (i = 0; i < model->num_positions; i++) {
+		x = (model->positions[i]).x;
+		y = (model->positions[i]).y;
+		Xil_Out32((start_addr + (x*4) + (y*4*screensize)), 0xffffff);
+	}
+}
+
 /*******************************************************************************
  * @brief Displays one HDMI frame
 ********************************************************************************/
@@ -154,7 +169,7 @@ void display_frame(Game_Model_t* model) {
 			x_pos = (model->asteroids[i]).x_pos;
 			y_pos = (model->asteroids[i]).y_pos;
 
-			for (j = 0; j < o_model.num; j++) {
+			for (j = 0; j < o_model.num_positions; j++) {
 				x = (o_model.positions[j].x) + x_pos;
 				y = (o_model.positions[j].y) + y_pos;
 				if (x > 0 && x < model->x && y > 0 && y < model->y) {
@@ -173,7 +188,7 @@ void display_frame(Game_Model_t* model) {
 			x_pos = (model->missiles[i]).x_pos;
 			y_pos = (model->missiles[i]).y_pos;
 
-			for (j = 0; j < o_model.num; j++) {
+			for (j = 0; j < o_model.num_positions; j++) {
 				x = (o_model.positions[j]).x + x_pos;
 				y = (o_model.positions[j]).y + y_pos;
 				if (x > 0 && x < model->x && y > 0 && y < model->y) {
@@ -187,21 +202,21 @@ void display_frame(Game_Model_t* model) {
 		x_pos = model->ship.x_pos;
 		y_pos = model->ship.y_pos;
 
-		for (j = 0; j < o_model.num; j++) {
+		for (j = 0; j < o_model.num_positions; j++) {
 			x = (o_model.positions[j]).x + x_pos;
 			y = (o_model.positions[j]).y + y_pos;
 			if (x > 0 && x < model->x && y > 0 && y < model->y) {
 				Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
 			}
 		}
-	} else {
-		o_model = *(model->model);
-		for (j = 0; j < o_model.num; j++) {
-			x = (o_model.positions[j]).x;
-			y = (o_model.positions[j]).y;
-			Xil_Out32((addr + (x*4) + (y*4*model->x)), 0xffffff);
-		}
 	}
+
+	//Tell the view what the score is
+	update_score_model(model->score);
+
+	//Display HUD (or menus)
+	o_model = *(model->model);
+	display_sub_objects(&o_model, model->x, addr);
 
 	//Start VDMA with the desired starting address
 	if (addr == FRAME_BUFFER_1) {
@@ -237,14 +252,32 @@ void hdmi_init(int* resx, int* resy) {
 	ADIAPI_TransmitterSetPowerMode(REP_POWER_UP);
 }
 
+#define GPIO_DATA (*((volatile unsigned int*)(0xE000A000 + 0x00000048)))
+#define BUTTONL (1 << 3)
+#define BUTTONC (1 << 0)
+#define BUTTOND (1 << 1)
+#define BUTTONR (1 << 2)
+#define BUTTONU (1 << 4)
+
+void gpio_init() {
+	GPIO_DATA = 0;
+}
+
 /********************************************************************************
  * Stores the value of the controller from the controller task
  ********************************************************************************/
 void get_controller_value(Controller_t* controller) {
-	controller->aux_button = false;
-	controller->trigger_button = false;
-	controller->pitch = 0;
-	controller->roll = 0;
+	printf("GPIO_DATA: %d\n", GPIO_DATA);
+	controller->aux_button = GPIO_DATA & BUTTOND;
+	controller->trigger_button = GPIO_DATA & BUTTONC;
+	controller->pitch = GPIO_DATA & BUTTONU ? 45 : 0;
+	if (GPIO_DATA & BUTTONR) {
+		controller->roll = 45;
+	} else if (GPIO_DATA & BUTTONL) {
+		controller->roll = -45;
+	} else {
+		controller->roll = 0;
+	}
 }
 
 /***************************************************************************//**
@@ -264,6 +297,7 @@ int main()
 
 	hdmi_init(&resx, &resy);
 	asteroids_init(&model, resx, resy);
+	gpio_init();
 
 	StartCount = HAL_GetCurrentMsCount();
 

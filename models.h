@@ -8,8 +8,28 @@
 #ifndef MODELS_H_
 #define MODELS_H_
 
-#define MAX_MODEL_SIZE 1500
-#define NUM_MODELS 38
+#define MAIN_MENU_NUM_CHARACTERS 45
+#define MAIN_MENU_TITLE_SCALE 6
+#define MAIN_MENU_LABEL_SCALE 2
+
+#define PAUSE_MENU_NUM_CHARACTERS 55
+#define PAUSE_MENU_TITLE_SCALE 5
+#define PAUSE_MENU_LABEL_SCALE 2
+
+#define END_GAME_MENU_NUM_CHARACTERS 39
+#define END_GAME_MENU_TITLE_SCALE 5
+#define END_GAME_MENU_SCORE_SCALE 3
+#define END_GAME_MENU_LABEL_SCALE 2
+
+#define SCORE_MAX_CHARACTERS 5
+#define LARGE_SCORE_SCALE END_GAME_MENU_SCORE_SCALE
+#define LARGE_SCORE_SPACING 40
+#define SMALL_SCORE_SCALE 2
+#define SMALL_SCORE_SPACING 30
+
+#define MAX_MODEL_SIZE 500
+#define MAX_NUM_SUB_OBJECTS 100
+#define NUM_MODELS 39
 
 #define TYPE_LARGE_ASTEROID  (NUM_MODELS - 1)
 #define TYPE_MEDIUM_ASTEROID (NUM_MODELS - 2)
@@ -20,16 +40,16 @@
 #define TYPE_END_GAME_MENU   (NUM_MODELS - 7)
 #define TYPE_PAUSE_GAME_MENU (NUM_MODELS - 8)
 #define TYPE_PLAYING         (NUM_MODELS - 9)
-#define TYPE_CHARACTER_0     (NUM_MODELS - 10)
-#define TYPE_CHARACTER_1     (NUM_MODELS - 11)
-#define TYPE_CHARACTER_2     (NUM_MODELS - 12)
-#define TYPE_CHARACTER_3     (NUM_MODELS - 13)
-#define TYPE_CHARACTER_4     (NUM_MODELS - 14)
-#define TYPE_CHARACTER_5     (NUM_MODELS - 15)
-#define TYPE_CHARACTER_6     (NUM_MODELS - 16)
-#define TYPE_CHARACTER_7     (NUM_MODELS - 17)
-#define TYPE_CHARACTER_8     (NUM_MODELS - 18)
-#define TYPE_CHARACTER_9     (NUM_MODELS - 19)
+#define TYPE_CHARACTER_9     (NUM_MODELS - 10)
+#define TYPE_CHARACTER_8     (NUM_MODELS - 11)
+#define TYPE_CHARACTER_7     (NUM_MODELS - 12)
+#define TYPE_CHARACTER_6     (NUM_MODELS - 13)
+#define TYPE_CHARACTER_5     (NUM_MODELS - 14)
+#define TYPE_CHARACTER_4     (NUM_MODELS - 15)
+#define TYPE_CHARACTER_3     (NUM_MODELS - 16)
+#define TYPE_CHARACTER_2     (NUM_MODELS - 17)
+#define TYPE_CHARACTER_1     (NUM_MODELS - 18)
+#define TYPE_CHARACTER_0     (NUM_MODELS - 19)
 #define TYPE_CHARACTER_A     (NUM_MODELS - 20)
 #define TYPE_CHARACTER_B     (NUM_MODELS - 21)
 #define TYPE_CHARACTER_C     (NUM_MODELS - 22)
@@ -47,8 +67,9 @@
 #define TYPE_CHARACTER_S     (NUM_MODELS - 34)
 #define TYPE_CHARACTER_T     (NUM_MODELS - 35)
 #define TYPE_CHARACTER_U     (NUM_MODELS - 36)
-#define TYPE_CHARACTER_Y     (NUM_MODELS - 37)
-#define TYPE_CHARACTER_Z     (NUM_MODELS - 38)
+#define TYPE_CHARACTER_V     (NUM_MODELS - 37)
+#define TYPE_CHARACTER_Y     (NUM_MODELS - 38)
+#define TYPE_CHARACTER_Z     (NUM_MODELS - 39)
 
 //Stores one x, y position
 typedef struct position_t {
@@ -58,8 +79,10 @@ typedef struct position_t {
 
 //Stores information about the object's display on screen
 typedef struct model_t {
-  int num;
+  int num_positions;
+  int num_sub_objects;
   Position_t positions[MAX_MODEL_SIZE];
+  struct model_t* sub_objects[MAX_NUM_SUB_OBJECTS];
 } Object_Model_t;
 
 /**
@@ -458,17 +481,16 @@ static Position_t character_q_model[CHARACTER_Q_NUM_POSITIONS] = {(Position_t){3
 																  (Position_t){4, 5},
 																  (Position_t){3, 4}};
 
-#define CHARACTER_R_NUM_POSITIONS 10
+#define CHARACTER_R_NUM_POSITIONS 9
 static Position_t character_r_model[CHARACTER_R_NUM_POSITIONS] = {(Position_t){-4, 5},
 																  (Position_t){-4, -5},
 																  (Position_t){2, -5},
 																  (Position_t){4, -3},
 																  (Position_t){4, -2},
 																  (Position_t){2, 0},
-																  (Position_t){4, 5},
-																  (Position_t){2, 0},
 																  (Position_t){-4, 0},
-																  (Position_t){-4, 5}};
+																  (Position_t){2, 0},
+																  (Position_t){4, 5}};
 
 #define CHARACTER_S_NUM_POSITIONS 19
 static Position_t character_s_model[CHARACTER_S_NUM_POSITIONS] = {(Position_t){2, -5},
@@ -512,12 +534,10 @@ static Position_t character_u_model[CHARACTER_U_NUM_POSITIONS] = {(Position_t){-
 																  (Position_t){-4, 3},
 																  (Position_t){-4, -5}};
 
-#define CHARACTER_V_NUM_POSITIONS 5
+#define CHARACTER_V_NUM_POSITIONS 3
 static Position_t character_v_model[CHARACTER_V_NUM_POSITIONS] = {(Position_t){-4, -5},
 																  (Position_t){0, 5},
-																  (Position_t){4, -5},
-																  (Position_t){0, 5},
-																  (Position_t){-4, -5}};
+																  (Position_t){4, -5}};
 
 #define CHARACTER_W_NUM_POSITIONS 9
 static Position_t character_w_model[CHARACTER_W_NUM_POSITIONS] = {(Position_t){-4, -5},
@@ -560,5 +580,6 @@ static Position_t character_z_model[CHARACTER_Z_NUM_POSITIONS] = {(Position_t){-
 //Function Defs
 void init_models(void);
 void set_object_model(Object_Model_t** model, int type);
+void update_score_model(int score);
 
 #endif /* MODELS_H_ */

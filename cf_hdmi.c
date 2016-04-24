@@ -135,7 +135,6 @@ void DDRVideoWr(unsigned short horizontalActiveTime, unsigned short verticalActi
 		for(pixel = 0; pixel < horizontalActiveTime; pixel++) {
 			Xil_Out32((FRAME_BUFFER_1 + (pixel*4)+(line * 4 * horizontalActiveTime)), (0x0));
 			Xil_Out32((FRAME_BUFFER_2 + (pixel*4)+(line * 4 * horizontalActiveTime)), (0x0));
-			Xil_Out32((FRAME_BUFFER_3 + (pixel*4)+(line * 4 * horizontalActiveTime)), (0x0));
 		}
 	}
 
