@@ -202,6 +202,8 @@ void display_frame(Game_Model_t* model) {
 		x_pos = model->ship.x_pos;
 		y_pos = model->ship.y_pos;
 
+		update_ship_model((model->ship).rotation);
+
 		for (j = 0; j < o_model.num_positions; j++) {
 			x = (o_model.positions[j]).x + x_pos;
 			y = (o_model.positions[j]).y + y_pos;

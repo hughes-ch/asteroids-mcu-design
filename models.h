@@ -588,5 +588,7 @@ static Position_t character_z_model[CHARACTER_Z_NUM_POSITIONS] = {(Position_t){-
 void init_models(void);
 void set_object_model(Object_Model_t** model, int type);
 void update_score_model(int score);
+void update_lives_model(int lives);
+void update_ship_model(int rotation);
 
 #endif /* MODELS_H_ */

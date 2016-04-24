@@ -1,3 +1,4 @@
+#include <math.h>
 #include "models.h"
 
 static Object_Model_t completed_models[NUM_MODELS];
@@ -717,5 +718,42 @@ void update_lives_model(int lives) {
 	model_lives.num_sub_objects = 0;
 	for (i = 0; i < num_digits; i++) {
 		add_sub_object(&model_lives, &digit_models[i], &((Position_t){(i * LIVES_SPACING) + 140, 50}));
+	}
+}
+
+void matrix_mult(double m1[2][2], double m2[2][1], double rotated[2][1]) {
+	rotated[0][0] = (m1[0][0] * m2[0][0]) + (m1[0][1] * m2[1][0]);
+	rotated[1][0] = (m1[1][0] * m2[0][0]) + (m1[1][1] * m2[1][0]);
+}
+
+void rotate(Position_t* vect, Position_t* new_vect, int rotation) {
+	double theta = (double)rotation * M_PI / 180.0;
+	double rot_matrix[2][2] = {{cos(theta), -sin(theta)}, {sin(theta), cos(theta)}};
+	double rotatee[2][1] = {vect->x, vect->y};
+	double rotated[2][1];
+	matrix_mult(rot_matrix, rotatee, rotated);
+
+	new_vect->x = rotated[0][0];
+	new_vect->y = rotated[0][1];
+}
+
+void update_ship_model(int rotation) {
+    //Rotate position array
+    Position_t rotated_model[SHIP_NUM_POSITIONS];
+	int i;
+	for (i = 0; i < SHIP_NUM_POSITIONS; i++) {
+		rotate(&ship_model[i], &rotated_model[i], rotation);
+	}
+
+	//Create object model using rotated position array
+	Position_t pos1, pos2;
+	completed_models[TYPE_SHIP].num_positions = 0;
+	completed_models[TYPE_SHIP].num_sub_objects = 0;
+	for (i = 0; i < SHIP_NUM_POSITIONS - 1; i++) {
+		pos1.x = rotated_model[i].x;
+		pos1.y = rotated_model[i].y;
+		pos2.x = rotated_model[i+1].x;
+		pos2.y = rotated_model[i+1].y;
+		connect_points(&completed_models[TYPE_SHIP], &pos1, &pos2);
 	}
 }
