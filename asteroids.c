@@ -167,12 +167,12 @@ static int create_missile(Game_Model_t* model) {
       
       //Calculate x and y positions
       Ship_t s = model->ship;
-      m.x_pos=s.x_pos+(int)(cos((double)s.rotation*M_PI/180.0)*s.radius);
-      m.y_pos=s.y_pos+(int)(sin((double)s.rotation*M_PI/180.0)*s.radius);
+      m.x_pos = s.x_pos + sin((double)s.rotation * M_PI/180.0) * s.radius;
+      m.y_pos = s.y_pos + -cos((double)s.rotation * M_PI/180.0) * s.radius;
 
       //Calculate x and y speeds
-      m.x_speed = (int)(cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
-      m.y_speed = (int)(sin((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
+      m.x_speed = sin((double)s.rotation * M_PI/180.0) * MISSILE_SPEED;
+      m.y_speed = -cos((double)s.rotation * M_PI/180.0) * MISSILE_SPEED;
 
       //Fill other missile parameters
       m.radius = MISSILE_RADIUS;
