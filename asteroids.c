@@ -71,8 +71,8 @@ static void get_from_control_queue(Controller_t* controller) {
 //
 //Returns true if the asteroid was created successfully and false 
 //otherwise
-int create_asteroid(Game_Model_t* m, int radius, int x, int y, 
-                     int x_s, int y_s) {
+int create_asteroid(Game_Model_t* m, int radius, float x, float y,
+                     float x_s, float y_s) {
 
   //Find open asteroid slot in data structure
   int i; 

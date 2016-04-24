@@ -51,10 +51,10 @@ typedef struct controller_t {
 //Stores the information defining a single asteroid
 typedef struct asteroid_t {
   bool empty;
-  int x_pos;
-  int y_pos;
-  int x_speed;
-  int y_speed;
+  float x_pos;
+  float y_pos;
+  float x_speed;
+  float y_speed;
   int radius;
   Object_Model_t* model;
 } Asteroid_t;
