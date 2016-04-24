@@ -314,8 +314,6 @@ int main()
 			}
 		}
 
-		APP_ChangeResolution();
-
 		get_controller_value(&controller);
 		asteroids_main(&model, &controller);
 		display_frame(&model);
