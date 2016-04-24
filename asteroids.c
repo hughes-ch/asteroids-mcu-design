@@ -485,6 +485,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
         collision_list[collision_list_index++] = &(model->asteroids[i]);
         in_collision_list = true;
       }
+      model->score += BREAK_ASTEROID_SCORE;
       lose_life(model);
     }
   }
