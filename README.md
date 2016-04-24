@@ -15,8 +15,9 @@ Todo:
 Bug List:
  - Change asteroids to use floats so that they can travel diagonally
  - Change model of ship so that it rotates
- - Missiles must travel farther
  - Score does not increase when ship collides with asteroids
  - Ship travels too fast
  - Ship travels in the wrong direction
  - When TV first turns on, it tries to use 1080i instead of 800x600
+ - Ship acceleration needs work
+ - Asteroid ship collisions are not working unless ship is completely surrounded by asteroid

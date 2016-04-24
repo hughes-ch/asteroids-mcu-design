@@ -546,7 +546,10 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 	if (model->state == STATE_MAIN_MENU) {
 	  //If trigger button is pressed, start game
 	  if (controller->trigger_button) {
-		model->state = STATE_PLAYING;
+	    //Keep booleans and memory allocated, but reset score and objects
+	    reset_game(model);
+
+	    model->state = STATE_PLAYING;
 		set_object_model(&(model->model), TYPE_PLAYING);
 	  }
 
@@ -566,9 +569,6 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 
 	//----------End game menu logic--------------------------------
 	} else if (model->state == STATE_END_GAME_MENU) {
-	  //Keep booleans and memory allocated, but reset score and objects
-	  reset_game(model);
-
 	  //Continue if any button is pressed
 	  if (controller->trigger_button | controller->aux_button) {
 		model->state = STATE_MAIN_MENU;
