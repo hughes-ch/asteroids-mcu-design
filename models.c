@@ -3,6 +3,7 @@
 static Object_Model_t completed_models[NUM_MODELS];
 Object_Model_t model_large_score;
 Object_Model_t model_small_score;
+Object_Model_t model_lives;
 
 void p_array_deep_copy(Position_t* copy, Position_t* orig, int length) {
 	int i;
@@ -240,6 +241,7 @@ void connect_points(Object_Model_t* model, Position_t* pos1, Position_t* pos2) {
 void create_main_menu(Object_Model_t* model);
 void create_pause_menu(Object_Model_t* model);
 void create_end_game_menu(Object_Model_t* model);
+void create_play_view(Object_Model_t* model);
 
 //Creates an object model for an object
 void create_object_model(Object_Model_t* model, int type, int scale) {
@@ -254,6 +256,10 @@ void create_object_model(Object_Model_t* model, int type, int scale) {
 	}
 	if (type == TYPE_END_GAME_MENU) {
 		create_end_game_menu(model);
+		return;
+	}
+	if (type == TYPE_PLAYING) {
+		create_play_view(model);
 		return;
 	}
 
@@ -622,6 +628,42 @@ void create_end_game_menu(Object_Model_t* model) {
 	add_sub_object(model, &model_large_score, &((Position_t){440, score_height}));
 }
 
+//Displays HUD:
+//	{SCORE}
+//	Lives {LIVES}
+void create_play_view(Object_Model_t* model) {
+	int i = 0;
+
+	//Create the desired characters at the desired scales
+	static Object_Model_t menu_models[PLAY_VIEW_NUM_CHARACTERS];
+
+	create_object_model(&menu_models[i++], TYPE_CHARACTER_L, PLAY_VIEW_LABEL_SCALE);
+	create_object_model(&menu_models[i++], TYPE_CHARACTER_I, PLAY_VIEW_LABEL_SCALE);
+	create_object_model(&menu_models[i++], TYPE_CHARACTER_V, PLAY_VIEW_LABEL_SCALE);
+	create_object_model(&menu_models[i++], TYPE_CHARACTER_E, PLAY_VIEW_LABEL_SCALE);
+	create_object_model(&menu_models[i++], TYPE_CHARACTER_S, PLAY_VIEW_LABEL_SCALE);
+
+	//Translate each character in the title
+	i = 0;
+	int lives_height = 50;
+	Position_t translations[PLAY_VIEW_NUM_CHARACTERS];
+	translations[i++] = (Position_t){20, lives_height};
+	translations[i++] = (Position_t){40, lives_height};
+	translations[i++] = (Position_t){60, lives_height};
+	translations[i++] = (Position_t){80, lives_height};
+	translations[i++] = (Position_t){100, lives_height};
+
+	//Append each character to the array
+	model->num_positions = 0;
+	for (i = 0; i < PLAY_VIEW_NUM_CHARACTERS; i++) {
+		add_sub_object(model, &menu_models[i], &translations[i]);
+	}
+
+	//Add the score object
+	add_sub_object(model, &model_small_score, &((Position_t){20, 40}));
+	add_sub_object(model, &model_lives, &((Position_t){20, lives_height}));
+}
+
 void get_digits(int* digits, int score, int* num_digits) {
 	digits[0] = (score % 10) + TYPE_CHARACTER_0;
 	digits[1] = ((score/10) % 10) + TYPE_CHARACTER_0;
@@ -655,6 +697,25 @@ void update_score_model(int score) {
 	model_small_score.num_sub_objects = 0;
 	for (i = 0; i < num_digits; i++) {
 		add_sub_object(&model_large_score, &large_digit_models[i], &((Position_t){(i * LARGE_SCORE_SPACING) + 440, 300}));
-		add_sub_object(&model_small_score, &small_digit_models[i], &((Position_t){(i * SMALL_SCORE_SPACING) + 440, 300}));
+		add_sub_object(&model_small_score, &small_digit_models[i], &((Position_t){(i * SMALL_SCORE_SPACING) + 20, 20}));
+	}
+}
+
+void update_lives_model(int lives) {
+	//Do math to see which digits we need
+	int digits[LIVES_MAX_CHARACTERS];
+	int num_digits, i;
+	get_digits(digits, lives, &num_digits);
+
+	//Create the digits
+	static Object_Model_t digit_models[LIVES_MAX_CHARACTERS];
+	for (i = 0; i < num_digits; i++) {
+		create_object_model(&digit_models[i], digits[num_digits - i - 1], LIVES_SCALE);
+	}
+
+	//Add digits to the lives model
+	model_lives.num_sub_objects = 0;
+	for (i = 0; i < num_digits; i++) {
+		add_sub_object(&model_lives, &digit_models[i], &((Position_t){(i * LIVES_SPACING) + 140, 50}));
 	}
 }

@@ -615,6 +615,4 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 	  srand(controller->pitch);
 	  game_tick(model, controller);
 	}
-
-	//send_model(model);
 }

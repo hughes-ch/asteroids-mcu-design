@@ -211,8 +211,9 @@ void display_frame(Game_Model_t* model) {
 		}
 	}
 
-	//Tell the view what the score is
+	//Update the view with lives and score
 	update_score_model(model->score);
+	update_lives_model(model->lives);
 
 	//Display HUD (or menus)
 	o_model = *(model->model);
@@ -267,7 +268,6 @@ void gpio_init() {
  * Stores the value of the controller from the controller task
  ********************************************************************************/
 void get_controller_value(Controller_t* controller) {
-	printf("GPIO_DATA: %d\n", GPIO_DATA);
 	controller->aux_button = GPIO_DATA & BUTTOND;
 	controller->trigger_button = GPIO_DATA & BUTTONC;
 	controller->pitch = GPIO_DATA & BUTTONU ? 45 : 0;
