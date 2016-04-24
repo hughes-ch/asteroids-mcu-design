@@ -15,7 +15,6 @@ Todo:
 Bug List:
  - Change asteroids to use floats so that they can travel diagonally
  - Change model of ship so that it rotates
- - State machine (between menus) does not work
  - Missiles must travel farther
  - One press of a button registers multiple touches
  - Score does not increase when ship collides with asteroids

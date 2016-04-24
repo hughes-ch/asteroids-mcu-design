@@ -336,6 +336,7 @@ static void lose_life(Game_Model_t* model) {
   //Check if game is lost
   if (model->lives == 0) {
     model->state = STATE_END_GAME_MENU;
+    set_object_model(&(model->model), TYPE_END_GAME_MENU);
   }
 }
 
@@ -399,9 +400,11 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
   if (model->state == STATE_PAUSE_MENU) {
     if (controller->trigger_button) {
       model->state = STATE_PLAYING;
+      set_object_model(&(model->model), TYPE_PLAYING);
 
     } else if (controller->aux_button) {
       model->state = STATE_END_GAME_MENU;
+      set_object_model(&(model->model), TYPE_END_GAME_MENU);
     }
 
     return;
@@ -410,6 +413,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
   //Determine if the game needs to be paused
   if (controller->aux_button) {
     model->state = STATE_PAUSE_MENU;
+    set_object_model(&(model->model), TYPE_PAUSE_GAME_MENU);
     return;
   }
 
@@ -500,69 +504,6 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
   }
 }
 
-//Sends the game model to the display task
-void send_model(Game_Model_t* model) {
-  int i;
-
-  printf("State: ");
-  if (model->state == STATE_MAIN_MENU) {
-	  printf("Main Menu\n");
-  } else if (model->state == STATE_PLAYING) {
-	  printf("Playing\n");
-  } else if (model->state == STATE_PAUSE_MENU) {
-	  printf("Pause Menu\n");
-  } else {
-	  printf("End Game Menu\n");
-  }
-  
-  //Print asteroids
-  char type[15];
-  int x_pos, y_pos, x_s, y_s;
-  printf("Asteroids:\n");
-  for (i = 0; i < MAX_ASTEROIDS; i++) {
-    if ((model->asteroids[i]).empty) {
-      continue;
-    }
-    if ((model->asteroids[i]).radius == LARGE_ASTEROID_RADIUS) {
-      strcpy(type, "LARGE");
-    } else if ((model->asteroids[i]).radius == MEDIUM_ASTEROID_RADIUS) {
-      strcpy(type, "MEDIUM");
-    } else {
-      strcpy(type, "SMALL");
-    }
-    x_pos = (model->asteroids[i]).x_pos;
-    y_pos = (model->asteroids[i]).y_pos;
-    x_s = (model->asteroids[i]).x_speed;
-    y_s = (model->asteroids[i]).y_speed;
-    printf("\t%s (%d,%d) travelling %d by %d\n",type,x_pos,y_pos,x_s,y_s);
-  }
-  
-  //Print missiles
-  int l;
-  printf("Missiles:\n");
-  for (i = 0; i < MAX_MISSILES; i++) {
-    if ((model->missiles[i]).empty) {
-      continue;
-    }
-    x_pos = (model->missiles[i]).x_pos;
-    y_pos = (model->missiles[i]).y_pos;
-    x_s = (model->missiles[i]).x_speed;
-    y_s = (model->missiles[i]).y_speed;
-    l = (model->missiles[i]).life;
-    printf("\t(%d,%d) %d by %d with %d left\n",x_pos,y_pos,x_s,y_s,l);
-  }
-
-  //Print ship information
-  Ship_t s = model->ship;
-  printf("Ship Position: (%d,%d)\n", s.x_pos, s.y_pos);
-  printf("Ship Speed: (%d, %d)\n", s.x_speed, s.y_speed);
-  printf("Ship Rotation: %d\n", s.rotation);
-  printf("Ship Invincibility: %d\n", s.invincible);
-
-  printf("Lives: %d\n", model->lives);
-  printf("Score: %d\n\n", model->score);
-}
-
 //Initializes a game of asteroids. Must be called before asteroids_main
 void asteroids_init(Game_Model_t* model, int x, int y) {
 	model->x = x;
@@ -570,8 +511,8 @@ void asteroids_init(Game_Model_t* model, int x, int y) {
 
 	init_models();
 
-	model->state = STATE_PLAYING;
-	set_object_model(&(model->model), TYPE_PLAYING);
+	model->state = STATE_MAIN_MENU;
+	set_object_model(&(model->model), TYPE_MAIN_MENU);
 
 	set_object_model(&((model->ship).model), TYPE_SHIP);
 
@@ -586,6 +527,7 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 	  //If trigger button is pressed, start game
 	  if (controller->trigger_button) {
 		model->state = STATE_PLAYING;
+		set_object_model(&(model->model), TYPE_PLAYING);
 	  }
 
 	//----------Pause menu logic-----------------------------------
@@ -593,11 +535,13 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 	  //If trigger button is pressed, return to game
 	  if (controller->trigger_button) {
 		model->state = STATE_PLAYING;
+		set_object_model(&(model->model), TYPE_PLAYING);
 	  }
 
 	  //If aux button is pressed, quit game
 	  if (controller->aux_button) {
 		model->state = STATE_END_GAME_MENU;
+		set_object_model(&(model->model), TYPE_END_GAME_MENU);
 	  }
 
 	//----------End game menu logic--------------------------------
@@ -608,6 +552,7 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 	  //Continue if any button is pressed
 	  if (controller->trigger_button | controller->aux_button) {
 		model->state = STATE_MAIN_MENU;
+		set_object_model(&(model->model), TYPE_MAIN_MENU);
 	  }
 
 	//----------Game logic------------------------------------------
