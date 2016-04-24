@@ -71,8 +71,7 @@ static void get_from_control_queue(Controller_t* controller) {
 //
 //Returns true if the asteroid was created successfully and false 
 //otherwise
-int create_asteroid(Game_Model_t* m, int radius, float x, float y,
-                     float x_s, float y_s) {
+int create_asteroid(Game_Model_t* m, int radius, double x, double y, double x_s, double y_s) {
 
   //Find open asteroid slot in data structure
   int i; 
@@ -147,8 +146,8 @@ static void level_up(Game_Model_t* model) {
     angle = rand() % 360;
     
     //Convert random speed into x_s and y_s
-    x_s = (int)(cos((double)angle * M_PI / 180.0) * speed);
-    y_s = (int)(sin((double)angle * M_PI / 180.0) * speed);
+    x_s = cos((double)angle * M_PI / 180.0) * speed;
+    y_s = sin((double)angle * M_PI / 180.0) * speed;
 
     create_asteroid(model, LARGE_ASTEROID_RADIUS, x, y, x_s, y_s); 
   }
@@ -350,11 +349,11 @@ static void lose_life(Game_Model_t* model) {
 //one child asteroid can be created.
 static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
   //Get important information from parent asteroid
-  int parent_x = asteroid->x_pos;
-  int parent_y = asteroid->y_pos;;
-  int parent_x_speed = asteroid->x_speed;
-  int parent_y_speed = asteroid->y_speed;
-  int parent_r = asteroid->radius;
+  double parent_x = asteroid->x_pos;
+  double parent_y = asteroid->y_pos;
+  double parent_x_speed = asteroid->x_speed;
+  double parent_y_speed = asteroid->y_speed;
+  double parent_r = asteroid->radius;
   
   //Destroy parent asteroid
   asteroid->empty = true;
@@ -380,7 +379,7 @@ static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
     if (parent_y_speed == 0) {
       p_angle = rand() % 360;
     } else {
-      p_angle = (int)atan(parent_x_speed / parent_y_speed);
+      p_angle = (int)(atan(parent_x_speed / parent_y_speed) * 180 / M_PI);
     }
 
     //Randomly generate angles within 30 degrees of parent's angle
@@ -388,10 +387,10 @@ static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
     int theta2 = (p_angle-ASTEROID_ANGLE) + (rand() % (ASTEROID_ANGLE*2));
 
     //Calculate x_speed and y_speed for both asteroids
-    int x_s1 = (int)(cos((double)theta1 * M_PI / 180.0) * s1);
-    int y_s1 = (int)(sin((double)theta1 * M_PI / 180.0) * s1);
-    int x_s2 = (int)(cos((double)theta2 * M_PI / 180.0) * s2);
-    int y_s2 = (int)(sin((double)theta2 * M_PI / 180.0) * s2);
+    int x_s1 = cos((double)theta1 * M_PI / 180.0) * s1;
+    int y_s1 = sin((double)theta1 * M_PI / 180.0) * s1;
+    int x_s2 = cos((double)theta2 * M_PI / 180.0) * s2;
+    int y_s2 = sin((double)theta2 * M_PI / 180.0) * s2;
 
     //Create the asteroids
     create_asteroid(model, child_r, parent_x, parent_y, x_s1, y_s1);
