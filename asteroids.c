@@ -204,7 +204,7 @@ static int create_missile(Game_Model_t* model) {
 }*/
 
 //Wraps the object to the other side of the screen
-static void wrap(Game_Model_t* m, int* x, int* y) {
+static void wrap(Game_Model_t* m, double* x, double* y) {
   if (*x < 0) {
     *x = m->x;
 
@@ -229,13 +229,18 @@ static void wrap(Game_Model_t* m, int* x, int* y) {
 //acceleration
 static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   //Calculate the orientation of the controller
-  int roll = c->roll;
-  int pitch = c->pitch;
+  double roll = (double)c->roll;
+  double pitch = (double)c->pitch;
   //calculate_roll_pitch(c, &roll, &pitch);
 
   //Change orientation based on roll
-  (m->ship).rotation += (SHIP_ROLL_RATE * roll);
-  (m->ship).rotation %= 360;
+  (m->ship).rotation += (roll / SHIP_ROLL_CONSTANT);
+  while ((m->ship).rotation > 360) {
+	  (m->ship).rotation -= 360;
+  }
+  while ((m->ship).rotation < 0) {
+	  (m->ship).rotation += 360;
+  }
 
   //Change position based on speed
   (m->ship).x_pos += (m->ship).x_speed;
@@ -243,14 +248,14 @@ static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   wrap(m, &((m->ship).x_pos), &((m->ship).y_pos));
   
   //Determine acceleration based on pitch and orientation
-  int a_tot = SHIP_ACCEL_RATE * pitch;
-  int accel_x = (int)(cos((double)(m->ship).rotation*M_PI/180.0)*a_tot);
-  int accel_y = (int)(sin((double)(m->ship).rotation*M_PI/180.0)*a_tot);
+  double a_tot = pitch / SHIP_ACCEL_CONSTANT;
+  double accel_x = sin((m->ship).rotation*M_PI/180.0)*a_tot;
+  double accel_y = -cos((m->ship).rotation*M_PI/180.0)*a_tot;
   (m->ship).accelerating = (a_tot != 0);
 
   //Determine decceleration based on current speed
-  int deccel_x = (m->ship).x_speed / SHIP_DECCEL_RATE;
-  int deccel_y = (m->ship).y_speed / SHIP_DECCEL_RATE;
+  int deccel_x = (m->ship).x_speed / SHIP_DECCEL_CONSTANT;
+  int deccel_y = (m->ship).y_speed / SHIP_DECCEL_CONSTANT;
 
   //Add decceleration and acceleration into speed 
   (m->ship).x_speed += (accel_x - deccel_x);

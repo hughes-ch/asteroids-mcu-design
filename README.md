@@ -21,3 +21,4 @@ Bug List:
  - Ship acceleration needs work
  - Asteroid ship collisions are not working unless ship is completely surrounded by asteroid
  - Asteroids do not fully exit screen before appearing on other side
+ - Missile collisions

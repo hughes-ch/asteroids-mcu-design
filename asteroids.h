@@ -32,9 +32,9 @@
 
 #define SHIP_START_ROTATION 0
 #define SHIP_RADIUS 3
-#define SHIP_ACCEL_RATE 1
-#define SHIP_ROLL_RATE 1
-#define SHIP_DECCEL_RATE 2 //Larger number = less decceleration (not zero)
+#define SHIP_ACCEL_CONSTANT 10
+#define SHIP_ROLL_CONSTANT 10
+#define SHIP_DECCEL_CONSTANT 1 //Larger number = less decceleration (not zero)
 #define SHIP_INVINCIBILITY_LENGTH 5
 
 #define NUM_LIVES 3
@@ -62,10 +62,10 @@ typedef struct asteroid_t {
 //Stores the information defining a single missile
 typedef struct missile_t {
   bool empty;
-  int x_pos;
-  int y_pos;
-  int x_speed;
-  int y_speed;
+  double x_pos;
+  double y_pos;
+  double x_speed;
+  double y_speed;
   int radius;
   int life;
   Object_Model_t* model;
@@ -73,10 +73,10 @@ typedef struct missile_t {
 
 //Stores the information defining the player's ship
 typedef struct ship_t {
-  int x_pos;
-  int y_pos;
-  int x_speed;
-  int y_speed;
+  double x_pos;
+  double y_pos;
+  double x_speed;
+  double y_speed;
   int radius;
   int rotation;
   bool accelerating;
