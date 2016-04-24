@@ -167,12 +167,12 @@ static int create_missile(Game_Model_t* model) {
       
       //Calculate x and y positions
       Ship_t s = model->ship;
-      m.x_pos=s.x_pos+(int)(cos((double)s.rotation*M_PI/180.0)*s.radius);
-      m.y_pos=s.y_pos+(int)(sin((double)s.rotation*M_PI/180.0)*s.radius);
+      m.x_pos = s.x_pos + sin((double)s.rotation * M_PI/180.0) * s.radius;
+      m.y_pos = s.y_pos + -cos((double)s.rotation * M_PI/180.0) * s.radius;
 
       //Calculate x and y speeds
-      m.x_speed = (int)(cos((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
-      m.y_speed = (int)(sin((double)s.rotation*M_PI/180.0)*MISSILE_SPEED);
+      m.x_speed = sin((double)s.rotation * M_PI/180.0) * MISSILE_SPEED;
+      m.y_speed = -cos((double)s.rotation * M_PI/180.0) * MISSILE_SPEED;
 
       //Fill other missile parameters
       m.radius = MISSILE_RADIUS;
@@ -228,7 +228,7 @@ static void wrap(Game_Model_t* m, double* x, double* y) {
 //acceleration
 static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   //Calculate the orientation of the controller
-  double roll = (double)c->roll;
+  int roll = c->roll;
   double pitch = (double)c->pitch;
   //calculate_roll_pitch(c, &roll, &pitch);
 
@@ -252,13 +252,9 @@ static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   double accel_y = -cos((m->ship).rotation*M_PI/180.0)*a_tot;
   (m->ship).accelerating = (a_tot != 0);
 
-  //Determine decceleration based on current speed
-  int deccel_x = (m->ship).x_speed / SHIP_DECCEL_CONSTANT;
-  int deccel_y = (m->ship).y_speed / SHIP_DECCEL_CONSTANT;
-
   //Add decceleration and acceleration into speed 
-  (m->ship).x_speed += (accel_x - deccel_x);
-  (m->ship).y_speed += (accel_y - deccel_y);
+  (m->ship).x_speed = ((m->ship).x_speed / SHIP_DECCEL_CONSTANT) + accel_x;
+  (m->ship).y_speed = ((m->ship).y_speed / SHIP_DECCEL_CONSTANT) + accel_y;
 }
 
 //Move asteroids. Uses asteroids' speed parameter in the Asteroid_t struct
