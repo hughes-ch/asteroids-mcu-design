@@ -485,6 +485,7 @@ void game_tick(Game_Model_t* model, Controller_t* controller) {
         collision_list[collision_list_index++] = &(model->asteroids[i]);
         in_collision_list = true;
       }
+      model->score += BREAK_ASTEROID_SCORE;
       lose_life(model);
     }
   }
@@ -522,11 +523,34 @@ void asteroids_init(Game_Model_t* model, int x, int y) {
 //Initializes and plays a game of asteroids
 //x and y parameters are the desired dimensions of the screen
 void asteroids_main(Game_Model_t* model, Controller_t* controller) {
+	//Make sure that a long button click does not register multiple clicks
+	static int first = 1;
+	static Controller_t* last_frame_controller;
+
+	if (!first) {
+	  bool temp = controller->aux_button;
+	  if (last_frame_controller->aux_button) {
+		  controller->aux_button = false;
+	  }
+	  last_frame_controller->aux_button = temp;
+
+	  temp = controller->trigger_button;
+	  if (last_frame_controller->trigger_button) {
+		  controller->trigger_button = false;
+	  }
+	  last_frame_controller->trigger_button = temp;
+	}
+
+	first = 0;
+
 	//----------Main menu logic-------------------------------------
 	if (model->state == STATE_MAIN_MENU) {
 	  //If trigger button is pressed, start game
 	  if (controller->trigger_button) {
-		model->state = STATE_PLAYING;
+	    //Keep booleans and memory allocated, but reset score and objects
+	    reset_game(model);
+
+	    model->state = STATE_PLAYING;
 		set_object_model(&(model->model), TYPE_PLAYING);
 	  }
 
@@ -546,9 +570,6 @@ void asteroids_main(Game_Model_t* model, Controller_t* controller) {
 
 	//----------End game menu logic--------------------------------
 	} else if (model->state == STATE_END_GAME_MENU) {
-	  //Keep booleans and memory allocated, but reset score and objects
-	  reset_game(model);
-
 	  //Continue if any button is pressed
 	  if (controller->trigger_button | controller->aux_button) {
 		model->state = STATE_MAIN_MENU;

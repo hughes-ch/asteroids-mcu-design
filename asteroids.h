@@ -28,7 +28,7 @@
 
 #define MISSILE_SPEED 3
 #define MISSILE_RADIUS 1
-#define MISSILE_LIFE 10
+#define MISSILE_LIFE 150
 
 #define SHIP_START_ROTATION 0
 #define SHIP_RADIUS 3
