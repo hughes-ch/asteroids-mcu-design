@@ -13,6 +13,4 @@ Todo:
 - Fix bugs
 
 Bug List:
- - Change asteroids to use floats so that they can travel diagonally
  - When TV first turns on, it tries to use 1080i instead of 800x600
- - Reset orientation of ship after collision

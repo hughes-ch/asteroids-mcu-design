@@ -103,7 +103,8 @@ int create_asteroid(Game_Model_t* m, int radius, double x, double y, double x_s,
 //on the screen. The number of asteroids is directly related to the level.
 //Assume there are no more asteroids in the model.
 static void level_up(Game_Model_t* model) {
-  int i, x, y, x_s, y_s, angle, side, speed;
+  int i, angle, side, speed;
+  double x, y, x_s, y_s;
 
   model->level++;
   int num_asteroids = MIN_ASTEROIDS + (model->level / 2);
@@ -146,8 +147,8 @@ static void level_up(Game_Model_t* model) {
     angle = rand() % 360;
     
     //Convert random speed into x_s and y_s
-    x_s = cos((double)angle * M_PI / 180.0) * speed;
-    y_s = sin((double)angle * M_PI / 180.0) * speed;
+    x_s = cos((double)angle * M_PI / 180.0) * (double)speed;
+    y_s = sin((double)angle * M_PI / 180.0) * (double)speed;
 
     create_asteroid(model, LARGE_ASTEROID_RADIUS, x, y, x_s, y_s); 
   }
@@ -335,6 +336,7 @@ static void lose_life(Game_Model_t* model) {
   (model->ship).y_pos = model->y / 2;
   (model->ship).x_speed = 0;
   (model->ship).y_speed = 0;
+  (model->ship).rotation = 0;
 
   //Make ship invincible for a few moments
   (model->ship).invincible = SHIP_INVINCIBILITY_LENGTH;
@@ -373,8 +375,8 @@ static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
   //Create new asteroids if needed
   if (child_r != 0) {
     //Randomly generate speeds
-    int s1 = (rand() % MAX_ASTEROID_SPEED) + 1;
-    int s2 = (rand() % MAX_ASTEROID_SPEED) + 1;
+    double s1 = (rand() % MAX_ASTEROID_SPEED) + 1;
+    double s2 = (rand() % MAX_ASTEROID_SPEED) + 1;
 
     //Calculate the angle of the parent's travel
     int p_angle;
@@ -389,10 +391,10 @@ static void break_asteroid(Game_Model_t* model, Asteroid_t* asteroid) {
     int theta2 = (p_angle-ASTEROID_ANGLE) + (rand() % (ASTEROID_ANGLE*2));
 
     //Calculate x_speed and y_speed for both asteroids
-    int x_s1 = cos((double)theta1 * M_PI / 180.0) * s1;
-    int y_s1 = sin((double)theta1 * M_PI / 180.0) * s1;
-    int x_s2 = cos((double)theta2 * M_PI / 180.0) * s2;
-    int y_s2 = sin((double)theta2 * M_PI / 180.0) * s2;
+    double x_s1 = cos((double)theta1 * M_PI / 180.0) * (double)s1;
+    double y_s1 = sin((double)theta1 * M_PI / 180.0) * (double)s1;
+    double x_s2 = cos((double)theta2 * M_PI / 180.0) * (double)s2;
+    double y_s2 = sin((double)theta2 * M_PI / 180.0) * (double)s2;
 
     //Create the asteroids
     create_asteroid(model, child_r, parent_x, parent_y, x_s1, y_s1);
