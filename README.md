@@ -15,7 +15,4 @@ Todo:
 Bug List:
  - Change asteroids to use floats so that they can travel diagonally
  - When TV first turns on, it tries to use 1080i instead of 800x600
- - Asteroid ship collisions are not working unless ship is completely surrounded by asteroid
- - Asteroids do not fully exit screen before appearing on other side
- - Missile collisions
  - Reset orientation of ship after collision

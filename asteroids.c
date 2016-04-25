@@ -203,18 +203,18 @@ static int create_missile(Game_Model_t* model) {
 }*/
 
 //Wraps the object to the other side of the screen
-static void wrap(Game_Model_t* m, double* x, double* y) {
-  if (*x < 0) {
+static void wrap(Game_Model_t* m, double* x, double* y, int radius) {
+  if (*x < 0 - radius) {
     *x = m->x;
 
-  } else if (*x > m->x) {
+  } else if (*x > m->x + radius) {
     *x = 0;
   } 
   
-  if (*y < 0) {
+  if (*y < 0 - radius) {
     *y = m->y;
 
-  } else if (*y > m->y) {
+  } else if (*y > m->y + radius) {
     *y = 0;
   }
 }
@@ -244,7 +244,7 @@ static void move_player_ship(Game_Model_t* m, Controller_t* c) {
   //Change position based on speed
   (m->ship).x_pos += (m->ship).x_speed;
   (m->ship).y_pos += (m->ship).y_speed;
-  wrap(m, &((m->ship).x_pos), &((m->ship).y_pos));
+  wrap(m, &((m->ship).x_pos), &((m->ship).y_pos), SHIP_RADIUS);
   
   //Determine acceleration based on pitch and orientation
   double a_tot = pitch / SHIP_ACCEL_CONSTANT;
@@ -271,7 +271,7 @@ static void move_asteroids(Game_Model_t* m) {
     (m->asteroids[i]).y_pos += (m->asteroids[i]).y_speed;
 
     //If an asteroid is out of bounds, wrap it to other side of screen
-    wrap(m, &((m->asteroids[i]).x_pos), &((m->asteroids[i]).y_pos));
+    wrap(m, &((m->asteroids[i]).x_pos), &((m->asteroids[i]).y_pos), (m->asteroids[i]).radius);
   }
 }
 
@@ -296,7 +296,7 @@ static void move_missiles(Game_Model_t* m) {
       (m->missiles[i]).y_pos += (m->missiles[i]).y_speed;
 
       //If a missile is out of bounds, wrap it to other side of screen
-      wrap(m, &((m->missiles[i]).x_pos), &((m->missiles[i]).y_pos));
+      wrap(m, &((m->missiles[i]).x_pos), &((m->missiles[i]).y_pos), MISSILE_RADIUS);
 
       //Decrement missile lifetime
       (m->missiles[i]).life--;
