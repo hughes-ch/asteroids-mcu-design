@@ -409,7 +409,7 @@ UINT16 TRANSMITTER_Notification (TX_EVENT Ev, UINT16 Count, UCHAR *BufPtr)
         /* EDID ready */
         case TX_EVENT_EDID_READY:
         	TRANSMITTER_DBG_MSG("A new EDID segment was read.\n\r");
-        	TRANSMITTER_NewEdidSegment(Count, BufPtr);
+        	//TRANSMITTER_NewEdidSegment(Count, BufPtr);
             break;
         default:
             break;

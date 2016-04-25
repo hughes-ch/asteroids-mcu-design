@@ -10,7 +10,3 @@ Notes:
 
 Todo:
 - Set up controller function and struct
-- Fix bugs
-
-Bug List:
- - When TV first turns on, it tries to use 1080i instead of 800x600
