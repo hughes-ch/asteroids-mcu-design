@@ -133,34 +133,34 @@ typedef struct model_t {
  *  [x] CHARACTER_Y
  *  [x] CHARACTER_Z
  */
-#define LARGE_ASTEROID_NUM_POSITIONS 13
-static Position_t large_asteroid_model[LARGE_ASTEROID_NUM_POSITIONS] = {(Position_t){24, -20},
-																		(Position_t){40, -28},
-																		(Position_t){28, -46},
-																		(Position_t){0, -37},
-																		(Position_t){-28, -46},
-																		(Position_t){-40, -28},
-																		(Position_t){-26, 0},
-																		(Position_t){-40, 12},
-																		(Position_t){-28, 36},
-																		(Position_t){-19, 28},
-																		(Position_t){24, 36},
-																		(Position_t){40, 12},
-																		(Position_t){24, -20}};
+#define LARGE_ASTEROID_NUM_POSITIONS 12
+static Position_t large_asteroid_model[LARGE_ASTEROID_NUM_POSITIONS] = {(Position_t){-10, 0},
+																		(Position_t){-10, 40},
+																		(Position_t){20, 40},
+																		(Position_t){40, 10},
+																		(Position_t){40, -10},
+																		(Position_t){26, -40},
+																		(Position_t){-16, -40},
+																		(Position_t){-36, -10},
+																		(Position_t){-26, -4},
+																		(Position_t){-38, 4},
+																		(Position_t){-28, 34},
+																		(Position_t){-10, -0}};
 
-#define MEDIUM_ASTEROID_NUM_POSITIONS 12
-static Position_t medium_asteroid_model[MEDIUM_ASTEROID_NUM_POSITIONS] = {(Position_t){-5, 0},
-																		  (Position_t){-5, 20},
-																		  (Position_t){10, 20},
-																		  (Position_t){20, 5},
-																		  (Position_t){20, -5},
-																		  (Position_t){13, -20},
-																		  (Position_t){-8, -20},
-																		  (Position_t){-18, -5},
-																		  (Position_t){-13, -2},
-																		  (Position_t){-19, 2},
-																		  (Position_t){-14, 17},
-																		  (Position_t){-5, 0}};
+#define MEDIUM_ASTEROID_NUM_POSITIONS 13
+static Position_t medium_asteroid_model[MEDIUM_ASTEROID_NUM_POSITIONS] = {(Position_t){12, -10},
+																		  (Position_t){20, -14},
+																		  (Position_t){14, -20},
+																		  (Position_t){0, -18},
+																		  (Position_t){-14, -20},
+																		  (Position_t){-20, -14},
+																		  (Position_t){-13, 0},
+																		  (Position_t){-20, 6},
+																		  (Position_t){-14, 18},
+																		  (Position_t){-5, 14},
+																		  (Position_t){12, 18},
+																		  (Position_t){20, 6},
+																		  (Position_t){12, -10}};
 
 #define SMALL_ASTEROID_NUM_POSITIONS 12
 static Position_t small_asteroid_model[SMALL_ASTEROID_NUM_POSITIONS] = {(Position_t){0, 0},
