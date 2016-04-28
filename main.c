@@ -52,6 +52,7 @@
 #include "transmitter.h"
 #include "xil_exception.h"
 #include "xuartps.h"
+#include "controller.h"
 
 extern void delay_ms(u32 ms_count);
 extern char inbyte(void);
@@ -272,6 +273,7 @@ void gpio_init() {
 void get_controller_value(Controller_t* controller) {
 	controller->aux_button = GPIO_DATA & BUTTOND;
 	controller->trigger_button = GPIO_DATA & BUTTONC;
+#ifndef I2C_WORKS
 	controller->pitch = GPIO_DATA & BUTTONU ? 45 : 0;
 	if (GPIO_DATA & BUTTONR) {
 		controller->roll = 45;
@@ -280,6 +282,10 @@ void get_controller_value(Controller_t* controller) {
 	} else {
 		controller->roll = 0;
 	}
+#else
+	controller->pitch = controller_get_pitch();
+	controller->roll = controller_get_roll();
+#endif
 }
 
 /***************************************************************************//**
@@ -300,6 +306,10 @@ int main()
 	hdmi_init(&resx, &resy);
 	asteroids_init(&model, resx, resy);
 	gpio_init();
+
+#ifdef I2C_WORKS
+	controller_init();
+#endif
 
 	StartCount = HAL_GetCurrentMsCount();
 
