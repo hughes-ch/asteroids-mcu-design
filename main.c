@@ -256,10 +256,10 @@ void hdmi_init(int* resx, int* resy) {
 }
 
 #define GPIO_DATA (*((volatile unsigned int*)(0xE000A000 + 0x00000048)))
-#define BUTTONL (1 << 3)
+#define BUTTONR (1 << 3)
 #define BUTTONC (1 << 0)
 #define BUTTOND (1 << 1)
-#define BUTTONR (1 << 2)
+#define BUTTONL (1 << 2)
 #define BUTTONU (1 << 4)
 
 void gpio_init() {

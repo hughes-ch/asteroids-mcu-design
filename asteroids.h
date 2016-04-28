@@ -38,7 +38,7 @@
 #define SHIP_INVINCIBILITY_LENGTH 5
 
 #define NUM_LIVES 3
-#define BREAK_ASTEROID_SCORE 100
+#define BREAK_ASTEROID_SCORE 20
 
 //Populated by the control task and used to modify the game model
 typedef struct controller_t {
