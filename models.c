@@ -1,11 +1,13 @@
 #include <math.h>
 #include "models.h"
 
+//Static completed object models
 static Object_Model_t completed_models[NUM_MODELS];
 Object_Model_t model_large_score;
 Object_Model_t model_small_score;
 Object_Model_t model_lives;
 
+//Performs a deep copy on an array of Position_t
 void p_array_deep_copy(Position_t* copy, Position_t* orig, int length) {
 	int i;
 	for (i = 0; i < length; i++) {
@@ -14,6 +16,7 @@ void p_array_deep_copy(Position_t* copy, Position_t* orig, int length) {
 	}
 }
 
+//Fills the input array based on the input type
 void set_type(Position_t positions[MAX_MODEL_SIZE], int type, int* num) {
 	switch (type) {
 		case TYPE_LARGE_ASTEROID:
@@ -288,6 +291,7 @@ void create_object_model(Object_Model_t* model, int type, int scale) {
 	}
 }
 
+//Initializes every object model
 void init_models() {
 	int i;
 	for (i = 0; i < NUM_MODELS; i++) {
@@ -295,10 +299,12 @@ void init_models() {
 	}
 }
 
+//Sets the input Object_Model_t parameter to the model that matches the type
 void set_object_model(Object_Model_t** model, int type) {
 	*model = &completed_models[type];
 }
 
+//Adds a sub object to an Object_Model_t with the given translation
 void add_sub_object(Object_Model_t* master, Object_Model_t* sub, Position_t* translation) {
 	if (master->num_sub_objects < MAX_NUM_SUB_OBJECTS) {
 		master->sub_objects[master->num_sub_objects] = sub;
@@ -665,6 +671,7 @@ void create_play_view(Object_Model_t* model) {
 	add_sub_object(model, &model_lives, &((Position_t){20, lives_height}));
 }
 
+//Returns an array with the correct object model type in each of the indecies
 void get_digits(int* digits, int score, int* num_digits) {
 	digits[0] = (score % 10) + TYPE_CHARACTER_0;
 	digits[1] = ((score/10) % 10) + TYPE_CHARACTER_0;
@@ -679,6 +686,7 @@ void get_digits(int* digits, int score, int* num_digits) {
 	}
 }
 
+//Tells the view what the new score of the game is
 void update_score_model(int score) {
 	//Do math to see which digits we need
 	int digits[SCORE_MAX_CHARACTERS];
@@ -702,6 +710,7 @@ void update_score_model(int score) {
 	}
 }
 
+//Tells the view how many lives the player has left
 void update_lives_model(int lives) {
 	//Do math to see which digits we need
 	int digits[LIVES_MAX_CHARACTERS];
@@ -721,11 +730,13 @@ void update_lives_model(int lives) {
 	}
 }
 
+//Multiply a 2x2 matrix by a 2x1 matrix and output a 2x1 matrix that is the product of the two
 void matrix_mult(double m1[2][2], double m2[2][1], double rotated[2][1]) {
 	rotated[0][0] = (m1[0][0] * m2[0][0]) + (m1[0][1] * m2[1][0]);
 	rotated[1][0] = (m1[1][0] * m2[0][0]) + (m1[1][1] * m2[1][0]);
 }
 
+//Rotates a vector "vect" by "rotation" and outputs the answer to "new_vect"
 void rotate(Position_t* vect, Position_t* new_vect, int rotation) {
 	double theta = (double)rotation * M_PI / 180.0;
 	double rot_matrix[2][2] = {{cos(theta), -sin(theta)}, {sin(theta), cos(theta)}};
@@ -737,6 +748,7 @@ void rotate(Position_t* vect, Position_t* new_vect, int rotation) {
 	new_vect->y = rotated[0][1];
 }
 
+//Update the ship model based on its rotation
 void update_ship_model(int rotation) {
     //Rotate position array
     Position_t rotated_model[SHIP_NUM_POSITIONS];

@@ -7,10 +7,7 @@
 #include "asteroids.h"
 #include "models.h"
 
-/*
- * Make sure that a long button press does not repeat actions
- */
-
+//Resets the game model
 static void reset_game(Game_Model_t* model) {
   int i;
   for (i = 0; i < MAX_ASTEROIDS; i++) {
@@ -192,16 +189,6 @@ static int create_missile(Game_Model_t* model) {
   //Return false if a new missile could not be created
   return 0;
 }
-
-//Calculates the roll and pitch of the controller
-/*static void calculate_roll_pitch(Controller_t* c, int* roll, int* pitch) {
-  double a_x = c->accel_x / ACCEL_1_G;
-  double a_y = c->accel_y / ACCEL_1_G;
-  double a_z = c->accel_z / ACCEL_1_G;
-
-  *roll = (int) atan(a_z * -1 / a_z);
-  *pitch = (int) atan(a_y / sqrt(pow(a_x, 2) + pow(a_z, 2)));
-}*/
 
 //Wraps the object to the other side of the screen
 static void wrap(Game_Model_t* m, double* x, double* y, int radius) {

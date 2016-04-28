@@ -128,6 +128,7 @@ u32 get_frame_addr() {
 	return addr;
 }
 
+//Recursive function that displays the object model and its sub-objects
 void display_sub_objects(Object_Model_t* model, int screensize, u32 start_addr) {
 	int i, x, y;
 	Object_Model_t* sub_model;
