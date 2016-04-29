@@ -47,13 +47,23 @@ THE SOFTWARE.
 #include "MPU6050.h"
 #include "xil_printf.h"
 
+// The bellow define and ifdef scheme was put in place due to the I2C issues
+// that our team encountered. To try and re-enable the I2C and gyro code a 
+// global define of the bellow in preprocessor will 
 //#define I2C_WORKS
 
 #ifdef I2C_WORKS
 #include "xiicps.h"
 #endif
 
-/* Populate these with the functions bellow to get functionality */
+/* 
+    Populate these with the functions bellow to get functionality 
+    
+    Currently they are blank as the Zedboard API never reached full
+    functionality but the functions they should map to are fairly straight
+    forward. ie I2Cdev_readByte is a call to Zedboard_readBytes with
+    length of one
+*/
 
 #define I2Cdev_readBit(devAddr, regAddr, bitNum, data) 
 #define I2Cdev_writeBit(devAddr, regAddr, bitNum, data)
@@ -105,7 +115,7 @@ void Zedboard_writeBit(uint16_t reg, uint8_t bits, BOOL value)
 
 void Zedboard_writeBytes(uint16_t reg, uint8_t* buffer, uint32_t length)
 {
-        // Load in register
+    // Load in register
     memcpy(sendBuff, &reg, 2);
 
     // Load in data

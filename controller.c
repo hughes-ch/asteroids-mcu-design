@@ -1,6 +1,11 @@
 //
 // Controller
 //
+// Very basic wrapper around the gyro code to abstrract the game model better from the HW
+// A better implementation of the button controls we ended up using could in theory live
+// in this class for a cleaner abstraction
+//
+
 #include "MPU6050.h"
 #include "xil_printf.h"
 
